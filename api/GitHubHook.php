@@ -100,4 +100,3 @@ class GitHubHook extends Hook {
         }
     }
 }
- ?>

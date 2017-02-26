@@ -91,5 +91,4 @@ class Hook {
                 $this->apiMessages[] = "Invalid Content Type";
         }
     }
-
 }
