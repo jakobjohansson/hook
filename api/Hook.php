@@ -1,40 +1,33 @@
 <?php
 class Hook {
-    private $secret = null;
-    private $headers;
-    private $contentType;
-    private $event;
-    private $algorithm;
-    private $signature;
-    private $payload;
+    protected $headers;
+    protected $contentType;
+    protected $payload = null;
+    protected $apiMessages = [];
 
-    public function __construct() {
-        return $this->setHeaders();
-    }
-
-    public function setSecret(String $secret) {
-        $this->secret = $secret;
-    }
-
-    public function setHeaders() {
-        $this->headers = apache_request_headers();
-        if ($this->checkHeaders()) {
-            $this->event = $this->headers['X-GitHub-Event'];
-            list($this->algorithm, $this->signature) = explode("=", $this->headers['X-Hub-Signature'], 2);
-            $this->contentType = $this->headers['Content-Type'];
-            $this->fetchPayload();
-            return $this->checkSecret();
+    public function __construct($service = null, $secret = null) {
+        if ($service === "GitHub") {
+            return new GitHubHook($secret);
         } else {
-            return false;
+            $this->fetchHeaders();
+            $this->fetchPayload();
         }
     }
 
-    public function checkHeaders() {
-        return array_key_exists('X-GitHub-Event', $this->headers) &&
-        array_key_exists('X-Hub-Signature', $this->headers);
+    public function getPayload() {
+        return $this->payload;
     }
 
-    public function fetchPayload() {
+    public function getApiMessages() {
+        return $this->apiMessages();
+    }
+
+    protected function fetchHeaders() {
+        $this->headers = apache_request_headers();
+        $this->contentType = $this->headers['Content-Type'];
+    }
+
+    protected function fetchPayload() {
         switch ($this->contentType) {
             case 'application/json':
                 $this->payload = json_decode(file_get_contents('php://input'));
@@ -42,10 +35,9 @@ class Hook {
             case 'application/x-www-form-urlencoded':
                 $this->payload = $_POST['payload'];
             break;
+            default:
+                $this->apiMessages[] = "Invalid Content Type";
         }
     }
 
-    public function checkSecret() {
-        return hash_equals(hash_hmac($this->algorithm, $this->payload, $this->secret), $this->signature);
-    }
 }
