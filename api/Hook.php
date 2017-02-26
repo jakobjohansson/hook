@@ -51,14 +51,6 @@ class Hook {
     }
 
     /**
-     * Returns the payload for the front end.
-     * @return Object JSON
-     */
-    public function getPayload() {
-        return $this->payload;
-    }
-
-    /**
      * Returns the $apiMessages
      * @return Array APIMessages
      */

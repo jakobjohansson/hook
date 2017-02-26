@@ -40,7 +40,7 @@ class GitHubHook extends Hook {
      * The events the API will listen to
      * @var Array
      */
-    public $listen = [];
+    public $listeners = [];
 
     /**
      * Checking for X-GitHub-Event header and authorizing
@@ -103,6 +103,33 @@ class GitHubHook extends Hook {
             case 'application/x-www-form-urlencoded':
                 return $_POST['payload'];
             break;
+        }
+    }
+
+    /**
+     * Sets the events to listen to
+     * @param  Array $listeners Array of events
+     * @return Object | false   false if event is not being watched
+     */
+    public function listen(array $listeners = null) {
+        $default = ['push', 'issues', 'repository', 'commit_comment',
+        'create', 'delete', 'deployment', 'deployment_status',
+        'fork', 'gollum', 'issue_comment', 'label', 'member',
+        'membership', 'milestone', 'organization', 'org_block',
+        'page_build', 'project_card', 'project_column', 'project',
+        'public', 'pull_request_review', 'pull_request_review_comments',
+        'pull_request', 'status', 'team', 'team_add', 'watch'];
+
+        if (!in_array($listeners, $default) && $listeners !== null) {
+            $this->apiMessages[] = "Invalid event";
+            return false;
+        }
+
+        $this->listeners = $listeners;
+
+        if (!in_array($this->event, $this->listeners)) {
+            $this->apiMessages[] = "Not watching $event";
+            return false;
         }
     }
 }
