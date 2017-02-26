@@ -1,10 +1,45 @@
 <?php
+/**
+ * GitHub service for the webhook-api.
+ * This hook is returned if specified in the main constructor.
+ * Will provide authorization if secret is provided.
+ *
+ * @category   API
+ * @package    webhook-api
+ * @author     Jakob Johansson
+ * @copyright  2017
+ * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
+ */
 class GitHubHook extends Hook {
+
+    /**
+     * Authorization key to be provided from the user
+     * @var String null
+     */
     private $secret = null;
+
+    /**
+     * The X-GitHub-Event header, i.e push, issue, etc
+     * @var String
+     */
     private $event;
-    private $algorithm;
+
+    /**
+     * The hash string from the X-GitHub-Signature header
+     * @var String
+     */
     private $signature;
 
+    /**
+     * The hash algorithm used in the X-GitHub-Signature header
+     * @var String
+     */
+    private $algorithm;
+
+    /**
+     * Checking for X-GitHub-Event header and authorizing
+     * @param String $secret the authorization key
+     */
     public function __construct($secret = null) {
         $this->fetchHeaders();
         if (!array_key_exists('X-GitHub-Event', $this->headers)) {
@@ -16,10 +51,17 @@ class GitHubHook extends Hook {
         if (isset($secret)) {
             $this->secret = $secret;
             return $this->auth();
+        } else {
+            $this->fetchPayload();
         }
     }
 
-    public function auth() {
+    /**
+     * Authorizing method with the helper functions secretValidator() and checkSecret()
+     * Sends message to apiMessages if a problem occures
+     * @return boolean true | false
+     */
+    protected function auth() {
         if (!array_key_exists('X-Hub-Signature', $this->headers)) {
             $this->apiMessages[] = "No signature provided";
             return false;
@@ -35,10 +77,18 @@ class GitHubHook extends Hook {
         }
     }
 
+    /**
+     * Compares the hashes provided by the webhook and the user
+     * @return boolean hash
+     */
     protected function checkSecret() {
         return hash_equals(hash_hmac($this->algorithm, $this->secretValidator(), $this->secret), $this->signature);
     }
 
+    /**
+     * Returns the payload temporarily for authorization needed in checkSecret()
+     * @return Array payload
+     */
     protected function secretValidator() {
         switch ($this->contentType) {
             case 'application/json':
