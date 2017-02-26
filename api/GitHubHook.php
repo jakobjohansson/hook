@@ -37,6 +37,12 @@ class GitHubHook extends Hook {
     private $algorithm;
 
     /**
+     * The events the API will listen to
+     * @var Array
+     */
+    public $listen = [];
+
+    /**
      * Checking for X-GitHub-Event header and authorizing
      * @param String $secret the authorization key
      */
