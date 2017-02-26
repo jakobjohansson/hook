@@ -58,7 +58,7 @@ class GitHubHook extends Hook {
 
     /**
      * Authorizing method with the helper functions secretValidator() and checkSecret()
-     * Sends message to apiMessages if a problem occures
+     * Sends message to apiMessages if a problem occurs
      * @return boolean true | false
      */
     protected function auth() {
