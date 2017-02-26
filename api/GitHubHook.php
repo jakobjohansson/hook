@@ -98,7 +98,7 @@ class GitHubHook extends Hook {
     protected function secretValidator() {
         switch ($this->contentType) {
             case 'application/json':
-                return json_decode(file_get_contents('php://input'));
+                return file_get_contents('php://input');
             break;
             case 'application/x-www-form-urlencoded':
                 return $_POST['payload'];

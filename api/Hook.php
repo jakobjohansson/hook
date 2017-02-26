@@ -34,7 +34,9 @@ class Hook {
      * Messages from the API used for trouble shooting or status texts
      * @var Array
      */
-    protected $apiMessages = [];
+    public $apiMessages = [];
+
+    public $git;
 
     /**
      * Determine if to return a children hook like GitHub etc, also sends an authorization key if provided.
@@ -43,7 +45,7 @@ class Hook {
      */
     public function __construct($service = null, $secret = null) {
         if ($service === "GitHub") {
-            return new GitHubHook($secret);
+            $this->git = new GitHubHook($secret);
         } else {
             $this->fetchHeaders();
             $this->fetchPayload();
@@ -64,7 +66,7 @@ class Hook {
      */
     protected function fetchHeaders() {
         $this->headers = apache_request_headers();
-        $this->contentType = $this->headers['Content-Type'];
+        $this->contentType = isset($this->headers['content-type']) ?: null;
     }
 
     /**
