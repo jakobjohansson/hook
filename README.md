@@ -8,3 +8,5 @@ This is a purely hobbyist project and is in no way a claim to be the most effici
 - Set authorization key (secret).
 - Set desired events to keep track of.
 - Option to set callback functions for specific events or in general, or a callback URL containing a script.
+
+Go to the [docs](docs/) folder for more information.
