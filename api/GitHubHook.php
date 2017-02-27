@@ -172,6 +172,10 @@ class GitHubHook extends Hook {
                 case 'issue_comment':
                     $this->output = new GitIssueCommentEvent($this->payload);
                 break;
+
+                case 'label':
+                    $this->output = new GitLabelEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
