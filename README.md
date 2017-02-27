@@ -7,5 +7,6 @@ The project is still in its very early development phase, so a lot of functional
 
 ## Ideas, to-do's
 - Option to log every incoming request.
+- Finish GitHub service events.
 
 Go to the [docs](docs/index.md) for more information.
