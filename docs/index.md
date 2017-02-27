@@ -16,3 +16,5 @@ foreach ($hook->getApiMessages() as $message) {
     echo "$message <br/>";
 }
 ```
+
+[Part 2 - Services](services.md)
