@@ -36,6 +36,10 @@ class Hook {
      */
     public $apiMessages = [];
 
+    /**
+     * Hook for Git
+     * @var Object
+     */
     public $git;
 
     /**
