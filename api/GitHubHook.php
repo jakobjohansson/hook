@@ -107,23 +107,6 @@ class GitHubHook extends Hook {
     }
 
     /**
-     * Fetches the payload from the webhook.
-     * @return void
-     */
-    protected function fetchPayload() {
-        switch ($this->contentType) {
-            case 'application/json':
-                $this->payload = json_decode(file_get_contents('php://input'));
-            break;
-            case 'application/x-www-form-urlencoded':
-                $this->payload = $_POST['payload'];
-            break;
-            default:
-                $this->apiMessages[] = "Invalid Content Type";
-        }
-    }
-
-    /**
      * Sets the events to listen to
      * Needs to be declared to create any output
      * Empty array watches all events
