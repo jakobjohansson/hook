@@ -26,3 +26,7 @@ function dumpPushOnly($content) {
 $hook->listen(['release', 'issues', 'push' => 'dumpPushOnly']);
 ```
 The **release** and **issues** events can be handled with `$hook->output` as normal. The **push** however, will be sent automatically to our assigned function.
+
+### Currently supported listeners
+Right now these events can be listened to:
+- create, delete, fork, gollum, issue_comment, issues, push, commit_comment
