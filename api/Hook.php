@@ -11,6 +11,7 @@
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
 class Hook {
+    
     /**
      * Webhook headers
      * @var Array
