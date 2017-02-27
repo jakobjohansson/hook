@@ -29,7 +29,7 @@ class GitLabelEvent extends GitEvent {
     public function __toString() {
         return $this->sender->login . " just " . $this->action
         . " a label in the <a href='"
-        . $this->html_url . "'>" . $public->repository->full_name
+        . $this->html_url . "'>" . $this->repository->full_name
         . "</a> repository.";
     }
 }
