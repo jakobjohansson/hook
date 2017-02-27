@@ -127,38 +127,45 @@ class GitHubHook extends Hook {
      * Sets the events to listen to
      * Needs to be declared to create any output
      * Empty array watches all events
+     * Can be complemented with callback functions
      * @param  Array $listeners Array of events
      * @return Object | false   false if event is not being watched
      */
-    public function listen(array $listeners = null) {
+    public function listen(array $listeners) {
         $default = ['push', 'issues', 'repository', 'commit_comment',
         'create', 'delete', 'deployment', 'deployment_status',
         'fork', 'gollum', 'issue_comment', 'label', 'member',
         'membership', 'milestone', 'organization', 'org_block',
         'page_build', 'project_card', 'project_column', 'project',
         'public', 'pull_request_review', 'pull_request_review_comments',
-        'pull_request', 'status', 'team', 'team_add', 'watch'];
+        'pull_request', 'status', 'team', 'team_add', 'watch', 'release'];
 
-        if ($listeners !== null) {
-            foreach ($listeners as $listener) {
-                if (!in_array($listener, $default)) {
-                    $this->apiMessages[] = "Invalid event";
+        if (empty($listeners)) {
+            $this->listeners = $default;
+        } else {
+            foreach ($listeners as $listener => $callback) {
+                if (!in_array($listener, $default) && !in_array($callback, $default)) {
+                    $this->apiMessages[] = "Can't watch an invalid event";
                     return false;
                 }
             }
+            $this->listeners = $listeners;
         }
 
-        $this->listeners = $listeners;
-
-        if (!in_array($this->event, $this->listeners)) {
+        if (!array_key_exists($this->event, $this->listeners) && !in_array($this->event, $this->listeners)) {
             $this->apiMessages[] = "Not watching the $this->event event";
             return false;
+
         } else {
 
             switch($this->event) {
                 case 'push':
                     $this->output = new GitPushEvent($this->payload);
                 break;
+            }
+
+            if (isset($this->listeners[$this->event])) {
+                call_user_func($this->listeners[$this->event], $this->output);
             }
 
         }
