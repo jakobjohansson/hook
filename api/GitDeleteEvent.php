@@ -23,18 +23,6 @@ class GitDeleteEvent extends GitEvent {
     public $ref_type = "";
 
     /**
-     * The pusher object
-     * @var Object
-     */
-    public $sender = "";
-
-    /**
-     * The URL of the repository
-     * @var string
-     */
-    public $html_url = "";
-
-    /**
      * The output to be sent to front end
      * @return string
      */

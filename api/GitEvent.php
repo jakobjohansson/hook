@@ -17,6 +17,18 @@ class GitEvent {
     public $repository = "";
 
     /**
+     * The pusher object
+     * @var Object
+     */
+    public $sender = "";
+
+    /**
+     * The URL of the repository
+     * @var string
+     */
+    public $html_url = "";
+
+    /**
      * Gets the payload and selects the necessary properties
      * @param Object $payload JSON
      */
