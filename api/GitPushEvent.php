@@ -14,7 +14,7 @@ class GitPushEvent extends GitEvent {
     public $commits = "";
 
     /**
-     * Pusher object with name and email properties
+     * Object with name and email properties of the pusher
      * @var Object
      */
     public $pusher = "";
@@ -38,7 +38,7 @@ class GitPushEvent extends GitEvent {
     }
 
     /**
-     * The message to be sent
+     * The output to be sent to front end
      * @return string
      */
     public function __toString() {

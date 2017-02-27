@@ -29,7 +29,13 @@ class Hook {
      * The transmission payload encoded in JSON
      * @var Object
      */
-    public $payload = null;
+    protected $payload = null;
+
+    /**
+     * Final output string, ready to be used.
+     * @var String
+     */
+    public $output = null;
 
     /**
      * Messages from the API used for trouble shooting or status texts
@@ -37,6 +43,10 @@ class Hook {
      */
     public $apiMessages = [];
 
+    /**
+     * Fetch headers and payload
+     * @return void
+     */
     public function __construct() {
         $this->fetchHeaders();
         $this->fetchPayload();
@@ -77,7 +87,7 @@ class Hook {
     }
 
     /**
-     * return a hook service
+     * Return a hook service
      * @param  String $service the specific service to use
      * @param  String $secret  Authorization key
      * @return Hook object

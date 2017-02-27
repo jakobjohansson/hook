@@ -125,6 +125,8 @@ class GitHubHook extends Hook {
 
     /**
      * Sets the events to listen to
+     * Needs to be declared to create any output
+     * Empty array watches all events
      * @param  Array $listeners Array of events
      * @return Object | false   false if event is not being watched
      */
@@ -155,7 +157,7 @@ class GitHubHook extends Hook {
 
             switch($this->event) {
                 case 'push':
-                    $this->payload = new GitPushEvent($this->payload);
+                    $this->output = new GitPushEvent($this->payload);
                 break;
             }
 
