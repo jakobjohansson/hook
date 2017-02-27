@@ -14,7 +14,7 @@ Now we have told the API to listen to the **push**, **release** and **issues** e
 ```html
 jakobjohansson just pushed 1 commits to <a href='https://github.com/jakobjohansson/webhook-api/compare/39d5ea25f9fb...4891054ffb83'>jakobjohansson/webhook-api</a>.
 ```
-We can now use the `$hook->output` variable for whatever purpose you choose.
+We can now use the `$hook->output` variable for whatever purpose we choose.
 
 ### Providing a callback
 Say we want some different functions to execute for each type of events. All we then have to do is to change our listen into a `$key => $value` structure, pointing the `$value` to our function:

@@ -1,8 +1,6 @@
 <?php
 /**
  * Main webhook class, which can be used singularly or to return a service hook like GitHub, GitLab etc.
- * Provide preferred service and an optional authorization key in the constructor, i.e:
- * $hook = new Hook("GitHub", "secret");
  *
  * @category   API
  * @package    webhook-api

@@ -1,7 +1,7 @@
 <?php
 /**
  * GitHub service for the webhook-api.
- * This hook is returned if specified in the main constructor.
+ * This hook is returned if specified in the static service function.
  * Will provide authorization if secret is provided.
  *
  * @category   API
