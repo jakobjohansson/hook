@@ -1,5 +1,5 @@
 # Services
-The API can be powerful if used for the integrated services like GitHub and GitLab. This is because of the sub classes for each event fired. In this article I will go through the steps you need to make full use of the API services.
+The API can be powerful if used with the integrated services like GitHub and GitLab. This is because of the sub classes for each event fired. In this article I will go through the steps you need to make full use of the API services.
 
 ## GitHub service
 To set up the API for GitHub, first we need to enable the webhook in our repository. This can be done in settings, where we will have to provide the URL for the webhook (our php-file), then we will configure what events will be fired. We also have an option to set a secret token, to protect our API from invaders. If we don't set a secret, we will skip the second parameter down below. After we have done that, we will tell the API to listen to GitHub events:
@@ -17,7 +17,7 @@ jakobjohansson just pushed 1 commits to <a href='https://github.com/jakobjohanss
 We can now use the `$hook->output` variable for whatever purpose you choose.
 
 ### Providing a callback
-Say we want some different functions to execute for each type of events. All we then have to do is to change our listen into a $key => $value structure, pointing the $value to our function:
+Say we want some different functions to execute for each type of events. All we then have to do is to change our listen into a `$key => $value` structure, pointing the `$value` to our function:
 ```php
 function dumpPushOnly($content) {
     var_dump($content);
@@ -25,4 +25,4 @@ function dumpPushOnly($content) {
 
 $hook->listen(['release', 'issues', 'push' => 'dumpPushOnly']);
 ```
-The **release** and **issues** events can be handled with `$hook->output` as normal. The push however, will be sent automatically to our assigned function.
+The **release** and **issues** events can be handled with `$hook->output` as normal. The **push** however, will be sent automatically to our assigned function.
