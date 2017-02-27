@@ -107,6 +107,23 @@ class GitHubHook extends Hook {
     }
 
     /**
+     * Fetches the payload from the webhook.
+     * @return void
+     */
+    protected function fetchPayload() {
+        switch ($this->contentType) {
+            case 'application/json':
+                $this->payload = json_decode(file_get_contents('php://input'));
+            break;
+            case 'application/x-www-form-urlencoded':
+                $this->payload = $_POST['payload'];
+            break;
+            default:
+                $this->apiMessages[] = "Invalid Content Type";
+        }
+    }
+
+    /**
      * Sets the events to listen to
      * @param  Array $listeners Array of events
      * @return Object | false   false if event is not being watched
@@ -134,6 +151,14 @@ class GitHubHook extends Hook {
         if (!in_array($this->event, $this->listeners)) {
             $this->apiMessages[] = "Not watching the $this->event event";
             return false;
+        } else {
+
+            switch($this->event) {
+                case 'push':
+                    $this->payload = new GitPushEvent($this->payload);
+                break;
+            }
+
         }
     }
 }

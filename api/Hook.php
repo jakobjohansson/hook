@@ -29,7 +29,7 @@ class Hook {
      * The transmission payload encoded in JSON
      * @var Object
      */
-    protected $payload = null;
+    public $payload = null;
 
     /**
      * Messages from the API used for trouble shooting or status texts

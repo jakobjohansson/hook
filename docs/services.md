@@ -10,4 +10,8 @@ We can now reach our service with `$hook`. Now it's time to tell the API which e
 ```php
 $hook->listen(['push', 'release', 'issues']);
 ```
-Now we have told the API to listen to the **push**, **release** and **issues** events. If we skip the listen step, the API will listen to **all** events.
+Now we have told the API to listen to the **push**, **release** and **issues** events. If we skip the listen step, the API will listen to **all** events. When an event is incoming, the hook will check it and reassign it to a sub class like GitPushEvent, GitIssuesEvent, etc. That object will be linked to `$hook->payload`, which when echoed will return a message looking something like this:
+```html
+jakobjohansson just pushed 1 commits to <a href='https://github.com/jakobjohansson/webhook-api/compare/39d5ea25f9fb...4891054ffb83'>jakobjohansson/webhook-api</a>.
+```
+You can now use the `payload` variable for whatever purpose you choose.
