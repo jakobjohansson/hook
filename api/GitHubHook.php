@@ -48,6 +48,7 @@ class GitHubHook extends Hook {
      */
     public function __construct($secret = null) {
         $this->fetchHeaders();
+        
         if (!array_key_exists('X-GitHub-Event', $this->headers)) {
             $this->apiMessages[] = "GitHub Event header not present";
             return false;
@@ -138,9 +139,7 @@ class GitHubHook extends Hook {
         if (!array_key_exists($this->event, $this->listeners) && !in_array($this->event, $this->listeners)) {
             $this->apiMessages[] = "Not watching the $this->event event";
             return false;
-
         } else {
-
             switch($this->event) {
                 case 'push':
                     $this->output = new GitPushEvent($this->payload);
@@ -150,7 +149,6 @@ class GitHubHook extends Hook {
             if (isset($this->listeners[$this->event])) {
                 call_user_func($this->listeners[$this->event], $this->output);
             }
-
         }
     }
 }
