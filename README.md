@@ -10,4 +10,4 @@ The project is still in its very early development phase, so a lot of functional
 - Option to set callback functions for specific events or in general, or a callback URL containing a script.
 - Option to log every incoming request.
 
-Go to the [docs](docs/) folder for more information.
+Go to the [docs](docs/index.md) for more information.
