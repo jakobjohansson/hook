@@ -120,15 +120,19 @@ class GitHubHook extends Hook {
         'public', 'pull_request_review', 'pull_request_review_comments',
         'pull_request', 'status', 'team', 'team_add', 'watch'];
 
-        if (!in_array($listeners, $default) && $listeners !== null) {
-            $this->apiMessages[] = "Invalid event";
-            return false;
+        if ($listeners !== null) {
+            foreach ($listeners as $listener) {
+                if (!in_array($listener, $default)) {
+                    $this->apiMessages[] = "Invalid event";
+                    return false;
+                }
+            }
         }
 
         $this->listeners = $listeners;
 
         if (!in_array($this->event, $this->listeners)) {
-            $this->apiMessages[] = "Not watching $event";
+            $this->apiMessages[] = "Not watching the $this->event event";
             return false;
         }
     }
