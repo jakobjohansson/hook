@@ -11,7 +11,7 @@
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
 class Hook {
-    
+
     /**
      * Webhook headers
      * @var Array
@@ -37,24 +37,9 @@ class Hook {
      */
     public $apiMessages = [];
 
-    /**
-     * Hook for Git
-     * @var Object
-     */
-    public $git;
-
-    /**
-     * Determine if to return a children hook like GitHub etc, also sends an authorization key if provided.
-     * @param String $service "GitHub", "GitLab" etc
-     * @param String $secret  Authorization key
-     */
-    public function __construct($service = null, $secret = null) {
-        if ($service === "GitHub") {
-            $this->git = new GitHubHook($secret);
-        } else {
-            $this->fetchHeaders();
-            $this->fetchPayload();
-        }
+    public function __construct() {
+        $this->fetchHeaders();
+        $this->fetchPayload();
     }
 
     /**
@@ -88,6 +73,18 @@ class Hook {
             break;
             default:
                 $this->apiMessages[] = "Invalid Content Type";
+        }
+    }
+
+    /**
+     * return a hook service
+     * @param  String $service the specific service to use
+     * @param  String $secret  Authorization key
+     * @return Hook object
+     */
+    public static function service($service, $secret = null) {
+        if ($service === "GitHub") {
+            return new GitHubHook($secret);
         }
     }
 }
