@@ -6,8 +6,8 @@ To set up the API for GitHub, first we need to enable the webhook in our reposit
 ```php
 $hook = new Hook("GitHub", $secret);
 ```
-Now it's time to tell the API which events we want to listen to:
+We can now reach our service with `$hook->git;`. Now it's time to tell the API which events we want to listen to:
 ```php
-$hook->listen(['push', 'release', 'issues']);
+$hook->git->listen(['push', 'release', 'issues']);
 ```
 Now we have told the API to listen to the **push**, **release** and **issues** events. If we skip the listen step, the API will listen to **all** events.
