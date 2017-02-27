@@ -164,6 +164,10 @@ class GitHubHook extends Hook {
                 case 'gollum':
                     $this->output = new GitGollumEvent($this->payload);
                 break;
+
+                case: 'issue_comment':
+                    $this->output = new GitIssueCommentEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
