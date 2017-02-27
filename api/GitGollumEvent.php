@@ -21,9 +21,11 @@ class GitGollumEvent extends GitEvent {
      * @return string
      */
     public function __toString() {
-        return $this->sender->login . " just <a href='"
-        . $this->pages[0]->html_url . "'>"
-        . $this->pages[0]->action . " a wiki page</a> in the "
-        . $this->repository->full_name . " repository.";
+        $re = $this->sender->login . " just made these wiki changes: <br />";
+        foreach ($this->pages as $page) {
+            $re .= "<br />" . $page->action . " <a href='" . $page->html_url . "'>" . $page->page_name . "</a>";
+        }
+        $re .= "<br />In <a href='" . $this->repository->html_url . "'>" . $this->repository->full_name . "</a>.";
+        return $re;
     }
 }

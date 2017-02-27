@@ -117,9 +117,8 @@ class GitHubHook extends Hook {
      */
     public function listen(array $listeners) {
         $default = ['push', 'issues', 'repository', 'commit_comment',
-        'create', 'delete', 'deployment', 'deployment_status',
-        'fork', 'gollum', 'issue_comment', 'label', 'member',
-        'membership', 'milestone', 'organization', 'org_block',
+        'create', 'delete', 'fork', 'gollum', 'issue_comment', 'label',
+        'member', 'membership', 'milestone', 'organization', 'org_block',
         'page_build', 'project_card', 'project_column', 'project',
         'public', 'pull_request_review', 'pull_request_review_comments',
         'pull_request', 'status', 'team', 'team_add', 'watch', 'release'];
