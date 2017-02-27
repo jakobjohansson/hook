@@ -35,7 +35,7 @@ class GitIssueCommentEvent extends GitEvent {
     public function __toString() {
         return $this->comment->user->login . " just <a href='"
         . $this->comment->html_url . "'>" . $this->action
-        . " a comment on an issue</a> in the " . $public->repository->full_name
+        . " a comment on an issue</a> in the " . $this->public->repository->full_name
         . " repository.";
     }
 }
