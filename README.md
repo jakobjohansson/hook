@@ -8,5 +8,6 @@ The project is still in its very early development phase, so a lot of functional
 ## Ideas
 - Set desired events to keep track of (these will be narrowed down to different classes, i.e GitHubIssue, GitHubPush etc).
 - Option to set callback functions for specific events or in general, or a callback URL containing a script.
+- Option to log every incoming request.
 
 Go to the [docs](docs/) folder for more information.
