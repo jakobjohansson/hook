@@ -29,4 +29,4 @@ The **release** and **issues** events can be handled with `$hook->output` as nor
 
 ### Currently supported listeners
 Right now these events can be listened to:
-- create, delete, fork, gollum, issue_comment, issues, push, commit_comment, label, member, membership, milestone, organization, org_block, page_build, project, project_card, project_column, public
+- create, delete, fork, gollum, issue_comment, issues, push, commit_comment, label, member, membership, milestone, organization, org_block, page_build, project, project_card, project_column, public, pull_request, pull_request_review, pull_request_review_comment, release, repository, team, team_add, watch.
