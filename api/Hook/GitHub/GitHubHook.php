@@ -190,6 +190,10 @@ class GitHubHook extends \Hook\Hook {
                 case 'milestone':
                     $this->output = new GitHubMilestoneEvent($this->payload);
                 break;
+
+                case 'organization':
+                    $this->output = new GitHubOrganizationEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {

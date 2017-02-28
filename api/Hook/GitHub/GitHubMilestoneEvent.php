@@ -1,7 +1,7 @@
 <?php
 namespace Hook\GitHub;
 /**
- * GitHub member event class.
+ * GitHub milestone event class.
  *
  * @category   API
  * @package    webhook-api
