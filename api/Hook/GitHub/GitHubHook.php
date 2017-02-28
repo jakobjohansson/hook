@@ -144,39 +144,43 @@ class GitHubHook extends \Hook\Hook {
             switch($this->event) {
 
                 case 'push':
-                    $this->output = New GitHubPushEvent($this->payload);
+                    $this->output = new GitHubPushEvent($this->payload);
                 break;
 
                 case 'commit_comment':
-                    $this->output = New GitHubCommitCommentEvent($this->payload);
+                    $this->output = new GitHubCommitCommentEvent($this->payload);
                 break;
 
                 case 'create':
-                    $this->output = New GitHubCreateEvent($this->payload);
+                    $this->output = new GitHubCreateEvent($this->payload);
                 break;
 
                 case 'delete':
-                    $this->output = New GitHubDeleteEvent($this->payload);
+                    $this->output = new GitHubDeleteEvent($this->payload);
                 break;
 
                 case 'fork':
-                    $this->output = New GitHubForkEvent($this->payload);
+                    $this->output = new GitHubForkEvent($this->payload);
                 break;
 
                 case 'gollum':
-                    $this->output = New GitHubGollumEvent($this->payload);
+                    $this->output = new GitHubGollumEvent($this->payload);
                 break;
 
                 case 'issues':
-                    $this->output = New GitHubIssuesEvent($this->payload);
+                    $this->output = new GitHubIssuesEvent($this->payload);
                 break;
 
                 case 'issue_comment':
-                    $this->output = New GitHubIssueCommentEvent($this->payload);
+                    $this->output = new GitHubIssueCommentEvent($this->payload);
                 break;
 
                 case 'label':
-                    $this->output = New GitHubLabelEvent($this->payload);
+                    $this->output = new GitHubLabelEvent($this->payload);
+                break;
+
+                case 'member':
+                    $this->output = new GitHubMemberEvent($this->payload);
                 break;
             }
 
