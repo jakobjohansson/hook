@@ -50,13 +50,13 @@ class GitHubOrganizationEvent extends GitHubEvent {
                 return $this->sender->login . " just added "
                 . " <a href='" . $this->membership->user->html_url . "'>"
                 . $this->membership->user->login . "</a> to the "
-                . $this->organization->login . " repository.";
+                . $this->organization->login . " organization.";
             break;
             case 'member_removed':
                 return $this->sender->login . " just removed "
                 . " <a href='" . $this->membership->user->html_url . "'>"
                 . $this->membership->user->login . "</a> from the "
-                . $this->organization->login . " repository.";
+                . $this->organization->login . " organization.";
             break;
         }
     }
