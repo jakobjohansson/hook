@@ -1,4 +1,5 @@
 <?php
+namespace Hook\GitHub;
 /**
  * GitHub commit comment event class.
  *

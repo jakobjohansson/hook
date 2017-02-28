@@ -1,4 +1,5 @@
 <?php
+namespace Hook\GitHub;
 /**
  * GitHub gollum event class.
  *

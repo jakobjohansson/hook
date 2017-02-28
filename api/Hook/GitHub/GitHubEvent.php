@@ -1,4 +1,5 @@
 <?php
+namespace Hook\GitHub;
 /**
  * GitHub event parent.
  * Can be straight up echoed for message.

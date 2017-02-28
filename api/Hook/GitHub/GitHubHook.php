@@ -1,4 +1,5 @@
 <?php
+namespace Hook\GitHub;
 /**
  * GitHub service for the webhook-api.
  * This hook is returned if specified in the static service function.
@@ -10,7 +11,7 @@
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitHubHook extends Hook {
+class GitHubHook extends \Hook\Hook {
 
     /**
      * Authorization key to be provided from the user
@@ -51,9 +52,9 @@ class GitHubHook extends Hook {
 
         if (!array_key_exists('X-GitHub-Event', $this->headers)) {
             $this->apiMessages[] = "GitHub Event header not present";
-            return false;
+        } else {
+            $this->event = $this->headers['X-GitHub-Event'];
         }
-        $this->event = $this->headers['X-GitHub-Event'];
 
         if (isset($secret)) {
             $this->secret = $secret;
@@ -136,7 +137,8 @@ class GitHubHook extends Hook {
         }
 
         if (!array_key_exists($this->event, $this->listeners) && !in_array($this->event, $this->listeners)) {
-            $this->apiMessages[] = "Not watching the $this->event event";
+            $this->event = (isset($this->event)) ?: "any";
+            $this->apiMessages[] = "Not watching $this->event event";
             return false;
         } else {
             switch($this->event) {

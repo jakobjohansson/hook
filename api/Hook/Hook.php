@@ -1,4 +1,5 @@
 <?php
+namespace Hook;
 /**
  * Main webhook class, which can be used singularly or to return a service hook like GitHub, GitLab etc.
  *
@@ -92,7 +93,7 @@ class Hook {
      */
     public static function service($service, $secret = null) {
         if ($service === "GitHub") {
-            return new GitHubHook($secret);
+            return new GitHub\GitHubHook($secret);
         }
     }
 }
