@@ -12,7 +12,7 @@ namespace Hook\GitHub;
 class GitHubProjectCardEvent extends GitHubEvent {
 
     /**
-     * The action performed on the issue
+     * The action performed on the project card
      * @var string
      */
     public $action = "";

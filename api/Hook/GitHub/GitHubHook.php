@@ -121,8 +121,8 @@ class GitHubHook extends \Hook\Hook {
         'create', 'delete', 'fork', 'gollum', 'issue_comment', 'label',
         'member', 'membership', 'milestone', 'organization', 'org_block',
         'page_build', 'project_card', 'project_column', 'project',
-        'public', 'pull_request_review', 'pull_request_review_comments',
-        'pull_request', 'status', 'team', 'team_add', 'watch', 'release'];
+        'public', 'pull_request_review', 'pull_request_review_comment',
+        'pull_request', 'team', 'team_add', 'watch', 'release'];
 
         if (empty($listeners)) {
             $this->listeners = $default;
@@ -217,6 +217,34 @@ class GitHubHook extends \Hook\Hook {
 
                 case 'public':
                     $this->output = new GitHubPublicEvent($this->payload);
+                break;
+
+                case 'pull_request':
+                    $this->output = new GitHubPullRequestEvent($this->payload);
+                break;
+
+                case 'pull_request_review':
+                    $this->output = new GitHubPullRequestReviewEvent($this->payload);
+                break;
+
+                case 'pull_request_review_comment':
+                    $this->output = new GitHubPullRequestReviewCommentEvent($this->payload);
+                break;
+
+                case 'release':
+                    $this->output = new GitHubReleaseEvent($this->payload);
+                break;
+
+                case 'repository':
+                    $this->output = new GitHubRepositoryEvent($this->payload);
+                break;
+
+                case 'team':
+                    $this->output = new GitHubTeamEvent($this->payload);
+                break;
+
+                case 'team_add':
+                    $this->output = new GitHubTeamAddEvent($this->payload);
                 break;
             }
 

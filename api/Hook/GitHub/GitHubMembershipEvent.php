@@ -12,7 +12,7 @@ namespace Hook\GitHub;
 class GitHubMembershipEvent extends GitHubEvent {
 
     /**
-     * The action performed on the issue
+     * The action performed on the membership
      * @var string
      */
     public $action = "";

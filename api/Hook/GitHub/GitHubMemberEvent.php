@@ -12,7 +12,7 @@ namespace Hook\GitHub;
 class GitHubMemberEvent extends GitHubEvent {
 
     /**
-     * The action performed on the issue
+     * The action performed on the member
      * @var string
      */
     public $action = "";
@@ -30,7 +30,7 @@ class GitHubMemberEvent extends GitHubEvent {
     public function __toString() {
         return $this->sender->login . " just " . $this->action
         . " <a href='" . $this->member->html_url . "'>"
-        . $this->member->login . "</a> in the " 
+        . $this->member->login . "</a> in the "
         . $this->repository->full_name . " repository.";
     }
 }

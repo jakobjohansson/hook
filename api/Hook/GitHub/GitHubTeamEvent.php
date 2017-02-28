@@ -1,7 +1,7 @@
 <?php
 namespace Hook\GitHub;
 /**
- * GitHub label event class.
+ * GitHub team event class.
  *
  * @category   API
  * @package    webhook-api
@@ -9,19 +9,25 @@ namespace Hook\GitHub;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitHubLabelEvent extends GitHubEvent {
+class GitHubTeamEvent extends GitHubEvent {
 
     /**
-     * The action performed on the label
+     * The action performed on team
      * @var string
      */
     public $action = "";
 
     /**
-     * The label object
+     * The team object
      * @var Object
      */
-    public $label = "";
+    public $team = "";
+
+    /**
+     * The organization object
+     * @var Object
+     */
+    public $organization = "";
 
     /**
      * The output to be sent to front end
@@ -29,8 +35,7 @@ class GitHubLabelEvent extends GitHubEvent {
      */
     public function __toString() {
         return $this->sender->login . " just " . $this->action
-        . " a label in the <a href='"
-        . $this->html_url . "'>" . $this->repository->full_name
-        . "</a> repository.";
+        . " a team/team member in the <a href='" . $this->organization->html_url
+        . "'>" . $this->organization->login . "</a> organization.";
     }
 }

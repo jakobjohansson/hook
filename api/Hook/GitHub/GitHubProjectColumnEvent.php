@@ -12,7 +12,7 @@ namespace Hook\GitHub;
 class GitHubProjectColumnEvent extends GitHubEvent {
 
     /**
-     * The action performed on the issue
+     * The action performed on the project column
      * @var string
      */
     public $action = "";

@@ -12,7 +12,7 @@ namespace Hook\GitHub;
 class GitHubOrganizationBlockEvent extends GitHubEvent {
 
     /**
-     * The action performed on the issue
+     * The action performed on the organization
      * @var string
      */
     public $action = "";
