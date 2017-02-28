@@ -7,7 +7,7 @@ function __autoload($class) {
 }
 ```
 ## Declaring the hook
-Now you need to initiate the object, `$hook = new Hook\Hook();`, or if you are using it for a more narrowed down purpose like GitHub, `$hook = Hook\Hook::service("GitHub", $secret)`.
+Now you need to initiate the object, `$hook = new Hook();`, or if you are using it for a more narrowed down purpose like GitHub, `$hook = Hook::service("GitHub", $secret)`.
 If you use a secret, or authorization key, you can provide this in the `$secret` holder, and the hook will authorize automatically for you.
 
 ## Check for API messages
