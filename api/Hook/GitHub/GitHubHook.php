@@ -246,6 +246,10 @@ class GitHubHook extends \Hook\Hook {
                 case 'team_add':
                     $this->output = new GitHubTeamAddEvent($this->payload);
                 break;
+
+                case 'watch':
+                    $this->output = new GitHubWatchEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
