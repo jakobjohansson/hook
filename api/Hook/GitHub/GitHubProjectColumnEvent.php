@@ -1,7 +1,7 @@
 <?php
 namespace Hook\GitHub;
 /**
- * GitHub project card event class.
+ * GitHub project column event class.
  *
  * @category   API
  * @package    webhook-api
@@ -9,7 +9,7 @@ namespace Hook\GitHub;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitHubProjectCardEvent extends GitHubEvent {
+class GitHubProjectColumnEvent extends GitHubEvent {
 
     /**
      * The action performed on the issue
@@ -18,10 +18,10 @@ class GitHubProjectCardEvent extends GitHubEvent {
     public $action = "";
 
     /**
-     * The project card object
+     * The project column object
      * @var Object
      */
-    public $project_card = "";
+    public $project_column = "";
 
     /**
      * The output to be sent to front end
@@ -29,7 +29,7 @@ class GitHubProjectCardEvent extends GitHubEvent {
      */
     public function __toString() {
         return $this->sender->login . " just " . $this->action
-        . " a project card in the <a href='" . $this->repository->html_url
+        . " a project column in the <a href='" . $this->repository->html_url
         . "'>" . $this->repository->full_name . "</a> repository.";
     }
 }
