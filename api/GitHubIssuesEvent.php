@@ -8,7 +8,7 @@
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitIssuesEvent extends GitEvent {
+class GitHubIssuesEvent extends GitHubEvent {
 
     /**
      * The action performed on the issue
@@ -29,6 +29,6 @@ class GitIssuesEvent extends GitEvent {
     public function __toString() {
         return $this->sender->login . " just <a href='"
         . $this->issue->html_url . "'>" . $this->action
-        . " an issue</a> in the " . $this->repository->full_name . " repository."; 
+        . " an issue</a> in the " . $this->repository->full_name . " repository.";
     }
 }

@@ -9,7 +9,7 @@
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitEvent {
+class GitHubEvent {
     /**
      * The repository object in the push
      * @var Object

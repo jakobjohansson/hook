@@ -8,7 +8,7 @@
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitForkEvent extends GitEvent {
+class GitHubForkEvent extends GitHubEvent {
 
     /**
      * The fork object

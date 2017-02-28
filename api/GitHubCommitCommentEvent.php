@@ -8,7 +8,7 @@
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitCommitCommentEvent extends GitEvent {
+class GitHubCommitCommentEvent extends GitHubEvent {
 
     /**
      * Comment object from payload

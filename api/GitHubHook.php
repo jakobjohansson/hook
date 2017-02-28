@@ -142,39 +142,39 @@ class GitHubHook extends Hook {
             switch($this->event) {
 
                 case 'push':
-                    $this->output = new GitPushEvent($this->payload);
+                    $this->output = New GitHubPushEvent($this->payload);
                 break;
 
                 case 'commit_comment':
-                    $this->output = new GitCommitCommentEvent($this->payload);
+                    $this->output = New GitHubCommitCommentEvent($this->payload);
                 break;
 
                 case 'create':
-                    $this->output = new GitCreateEvent($this->payload);
+                    $this->output = New GitHubCreateEvent($this->payload);
                 break;
 
                 case 'delete':
-                    $this->output = new GitDeleteEvent($this->payload);
+                    $this->output = New GitHubDeleteEvent($this->payload);
                 break;
 
                 case 'fork':
-                    $this->output = new GitForkEvent($this->payload);
+                    $this->output = New GitHubForkEvent($this->payload);
                 break;
 
                 case 'gollum':
-                    $this->output = new GitGollumEvent($this->payload);
+                    $this->output = New GitHubGollumEvent($this->payload);
                 break;
 
                 case 'issues':
-                    $this->output = new GitIssuesEvent($this->payload);
+                    $this->output = New GitHubIssuesEvent($this->payload);
                 break;
 
                 case 'issue_comment':
-                    $this->output = new GitIssueCommentEvent($this->payload);
+                    $this->output = New GitHubIssueCommentEvent($this->payload);
                 break;
 
                 case 'label':
-                    $this->output = new GitLabelEvent($this->payload);
+                    $this->output = New GitHubLabelEvent($this->payload);
                 break;
             }
 

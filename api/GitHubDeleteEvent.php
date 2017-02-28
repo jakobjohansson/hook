@@ -8,7 +8,7 @@
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitDeleteEvent extends GitEvent {
+class GitHubDeleteEvent extends GitHubEvent {
 
     /**
      * The git ref (name) that was deleted

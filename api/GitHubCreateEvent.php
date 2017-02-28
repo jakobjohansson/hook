@@ -8,7 +8,7 @@
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitCreateEvent extends GitEvent {
+class GitHubCreateEvent extends GitHubEvent {
 
     /**
      * The git ref (or null if a repository was created)

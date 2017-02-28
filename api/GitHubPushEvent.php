@@ -8,7 +8,7 @@
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class GitPushEvent extends GitEvent {
+class GitHubPushEvent extends GitHubEvent {
 
     /**
      * URL to the event
