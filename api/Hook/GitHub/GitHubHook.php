@@ -202,6 +202,10 @@ class GitHubHook extends \Hook\Hook {
                 case 'page_build':
                     $this->output = new GitHubPageBuildEvent($this->payload);
                 break;
+
+                case 'project_card':
+                    $this->output = new GitHubProjectCardEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
