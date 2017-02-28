@@ -198,6 +198,10 @@ class GitHubHook extends \Hook\Hook {
                 case 'org_block':
                     $this->output = new GitHubOrganizationBlockEvent($this->payload);
                 break;
+
+                case 'page_build':
+                    $this->output = new GitHubPageBuildEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
