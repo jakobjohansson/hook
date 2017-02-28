@@ -182,6 +182,10 @@ class GitHubHook extends \Hook\Hook {
                 case 'member':
                     $this->output = new GitHubMemberEvent($this->payload);
                 break;
+
+                case 'membership':
+                    $this->output = new GitHubMembershipEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
