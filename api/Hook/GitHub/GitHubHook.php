@@ -214,6 +214,10 @@ class GitHubHook extends \Hook\Hook {
                 case 'project':
                     $this->output = new GitHubProjectEvent($this->payload);
                 break;
+
+                case 'public':
+                    $this->output = new GitHubPublicEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
