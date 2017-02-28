@@ -210,6 +210,10 @@ class GitHubHook extends \Hook\Hook {
                 case 'project_column':
                     $this->output = new GitHubProjectColumnEvent($this->payload);
                 break;
+
+                case 'project':
+                    $this->output = new GitHubProjectEvent($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
