@@ -137,8 +137,9 @@ class Hook extends \Hook {
         }
 
         if (!array_key_exists($this->event, $this->listeners) && !in_array($this->event, $this->listeners)) {
-            $event = (isset($this->event)) ?: "any";
-            $this->apiMessages[] = "Not watching event";
+            if (!empty($this->event)) {
+                $this->apiMessages[] = "Not watching $this->event event";
+            }
             return false;
         } else {
             switch($this->event) {
