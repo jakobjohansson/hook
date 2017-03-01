@@ -168,11 +168,11 @@ class Hook extends \Hook {
                 break;
 
                 case 'issues':
-                    $this->output = new Event\Issues($this->payload);
+                    $this->output = new Event\Issue\Issues($this->payload);
                 break;
 
                 case 'issue_comment':
-                    $this->output = new Event\IssueComment($this->payload);
+                    $this->output = new Event\Issue\Comment($this->payload);
                 break;
 
                 case 'label':
@@ -180,11 +180,11 @@ class Hook extends \Hook {
                 break;
 
                 case 'member':
-                    $this->output = new Event\Member($this->payload);
+                    $this->output = new Event\Member\Member($this->payload);
                 break;
 
                 case 'membership':
-                    $this->output = new Event\Membership($this->payload);
+                    $this->output = new Event\Member\Membership($this->payload);
                 break;
 
                 case 'milestone':
@@ -192,11 +192,11 @@ class Hook extends \Hook {
                 break;
 
                 case 'organization':
-                    $this->output = new Event\Organization($this->payload);
+                    $this->output = new Event\Organization\Organization($this->payload);
                 break;
 
                 case 'org_block':
-                    $this->output = new Event\OrganizationBlock($this->payload);
+                    $this->output = new Event\Organization\Block($this->payload);
                 break;
 
                 case 'page_build':
@@ -204,31 +204,31 @@ class Hook extends \Hook {
                 break;
 
                 case 'project_card':
-                    $this->output = new Event\ProjectCard($this->payload);
+                    $this->output = new Event\Project\Card($this->payload);
                 break;
 
                 case 'project_column':
-                    $this->output = new Event\ProjectColumn($this->payload);
+                    $this->output = new Event\Project\Column($this->payload);
                 break;
 
                 case 'project':
-                    $this->output = new Event\Project($this->payload);
+                    $this->output = new Event\Project\Project($this->payload);
                 break;
 
                 case 'public':
-                    $this->output = new Event\PublicRepository($this->payload);
+                    $this->output = new Event\Repository\PublicRepository($this->payload);
                 break;
 
                 case 'pull_request':
-                    $this->output = new Event\PullRequest($this->payload);
+                    $this->output = new Event\PullRequest\PullRequest($this->payload);
                 break;
 
                 case 'pull_request_review':
-                    $this->output = new Event\PullRequestReview($this->payload);
+                    $this->output = new Event\PullRequest\Review($this->payload);
                 break;
 
                 case 'pull_request_review_comment':
-                    $this->output = new Event\PullRequestReviewComment($this->payload);
+                    $this->output = new Event\PullRequest\ReviewComment($this->payload);
                 break;
 
                 case 'release':
@@ -236,15 +236,15 @@ class Hook extends \Hook {
                 break;
 
                 case 'repository':
-                    $this->output = new Event\Repository($this->payload);
+                    $this->output = new Event\Repository\Repository($this->payload);
                 break;
 
                 case 'team':
-                    $this->output = new Event\Team($this->payload);
+                    $this->output = new Event\Team\Team($this->payload);
                 break;
 
                 case 'team_add':
-                    $this->output = new Event\TeamAdd($this->payload);
+                    $this->output = new Event\Team\Add($this->payload);
                 break;
 
                 case 'watch':

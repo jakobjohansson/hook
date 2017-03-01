@@ -1,5 +1,5 @@
 <?php
-namespace GitHub\Event;
+namespace GitHub\Event\PullRequest;
 /**
  * GitHub pull request event class.
  *
@@ -9,7 +9,7 @@ namespace GitHub\Event;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class PullRequest extends Event {
+class PullRequest extends \Event {
 
     /**
      * The action performed on the pull request

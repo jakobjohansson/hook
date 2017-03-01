@@ -1,5 +1,5 @@
 <?php
-namespace GitHub\Event;
+namespace GitHub\Event\Organization;
 /**
  * GitHub organization block event class.
  *
@@ -9,7 +9,7 @@ namespace GitHub\Event;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class OrganizationBlock extends Event {
+class Block extends \Event {
 
     /**
      * The action performed on the organization

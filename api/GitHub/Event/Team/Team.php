@@ -1,5 +1,5 @@
 <?php
-namespace GitHub\Event;
+namespace GitHub\Event\Team;
 /**
  * GitHub team event class.
  *
@@ -9,7 +9,7 @@ namespace GitHub\Event;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Team extends Event {
+class Team extends \Event {
 
     /**
      * The action performed on team

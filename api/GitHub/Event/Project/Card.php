@@ -1,7 +1,7 @@
 <?php
-namespace GitHub\Event;
+namespace GitHub\Event\Project;
 /**
- * GitHub pull request review comment event class.
+ * GitHub project card event class.
  *
  * @category   API
  * @package    webhook-api
@@ -9,33 +9,27 @@ namespace GitHub\Event;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class PullRequestReviewComment extends Event {
+class Card extends \Event {
 
     /**
-     * The action performed on the pull request
+     * The action performed on the project card
      * @var string
      */
     public $action = "";
 
     /**
-     * The comment object
+     * The project card object
      * @var Object
      */
-    public $comment = "";
-
-    /**
-     * The pull request object
-     * @var Object
-     */
-    public $pull_request = "";
+    public $project_card = "";
 
     /**
      * The output to be sent to front end
      * @return string
      */
     public function __toString() {
-        return $this->comment->user->login . " just " . $this->action
-        . " a comment on a pull request review in the <a href='" . $this->comment->html_url
+        return $this->sender->login . " just " . $this->action
+        . " a project card in the <a href='" . $this->repository->html_url
         . "'>" . $this->repository->full_name . "</a> repository.";
     }
 }
