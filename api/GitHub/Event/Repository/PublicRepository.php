@@ -9,7 +9,7 @@ namespace GitHub\Event\Repository;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class PublicRepository extends \GitHub\Event {
+class PublicRepository extends \GitHub\Event\Event {
 
     /**
      * The output to be sent to front end

@@ -9,7 +9,7 @@ namespace GitHub\Event\PullRequest;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class PullRequest extends \GitHub\Event {
+class PullRequest extends \GitHub\Event\Event {
 
     /**
      * The action performed on the pull request

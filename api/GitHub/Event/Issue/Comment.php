@@ -9,7 +9,7 @@ namespace GitHub\Event\Issue;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Comment extends \GitHub\Event {
+class Comment extends \GitHub\Event\Event {
 
     /**
      * The action performed on the comment

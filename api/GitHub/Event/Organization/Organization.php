@@ -9,7 +9,7 @@ namespace GitHub\Event\Organization;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Organization extends \GitHub\Event {
+class Organization extends \GitHub\Event\Event {
 
     /**
      * The action performed on the organization
