@@ -1,5 +1,5 @@
 <?php
-namespace GitHub\Event\PullRequest;
+namespace GitHub\Event\PullRequest\Review;
 /**
  * GitHub pull request reviewevent class.
  *

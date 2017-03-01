@@ -1,5 +1,5 @@
 <?php
-namespace GitHub\Event\PullRequest;
+namespace GitHub\Event\PullRequest\Review;
 /**
  * GitHub pull request review comment event class.
  *
@@ -9,7 +9,7 @@ namespace GitHub\Event\PullRequest;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class ReviewComment extends \GitHub\Event\Event {
+class Comment extends \GitHub\Event\Event {
 
     /**
      * The action performed on the pull request

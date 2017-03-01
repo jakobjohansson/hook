@@ -224,11 +224,11 @@ class Hook extends \Hook {
                 break;
 
                 case 'pull_request_review':
-                    $this->output = new Event\PullRequest\Review($this->payload);
+                    $this->output = new Event\PullRequest\Review\Review($this->payload);
                 break;
 
                 case 'pull_request_review_comment':
-                    $this->output = new Event\PullRequest\ReviewComment($this->payload);
+                    $this->output = new Event\PullRequest\Review\Comment($this->payload);
                 break;
 
                 case 'release':
