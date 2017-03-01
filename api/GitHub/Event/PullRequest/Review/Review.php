@@ -9,25 +9,13 @@ namespace GitHub\Event\PullRequest\Review;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Review extends \GitHub\Event\Event {
-
-    /**
-     * The action performed
-     * @var string
-     */
-    public $action = "";
+class Review extends \GitHub\Event\PullRequest\PullRequest  {
 
     /**
      * The review object
      * @var Object
      */
     public $review = "";
-
-    /**
-     * The pull request object
-     * @var Object
-     */
-    public $pull_request = "";
 
     /**
      * The output to be sent to front end

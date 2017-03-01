@@ -18,12 +18,6 @@ class PullRequest extends \GitHub\Event\Event {
     public $action = "";
 
     /**
-     * The pull request number
-     * @var integer
-     */
-    public $number = "";
-
-    /**
      * The pull request object
      * @var Object
      */
