@@ -9,7 +9,7 @@ namespace GitHub\Event\Team;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Add extends \Event {
+class Add extends \GitHub\Event {
 
     /**
      * The team object

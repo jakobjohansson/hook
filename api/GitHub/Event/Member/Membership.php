@@ -9,7 +9,7 @@ namespace GitHub\Event\Member;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Membership extends \Event {
+class Membership extends \GitHub\Event {
 
     /**
      * The action performed on the membership

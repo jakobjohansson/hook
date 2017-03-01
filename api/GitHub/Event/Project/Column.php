@@ -9,7 +9,7 @@ namespace GitHub\Event\Project;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Column extends \Event {
+class Column extends \GitHub\Event {
 
     /**
      * The action performed on the project column
