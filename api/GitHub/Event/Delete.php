@@ -29,7 +29,7 @@ class Delete extends Event {
      */
     public function __toString() {
         return $this->sender->login . " just deleted the "
-        . $this->ref_type . " " . $this->ref . "in the <a href='" . $this->html_url
+        . $this->ref_type . " " . $this->ref . "in the <a href='" . $this->repository->html_url
         . "'>" . $this->repository->full_name . "</a> repository.";
     }
 }
