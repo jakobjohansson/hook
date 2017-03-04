@@ -1,7 +1,7 @@
 <?php
 namespace GitLab\Event;
 /**
- * GitLab tag push event class.
+ * GitLab issue event class.
  * Can be straight up echoed for message.
  *
  * @category   API
@@ -10,19 +10,13 @@ namespace GitLab\Event;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Tag extends Event {
+class Issue extends Event {
 
     /**
      * The user who made the push
-     * @var String
+     * @var Object
      */
-    public $user_name;
-
-    /**
-     * The ref pushed
-     * @var String
-     */
-    public $ref;
+    public $user;
 
     /**
      * Gets the payload and selects the necessary properties
@@ -37,9 +31,9 @@ class Tag extends Event {
     }
 
     public function __toString() {
-        return $this->user_name . " just pushed the tag "
-        . explode("/", $this->ref)[2]
-        . " to the <a href='" . $this->project->web_url
+        return $this->user->name . " just opened a new <a href='"
+        . $this->object_attributes->url
+        . "'>issue</a> in the <a href='" . $this->project->web_url
         . "'>" . $this->project->name . "</a> repository.";
     }
 }
