@@ -93,6 +93,8 @@ class Hook {
     public static function service($service, $secret = null) {
         if ($service === "GitHub") {
             return new GitHub\Hook($secret);
+        } elseif ($service === "GitLab") {
+            return new GitLab\Hook($secret);
         }
     }
 }
