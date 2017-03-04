@@ -149,10 +149,15 @@ class Hook extends \Hook {
                 case 'Merge Request Hook':
                     $this->output = new Event\MergeRequest($this-payload);
                 break;
-                case 'Wiki Page Hook': {
+                case 'Wiki Page Hook':
                     $this->output = new Event\Wiki($this->payload);
                 break;
-                }
+                case 'Pipeline Hook':
+                    $this->output = new Event\Pipeline($this->payload);
+                break;
+                case 'Build Hook':
+                    $this->output = new Event\Build($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
