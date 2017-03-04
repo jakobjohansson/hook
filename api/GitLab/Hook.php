@@ -143,6 +143,9 @@ class Hook extends \Hook {
                 case 'Issue Hook':
                     $this->output = new Event\Issue($this->payload);
                 break;
+                case 'Note Hook':
+                    $this->output = new Event\Note($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
