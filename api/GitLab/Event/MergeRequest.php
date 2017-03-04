@@ -1,7 +1,7 @@
 <?php
 namespace GitLab\Event;
 /**
- * GitLab issue event class.
+ * GitLab merge request event class.
  * Can be straight up echoed for message.
  *
  * @category   API
@@ -10,7 +10,7 @@ namespace GitLab\Event;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Issue extends Event {
+class MergeRequest extends Event {
 
     /**
      * The user who made the push
@@ -31,9 +31,9 @@ class Issue extends Event {
     }
 
     public function __toString() {
-        return $this->user->name . " just opened a new <a href='"
+        return $this->user->name . " just " . $this->object_attributes->state . " a new <a href='"
         . $this->object_attributes->url
-        . "'>issue</a> in the <a href='" . $this->project->web_url
+        . "'>merge request</a> in the <a href='" . $this->project->web_url
         . "'>" . $this->project->name . "</a> repository.";
     }
 }

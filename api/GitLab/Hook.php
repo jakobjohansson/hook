@@ -146,6 +146,13 @@ class Hook extends \Hook {
                 case 'Note Hook':
                     $this->output = new Event\Note($this->payload);
                 break;
+                case 'Merge Request Hook':
+                    $this->output = new Event\MergeRequest($this-payload);
+                break;
+                case 'Wiki Page Hook': {
+                    $this->output = new Event\Wiki($this->payload);
+                break;
+                }
             }
 
             if (isset($this->listeners[$this->event])) {

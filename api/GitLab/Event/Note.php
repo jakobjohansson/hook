@@ -16,7 +16,7 @@ class Note extends Event {
      * The user who made the push
      * @var Object
      */
-    public $user;
+    public $user = "";
 
     /**
      * Gets the payload and selects the necessary properties

@@ -16,13 +16,13 @@ class Tag extends Event {
      * The user who made the push
      * @var String
      */
-    public $user_name;
+    public $user_name = "";
 
     /**
      * The ref pushed
      * @var String
      */
-    public $ref;
+    public $ref = "";
 
     /**
      * Gets the payload and selects the necessary properties
