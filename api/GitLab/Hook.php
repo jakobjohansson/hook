@@ -137,6 +137,12 @@ class Hook extends \Hook {
                 case 'Push Hook':
                     $this->output = new Event\Push($this->payload);
                 break;
+                case 'Tag Push Hook':
+                    $this->output = new Event\Tag($this->payload);
+                break;
+                case 'Issue Hook':
+                    $this->output = new Event\Issue($this->payload);
+                break;
             }
 
             if (isset($this->listeners[$this->event])) {
