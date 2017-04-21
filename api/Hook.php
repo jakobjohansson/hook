@@ -14,7 +14,7 @@ class Hook {
      * Webhook headers
      * @var Array
      */
-    protected $headers;
+    public $headers;
 
     /**
      * Content-Type header
@@ -27,7 +27,7 @@ class Hook {
      * The transmission payload encoded in JSON
      * @var Object
      */
-    protected $payload = null;
+    public $payload = null;
 
     /**
      * Final output string, ready to be used.
@@ -39,7 +39,7 @@ class Hook {
      * Messages from the API used for trouble shooting or status texts
      * @var Array
      */
-    public $apiMessages = [];
+    protected $apiMessages = [];
 
     /**
      * Fetch headers and payload
@@ -55,7 +55,7 @@ class Hook {
      * @return Array APIMessages
      */
     public function getApiMessages() {
-        return $this->apiMessages();
+        return $this->apiMessages;
     }
 
     /**
@@ -64,7 +64,7 @@ class Hook {
      */
     protected function fetchHeaders() {
         $this->headers = apache_request_headers();
-        $this->contentType = isset($this->headers['content-type']) ?: null;
+        $this->contentType = isset($this->headers['Content-Type']) ?: null;
     }
 
     /**
