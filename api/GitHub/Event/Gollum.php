@@ -22,11 +22,11 @@ class Gollum extends Event {
      * @return string
      */
     public function __toString() {
-        $re = $this->sender->login . " just made these wiki changes: <br />";
+        $output = $this->sender->login . " just made these wiki changes: <br />";
         foreach ($this->pages as $page) {
-            $re .= "<br />" . $page->action . " <a href='" . $page->html_url . "'>" . $page->page_name . "</a>";
+            $output .= "<br />" . $page->action . " <a href='" . $page->html_url . "'>" . $page->page_name . "</a>";
         }
-        $re .= "<br />In <a href='" . $this->html_url . "'>" . $this->repository->full_name . "</a>.";
-        return $re;
+        $output .= "<br />In <a href='" . $this->html_url . "'>" . $this->repository->full_name . "</a>.";
+        return $output;
     }
 }
