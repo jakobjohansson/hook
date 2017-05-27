@@ -46,16 +46,17 @@ class Hook extends \Hook {
 
         if (!array_key_exists('X-Gitlab-Event', $this->headers)) {
             $this->apiMessages[] = "GitLab Event header not present";
-        } else {
-            $this->event = $this->headers['X-Gitlab-Event'];
+            return;
         }
+
+        $this->event = $this->headers['X-Gitlab-Event'];
 
         if (isset($secret)) {
             $this->secret = $secret;
             return $this->auth();
-        } else {
-            $this->fetchPayload();
         }
+
+        $this->fetchPayload();
     }
 
     /**

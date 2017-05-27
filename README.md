@@ -1,6 +1,4 @@
-# webhook-api
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/aec1b5740a6b43bd8754ae2bfad56bc7)](https://www.codacy.com/app/jakobjohansson2/webhook-api?utm_source=github.com&utm_medium=referral&utm_content=jakobjohansson/webhook-api&utm_campaign=badger)
+# webhook-api [![Codacy Badge](https://api.codacy.com/project/badge/Grade/aec1b5740a6b43bd8754ae2bfad56bc7)](https://www.codacy.com/app/jakobjohansson2/webhook-api?utm_source=github.com&utm_medium=referral&utm_content=jakobjohansson/webhook-api&utm_campaign=badger)
 
 A PHP webhook-api I'm working on to streamline my processes. Head to the [wiki](https://github.com/jakobjohansson/webhook-api/wiki) for a detailed documentation of how to use the API.
 

@@ -52,16 +52,17 @@ class Hook extends \Hook {
 
         if (!array_key_exists('X-GitHub-Event', $this->headers)) {
             $this->apiMessages[] = "GitHub Event header not present";
-        } else {
-            $this->event = $this->headers['X-GitHub-Event'];
+            return;
         }
+
+        $this->event = $this->headers['X-GitHub-Event'];
 
         if (isset($secret)) {
             $this->secret = $secret;
             return $this->auth();
-        } else {
-            $this->fetchPayload();
         }
+
+        $this->fetchPayload();
     }
 
     /**
