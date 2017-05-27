@@ -113,58 +113,59 @@ class Hook extends \Hook {
      * @return Object | false   false if event is not being watched
      */
     public function listen(array $listeners) {
-        $default = ['Push Hook', 'Tag Push Hook', 'Issue Hook',
-                    'Note Hook', 'Merge Request Hook',
-                    'Wiki Page Hook', 'Pipeline Hook', 'Build Hook'];
-
         if (empty($listeners)) {
-            $this->listeners = $default;
-        } else {
-            foreach ($listeners as $listener => $callback) {
-                if (!in_array($listener, $default) && !in_array($callback, $default)) {
-                    $this->apiMessages[] = "Can't watch an invalid event";
-                    return false;
-                }
-            }
-            $this->listeners = $listeners;
+            $listeners = [
+                'Push Hook', 'Tag Push Hook', 'Issue Hook',
+                'Note Hook', 'Merge Request Hook',
+                'Wiki Page Hook', 'Pipeline Hook', 'Build Hook'
+            ];
         }
+
+        foreach ($listeners as $listener => $callback) {
+            if (!in_array($listener, $default) && !in_array($callback, $default)) {
+                $this->apiMessages[] = "Can't watch an invalid event";
+                return false;
+            }
+        }
+
+        $this->listeners = $listeners;
 
         if (!array_key_exists($this->event, $this->listeners) && !in_array($this->event, $this->listeners)) {
             if (!empty($this->event)) {
                 $this->apiMessages[] = "Not watching $this->event event";
             }
             return false;
-        } else {
-            switch($this->event) {
-                case 'Push Hook':
-                    $this->output = new Event\Push($this->payload);
-                break;
-                case 'Tag Push Hook':
-                    $this->output = new Event\Tag($this->payload);
-                break;
-                case 'Issue Hook':
-                    $this->output = new Event\Issue($this->payload);
-                break;
-                case 'Note Hook':
-                    $this->output = new Event\Note($this->payload);
-                break;
-                case 'Merge Request Hook':
-                    $this->output = new Event\MergeRequest($this-payload);
-                break;
-                case 'Wiki Page Hook':
-                    $this->output = new Event\Wiki($this->payload);
-                break;
-                case 'Pipeline Hook':
-                    $this->output = new Event\Pipeline($this->payload);
-                break;
-                case 'Build Hook':
-                    $this->output = new Event\Build($this->payload);
-                break;
-            }
+        }
 
-            if (isset($this->listeners[$this->event])) {
-                call_user_func($this->listeners[$this->event], $this->output->__toString());
-            }
+        switch($this->event) {
+            case 'Push Hook':
+                $this->output = new Event\Push($this->payload);
+            break;
+            case 'Tag Push Hook':
+                $this->output = new Event\Tag($this->payload);
+            break;
+            case 'Issue Hook':
+                $this->output = new Event\Issue($this->payload);
+            break;
+            case 'Note Hook':
+                $this->output = new Event\Note($this->payload);
+            break;
+            case 'Merge Request Hook':
+                $this->output = new Event\MergeRequest($this-payload);
+            break;
+            case 'Wiki Page Hook':
+                $this->output = new Event\Wiki($this->payload);
+            break;
+            case 'Pipeline Hook':
+                $this->output = new Event\Pipeline($this->payload);
+            break;
+            case 'Build Hook':
+                $this->output = new Event\Build($this->payload);
+            break;
+        }
+
+        if (isset($this->listeners[$this->event])) {
+            call_user_func($this->listeners[$this->event], $this->output->__toString());
         }
     }
 }
