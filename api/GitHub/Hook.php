@@ -77,13 +77,14 @@ class Hook extends \Hook {
         }
 
         list($this->algorithm, $this->signature) = explode("=", $this->headers['X-Hub-Signature'], 2);
+
         if (!$this->checkSecret()) {
             $this->apiMessages[] = "Signature not authorized";
             return false;
-        } else {
-            $this->fetchPayload();
-            return true;
         }
+
+        $this->fetchPayload();
+        return true;
     }
 
     /**

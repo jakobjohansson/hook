@@ -71,13 +71,14 @@ class Hook extends \Hook {
         }
 
         $this->signature = $this->headers['X-Gitlab-Token'];
+
         if (!$this->checkSecret()) {
             $this->apiMessages[] = "Signature not authorized";
             return false;
-        } else {
-            $this->fetchPayload();
-            return true;
         }
+
+        $this->fetchPayload();
+        return true;
     }
 
     /**
