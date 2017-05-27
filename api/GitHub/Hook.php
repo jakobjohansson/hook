@@ -104,7 +104,7 @@ class Hook extends \Hook {
                 return file_get_contents('php://input');
             break;
             case 'application/x-www-form-urlencoded':
-                return $_POST['payload'];
+                return \Request::input('payload');
             break;
         }
     }

@@ -77,7 +77,7 @@ class Hook {
                 $this->payload = json_decode(file_get_contents('php://input'));
             break;
             case 'application/x-www-form-urlencoded':
-                $this->payload = $_POST['payload'];
+                $this->payload = Request::input('payload');
             break;
             default:
                 $this->apiMessages[] = "Invalid Content Type";
