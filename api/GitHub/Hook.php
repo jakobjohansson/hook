@@ -44,6 +44,20 @@ class Hook extends \Hook {
     public $listeners = [];
 
     /**
+     * The default available events to listen to
+     *
+     * @var Array
+     */
+    private $defaultListeners = [
+        'push', 'issues', 'repository', 'commit_comment',
+        'create', 'delete', 'fork', 'gollum', 'issue_comment', 'label',
+        'member', 'membership', 'milestone', 'organization', 'org_block',
+        'page_build', 'project_card', 'project_column', 'project',
+        'public', 'pull_request_review', 'pull_request_review_comment',
+        'pull_request', 'team', 'team_add', 'watch', 'release'
+    ];
+
+    /**
      * Checking for X-GitHub-Event header and authorizing
      * @param String $secret the authorization key
      */
@@ -120,18 +134,11 @@ class Hook extends \Hook {
      */
     public function listen(array $listeners) {
         if (empty($listeners)) {
-            $listeners = [
-                'push', 'issues', 'repository', 'commit_comment',
-                'create', 'delete', 'fork', 'gollum', 'issue_comment', 'label',
-                'member', 'membership', 'milestone', 'organization', 'org_block',
-                'page_build', 'project_card', 'project_column', 'project',
-                'public', 'pull_request_review', 'pull_request_review_comment',
-                'pull_request', 'team', 'team_add', 'watch', 'release'
-            ];
+            $listeners = $this->defaultListeners;
         }
 
         foreach ($listeners as $listener => $callback) {
-            if (!in_array($listener, $default) && !in_array($callback, $default)) {
+            if (!in_array($listener, $this->defaultListeners) && !in_array($callback, $this->defaultListeners)) {
                 $this->apiMessages[] = "Can't watch an invalid event";
                 return false;
             }
@@ -139,13 +146,42 @@ class Hook extends \Hook {
 
         $this->listeners = $listeners;
 
+        if ($this->notWatchingEvent()) {
+            return false;
+        }
+
+        $this->registerEvent();
+
+        if (isset($this->listeners[$this->event])) {
+            call_user_func($this->listeners[$this->event], $this->output->__toString());
+        }
+    }
+
+    /**
+     * Check if the event is set up to be watched.
+     *
+     * @return boolean
+     */
+    private function notWatchingEvent()
+    {
         if (!array_key_exists($this->event, $this->listeners) && !in_array($this->event, $this->listeners)) {
             if (!empty($this->event)) {
                 $this->apiMessages[] = "Not watching $this->event event";
             }
+
             return false;
         }
 
+        return true;
+    }
+
+    /**
+     * Register the event and send the payload to its configured class.
+     *
+     * @return void
+     */
+    private function registerEvent()
+    {
         switch($this->event) {
             case 'push':
                 $this->output = new Event\Push($this->payload);
@@ -254,10 +290,6 @@ class Hook extends \Hook {
             case 'watch':
                 $this->output = new Event\Watch($this->payload);
             break;
-        }
-
-        if (isset($this->listeners[$this->event])) {
-            call_user_func($this->listeners[$this->event], $this->output->__toString());
         }
     }
 }
