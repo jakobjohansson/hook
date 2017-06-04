@@ -1,52 +1,59 @@
 <?php
+
 namespace GitHub;
+
 /**
  * GitHub service for the webhook-api.
  * This hook is returned if specified in the static service function.
  * Will provide authorization if secret is provided.
  *
  * @category   API
- * @package    webhook-api
+ *
  * @author     Jakob Johansson
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Hook extends \Hook {
-
+class Hook extends \Hook
+{
     /**
-     * Authorization key to be provided from the user
-     * @var String null
+     * Authorization key to be provided from the user.
+     *
+     * @var string null
      */
     private $secret = null;
 
     /**
-     * The X-GitHub-Event header, i.e push, issue, etc
-     * @var String
+     * The X-GitHub-Event header, i.e push, issue, etc.
+     *
+     * @var string
      */
     private $event;
 
     /**
-     * The hash string from the X-GitHub-Signature header
-     * @var String
+     * The hash string from the X-GitHub-Signature header.
+     *
+     * @var string
      */
     private $signature;
 
     /**
-     * The hash algorithm used in the X-GitHub-Signature header
-     * @var String
+     * The hash algorithm used in the X-GitHub-Signature header.
+     *
+     * @var string
      */
     private $algorithm;
 
     /**
-     * The events the API will listen to
-     * @var Array
+     * The events the API will listen to.
+     *
+     * @var array
      */
     public $listeners = [];
 
     /**
-     * The default available events to listen to
+     * The default available events to listen to.
      *
-     * @var Array
+     * @var array
      */
     private $defaultListeners = [
         'push', 'issues', 'repository', 'commit_comment',
@@ -54,18 +61,21 @@ class Hook extends \Hook {
         'member', 'membership', 'milestone', 'organization', 'org_block',
         'page_build', 'project_card', 'project_column', 'project',
         'public', 'pull_request_review', 'pull_request_review_comment',
-        'pull_request', 'team', 'team_add', 'watch', 'release'
+        'pull_request', 'team', 'team_add', 'watch', 'release',
     ];
 
     /**
-     * Checking for X-GitHub-Event header and authorizing
-     * @param String $secret the authorization key
+     * Checking for X-GitHub-Event header and authorizing.
+     *
+     * @param string $secret the authorization key
      */
-    public function __construct($secret = null) {
+    public function __construct($secret = null)
+    {
         $this->fetchHeaders();
 
         if (!array_key_exists('X-GitHub-Event', $this->headers)) {
-            $this->apiMessages[] = "GitHub Event header not present";
+            $this->apiMessages[] = 'GitHub Event header not present';
+
             return;
         }
 
@@ -73,6 +83,7 @@ class Hook extends \Hook {
 
         if (isset($secret)) {
             $this->secret = $secret;
+
             return $this->auth();
         }
 
@@ -81,39 +92,48 @@ class Hook extends \Hook {
 
     /**
      * Authorizing method with the helper functions secretValidator() and checkSecret()
-     * Sends message to apiMessages if a problem occurs
-     * @return boolean true | false
+     * Sends message to apiMessages if a problem occurs.
+     *
+     * @return bool true | false
      */
-    protected function auth() {
+    protected function auth()
+    {
         if (!array_key_exists('X-Hub-Signature', $this->headers)) {
-            $this->apiMessages[] = "No signature provided";
+            $this->apiMessages[] = 'No signature provided';
+
             return false;
         }
 
-        list($this->algorithm, $this->signature) = explode("=", $this->headers['X-Hub-Signature'], 2);
+        list($this->algorithm, $this->signature) = explode('=', $this->headers['X-Hub-Signature'], 2);
 
         if (!$this->checkSecret()) {
-            $this->apiMessages[] = "Signature not authorized";
+            $this->apiMessages[] = 'Signature not authorized';
+
             return false;
         }
 
         $this->fetchPayload();
+
         return true;
     }
 
     /**
-     * Compares the hashes provided by the webhook and the user
-     * @return boolean hash
+     * Compares the hashes provided by the webhook and the user.
+     *
+     * @return bool hash
      */
-    protected function checkSecret() {
+    protected function checkSecret()
+    {
         return hash_equals(hash_hmac($this->algorithm, $this->secretValidator(), $this->secret), $this->signature);
     }
 
     /**
-     * Returns the payload temporarily for authorization needed in checkSecret()
-     * @return Array payload
+     * Returns the payload temporarily for authorization needed in checkSecret().
+     *
+     * @return array payload
      */
-    protected function secretValidator() {
+    protected function secretValidator()
+    {
         switch ($this->contentType) {
             case 'application/json':
                 return file_get_contents('php://input');
@@ -128,11 +148,14 @@ class Hook extends \Hook {
      * Sets the events to listen to
      * Needs to be declared to create any output
      * Empty array watches all events
-     * Can be complemented with callback functions
-     * @param  Array $listeners Array of events
-     * @return Object | false   false if event is not being watched
+     * Can be complemented with callback functions.
+     *
+     * @param array $listeners Array of events
+     *
+     * @return object | false   false if event is not being watched
      */
-    public function listen(array $listeners) {
+    public function listen(array $listeners)
+    {
         if (empty($listeners)) {
             $listeners = $this->defaultListeners;
         }
@@ -140,6 +163,7 @@ class Hook extends \Hook {
         foreach ($listeners as $listener => $callback) {
             if (!in_array($listener, $this->defaultListeners) && !in_array($callback, $this->defaultListeners)) {
                 $this->apiMessages[] = "Can't watch an invalid event";
+
                 return false;
             }
         }
@@ -160,7 +184,7 @@ class Hook extends \Hook {
     /**
      * Check if the event is set up to be watched.
      *
-     * @return boolean
+     * @return bool
      */
     private function notWatchingEvent()
     {
@@ -182,7 +206,7 @@ class Hook extends \Hook {
      */
     private function registerEvent()
     {
-        switch($this->event) {
+        switch ($this->event) {
             case 'push':
                 $this->output = new Event\Push($this->payload);
             break;
