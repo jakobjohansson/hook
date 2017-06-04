@@ -1,36 +1,42 @@
 <?php
+
 namespace GitHub\Event\Member;
+
 /**
  * GitHub member event class.
  *
  * @category   API
- * @package    webhook-api
+ *
  * @author     Jakob Johansson
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Member extends \GitHub\Event\Event {
-
+class Member extends \GitHub\Event\Event
+{
     /**
-     * The action performed on the member
+     * The action performed on the member.
+     *
      * @var string
      */
-    public $action = "";
+    public $action = '';
 
     /**
-     * The member object
-     * @var Object
+     * The member object.
+     *
+     * @var object
      */
-    public $member = "";
+    public $member = '';
 
     /**
-     * The output to be sent to front end
+     * The output to be sent to front end.
+     *
      * @return string
      */
-    public function __toString() {
-        return $this->sender->login . " just " . $this->action
-        . " <a href='" . $this->member->html_url . "'>"
-        . $this->member->login . "</a> in the "
-        . $this->repository->full_name . " repository.";
+    public function __toString()
+    {
+        return $this->sender->login.' just '.$this->action
+        ." <a href='".$this->member->html_url."'>"
+        .$this->member->login.'</a> in the '
+        .$this->repository->full_name.' repository.';
     }
 }
