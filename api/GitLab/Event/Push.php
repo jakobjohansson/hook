@@ -1,40 +1,47 @@
 <?php
+
 namespace GitLab\Event;
+
 /**
  * GitLab push event class.
  * Can be straight up echoed for message.
  *
  * @category   API
- * @package    webhook-api
+ *
  * @author     Jakob Johansson
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Push extends Event {
+class Push extends Event
+{
+    /**
+     * The user who made the push.
+     *
+     * @var string
+     */
+    public $user_name = '';
 
     /**
-     * The user who made the push
-     * @var String
+     * Array of commit objects.
+     *
+     * @var array
      */
-    public $user_name = "";
+    public $commits = '';
 
     /**
-     * Array of commit objects
-     * @var Array
+     * The number of commits pushed.
+     *
+     * @var int
      */
-    public $commits = "";
+    public $total_commits_count = '';
 
     /**
-     * The number of commits pushed
-     * @var Integer
+     * Gets the payload and selects the necessary properties.
+     *
+     * @param object $payload JSON
      */
-    public $total_commits_count = "";
-
-    /**
-     * Gets the payload and selects the necessary properties
-     * @param Object $payload JSON
-     */
-    public function __construct($payload) {
+    public function __construct($payload)
+    {
         foreach ($payload as $key => $value) {
             if (property_exists($this, $key)) {
                 $this->$key = $value;
@@ -42,9 +49,10 @@ class Push extends Event {
         }
     }
 
-    public function __toString() {
-        return $this->user_name . " just pushed " . $this->total_commits_count
-        . " commits to the <a href='" . $this->project->web_url
-        . "'>" . $this->project->name . "</a> repository.";
+    public function __toString()
+    {
+        return $this->user_name.' just pushed '.$this->total_commits_count
+        ." commits to the <a href='".$this->project->web_url
+        ."'>".$this->project->name.'</a> repository.';
     }
 }

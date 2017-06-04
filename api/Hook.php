@@ -3,75 +3,88 @@
  * Main webhook class, which can be used singularly or to return a service hook like GitHub, GitLab etc.
  *
  * @category   API
- * @package    webhook-api
+ *
  * @author     Jakob Johansson
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Hook {
-
+class Hook
+{
     /**
-     * Webhook headers
-     * @var Array
+     * Webhook headers.
+     *
+     * @var array
      */
     public $headers;
 
     /**
      * Content-Type header
-     * (application/json, application/x-www-form-urlencoded etc)
-     * @var String
+     * (application/json, application/x-www-form-urlencoded etc).
+     *
+     * @var string
      */
     protected $contentType;
 
     /**
-     * The transmission payload encoded in JSON
-     * @var Object
+     * The transmission payload encoded in JSON.
+     *
+     * @var object
      */
     public $payload = null;
 
     /**
      * Final output string, ready to be used.
-     * @var String
+     *
+     * @var string
      */
     public $output = null;
 
     /**
-     * Messages from the API used for trouble shooting or status texts
-     * @var Array
+     * Messages from the API used for trouble shooting or status texts.
+     *
+     * @var array
      */
     protected $apiMessages = [];
 
     /**
-     * Fetch headers and payload
+     * Fetch headers and payload.
+     *
      * @return void
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->fetchHeaders();
         $this->fetchPayload();
     }
 
     /**
-     * Returns the $apiMessages
-     * @return Array APIMessages
+     * Returns the $apiMessages.
+     *
+     * @return array APIMessages
      */
-    public function getApiMessages() {
+    public function getApiMessages()
+    {
         return $this->apiMessages;
     }
 
     /**
-     * Fetches all the webhook headers and sets them as object properties
+     * Fetches all the webhook headers and sets them as object properties.
+     *
      * @return void
      */
-    protected function fetchHeaders() {
+    protected function fetchHeaders()
+    {
         $this->headers = apache_request_headers();
         $this->contentType = isset($this->headers['Content-Type']) ?: null;
     }
 
     /**
      * Fetches the payload from the webhook.
+     *
      * @return void
      */
-    protected function fetchPayload() {
+    protected function fetchPayload()
+    {
         switch ($this->contentType) {
             case 'application/json':
                 $this->payload = json_decode(file_get_contents('php://input'));
@@ -80,20 +93,23 @@ class Hook {
                 $this->payload = Request::input('payload');
             break;
             default:
-                $this->apiMessages[] = "Invalid Content Type";
+                $this->apiMessages[] = 'Invalid Content Type';
         }
     }
 
     /**
-     * Return a hook service
-     * @param  String $service the specific service to use
-     * @param  String $secret  Authorization key
+     * Return a hook service.
+     *
+     * @param string $service the specific service to use
+     * @param string $secret  Authorization key
+     *
      * @return Hook object
      */
-    public static function service($service, $secret = null) {
-        if ($service === "GitHub") {
+    public static function service($service, $secret = null)
+    {
+        if ($service === 'GitHub') {
             return new GitHub\Hook($secret);
-        } elseif ($service === "GitLab") {
+        } elseif ($service === 'GitLab') {
             return new GitLab\Hook($secret);
         }
     }

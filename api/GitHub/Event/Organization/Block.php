@@ -1,42 +1,49 @@
 <?php
+
 namespace GitHub\Event\Organization;
+
 /**
  * GitHub organization block event class.
  *
  * @category   API
- * @package    webhook-api
+ *
  * @author     Jakob Johansson
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Block extends \GitHub\Event\Event {
-
+class Block extends \GitHub\Event\Event
+{
     /**
-     * The action performed on the organization
+     * The action performed on the organization.
+     *
      * @var string
      */
-    public $action = "";
+    public $action = '';
 
     /**
-     * The blocked user object
-     * @var Object
+     * The blocked user object.
+     *
+     * @var object
      */
-    public $blocked_user = "";
+    public $blocked_user = '';
 
     /**
-     * The organization object
-     * @var Object
+     * The organization object.
+     *
+     * @var object
      */
-    public $organization = "";
+    public $organization = '';
 
     /**
-     * The output to be sent to front end
+     * The output to be sent to front end.
+     *
      * @return string
      */
-    public function __toString() {
-        return $this->sender->login . " just " . $this->action . " "
-        . " <a href='" . $this->blocked_user->html_url . "'>"
-        . $this->blocked_user->login . "</a> from the "
-        . $this->organization->login . " organization.";
+    public function __toString()
+    {
+        return $this->sender->login.' just '.$this->action.' '
+        ." <a href='".$this->blocked_user->html_url."'>"
+        .$this->blocked_user->login.'</a> from the '
+        .$this->organization->login.' organization.';
     }
 }

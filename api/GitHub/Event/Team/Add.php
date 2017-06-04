@@ -1,29 +1,34 @@
 <?php
+
 namespace GitHub\Event\Team;
+
 /**
  * GitHub team add event class.
  *
  * @category   API
- * @package    webhook-api
+ *
  * @author     Jakob Johansson
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Add extends \GitHub\Event\Event {
-
+class Add extends \GitHub\Event\Event
+{
     /**
-     * The team object
-     * @var Object
+     * The team object.
+     *
+     * @var object
      */
-    public $team = "";
+    public $team = '';
 
     /**
-     * The output to be sent to front end
+     * The output to be sent to front end.
+     *
      * @return string
      */
-    public function __toString() {
-        return $this->sender->login . " just added a <a href='"
-        . $this->repository->html_url . "'>repository</a> to the "
-        . $this->team->name . " team.";
+    public function __toString()
+    {
+        return $this->sender->login." just added a <a href='"
+        .$this->repository->html_url."'>repository</a> to the "
+        .$this->team->name.' team.';
     }
 }
