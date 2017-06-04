@@ -1,36 +1,42 @@
 <?php
+
 namespace GitHub\Event;
+
 /**
  * GitHub milestone event class.
  *
  * @category   API
- * @package    webhook-api
+ *
  * @author     Jakob Johansson
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Milestone extends Event {
-
+class Milestone extends Event
+{
     /**
-     * The action performed on the milestone
+     * The action performed on the milestone.
+     *
      * @var string
      */
-    public $action = "";
+    public $action = '';
 
     /**
-     * The milstone object
-     * @var Object
+     * The milstone object.
+     *
+     * @var object
      */
-    public $milestone = "";
+    public $milestone = '';
 
     /**
-     * The output to be sent to front end
+     * The output to be sent to front end.
+     *
      * @return string
      */
-    public function __toString() {
-        return $this->sender->login . " just " . $this->action
-        . " <a href='" . $this->milestone->html_url . "'>"
-        . $this->milestone->title . "</a> in the "
-        . $this->repository->full_name . " repository.";
+    public function __toString()
+    {
+        return $this->sender->login.' just '.$this->action
+        ." <a href='".$this->milestone->html_url."'>"
+        .$this->milestone->title.'</a> in the '
+        .$this->repository->full_name.' repository.';
     }
 }
