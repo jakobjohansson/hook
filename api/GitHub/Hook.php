@@ -2,7 +2,7 @@
 
 namespace GitHub;
 
-use \Eventmap;
+use Eventmap;
 
 /**
  * GitHub service for the webhook-api.
@@ -67,7 +67,7 @@ class Hook extends \Hook
     ];
 
     /**
-     * The GitHub Event map
+     * The GitHub Event map.
      *
      * @var array
      */
@@ -139,7 +139,7 @@ class Hook extends \Hook
                 $this->algorithm,
                 $this->secretValidator(),
                 $this->secret
-            ),  $this->signature);
+            ), $this->signature);
     }
 
     /**
