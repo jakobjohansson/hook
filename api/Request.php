@@ -37,7 +37,8 @@ class Request
     /**
      * Returns a specified header.
      *
-     * @param  string $header
+     * @param string $header
+     *
      * @return string|null
      */
     public static function header($header)
