@@ -18,9 +18,9 @@ trait Authenticates
      */
     private $signature;
 
-    protected abstract function auth();
+    abstract protected function auth();
 
-    protected abstract function checkSecret();
+    abstract protected function checkSecret();
 
     /**
      * Returns the payload temporarily for authorization needed in checkSecret().

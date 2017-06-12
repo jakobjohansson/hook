@@ -2,10 +2,10 @@
 
 namespace GitLab;
 
-use \EventMap;
-use \Traits\MapsEvents;
-use \Traits\HandlesEvents;
-use \Traits\Authenticates;
+use EventMap;
+use Traits\Authenticates;
+use Traits\HandlesEvents;
+use Traits\MapsEvents;
 
 /**
  * GitLab service for the webhook-api.
@@ -20,7 +20,6 @@ use \Traits\Authenticates;
  */
 class Hook extends \Hook
 {
-
     use MapsEvents, HandlesEvents, Authenticates;
 
     /**
