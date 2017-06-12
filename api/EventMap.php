@@ -7,7 +7,7 @@ class EventMap
      *
      * @return  array
      */
-    public static function GitHub
+    public static function GitHub()
     {
         return [
             'push' => 'Event\Push',
@@ -45,7 +45,7 @@ class EventMap
      *
      * @return  array
      */
-    public static function GitLab
+    public static function GitLab()
     {
         return [
             'Push Hook' => 'Event\Push',

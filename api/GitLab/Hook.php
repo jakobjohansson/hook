@@ -2,7 +2,7 @@
 
 namespace GitLab;
 
-use \Eventmap;
+use \EventMap;
 
 /**
  * GitLab service for the webhook-api.
@@ -50,11 +50,7 @@ class Hook extends \Hook
      *
      * @var array
      */
-    private $defaultListeners = [
-        'Push Hook', 'Tag Push Hook', 'Issue Hook',
-        'Note Hook', 'Merge Request Hook',
-        'Wiki Page Hook', 'Pipeline Hook', 'Build Hook',
-    ];
+    private $defaultListeners;
 
     /**
      * The GitLab Event map
@@ -70,6 +66,7 @@ class Hook extends \Hook
      */
     public function __construct($secret = null)
     {
+        $this->setEventMap(EventMap::GitLab());
         $this->fetchHeaders();
 
         if (!array_key_exists('X-Gitlab-Event', $this->headers)) {
@@ -87,7 +84,17 @@ class Hook extends \Hook
         }
 
         $this->fetchPayload();
-        $this->eventMap = EventMap::GitLab();
+    }
+
+    /**
+     * Set the Event Map and the default listeners.
+     *
+     * @param array $map
+     */
+    private function setEventMap($map)
+    {
+        $this->eventMap = $map;
+        $this->defaultListeners = array_keys($map);
     }
 
     /**

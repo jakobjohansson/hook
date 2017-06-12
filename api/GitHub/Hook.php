@@ -2,7 +2,7 @@
 
 namespace GitHub;
 
-use \Eventmap;
+use \EventMap;
 
 /**
  * GitHub service for the webhook-api.
@@ -57,14 +57,7 @@ class Hook extends \Hook
      *
      * @var array
      */
-    private $defaultListeners = [
-        'push', 'issues', 'repository', 'commit_comment',
-        'create', 'delete', 'fork', 'gollum', 'issue_comment', 'label',
-        'member', 'membership', 'milestone', 'organization', 'org_block',
-        'page_build', 'project_card', 'project_column', 'project',
-        'public', 'pull_request_review', 'pull_request_review_comment',
-        'pull_request', 'team', 'team_add', 'watch', 'release',
-    ];
+    private $defaultListeners;
 
     /**
      * The GitHub Event map
@@ -80,6 +73,7 @@ class Hook extends \Hook
      */
     public function __construct($secret = null)
     {
+        $this->setEventMap(EventMap::GitHub());
         $this->fetchHeaders();
 
         if (!array_key_exists('X-GitHub-Event', $this->headers)) {
@@ -97,7 +91,17 @@ class Hook extends \Hook
         }
 
         $this->fetchPayload();
-        $this->eventMap = EventMap::GitHub();
+    }
+
+    /**
+     * Set the Event Map and the default listeners.
+     *
+     * @param array $map
+     */
+    private function setEventMap($map)
+    {
+        $this->eventMap = $map;
+        $this->defaultListeners = array_keys($map);
     }
 
     /**
