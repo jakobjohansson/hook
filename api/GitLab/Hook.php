@@ -2,6 +2,8 @@
 
 namespace GitLab;
 
+use \Eventmap;
+
 /**
  * GitLab service for the webhook-api.
  * This hook is returned if specified in the static service function.
@@ -55,6 +57,13 @@ class Hook extends \Hook
     ];
 
     /**
+     * The GitLab Event map
+     *
+     * @var array
+     */
+    private $eventMap;
+
+    /**
      * Checking for X-Gitlab-Event header and authorizing.
      *
      * @param string $secret the authorization key
@@ -78,6 +87,7 @@ class Hook extends \Hook
         }
 
         $this->fetchPayload();
+        $this->eventMap = EventMap::GitLab();
     }
 
     /**
@@ -196,31 +206,8 @@ class Hook extends \Hook
      */
     private function registerEvent()
     {
-        switch ($this->event) {
-            case 'Push Hook':
-                $this->output = new Event\Push($this->payload);
-            break;
-            case 'Tag Push Hook':
-                $this->output = new Event\Tag($this->payload);
-            break;
-            case 'Issue Hook':
-                $this->output = new Event\Issue($this->payload);
-            break;
-            case 'Note Hook':
-                $this->output = new Event\Note($this->payload);
-            break;
-            case 'Merge Request Hook':
-                $this->output = new Event\MergeRequest($this - payload);
-            break;
-            case 'Wiki Page Hook':
-                $this->output = new Event\Wiki($this->payload);
-            break;
-            case 'Pipeline Hook':
-                $this->output = new Event\Pipeline($this->payload);
-            break;
-            case 'Build Hook':
-                $this->output = new Event\Build($this->payload);
-            break;
+        if (array_key_exists($this->event, $this->eventMap) {
+            $this->output = new $eventMap[$this->event]($this->payload);
         }
     }
 }

@@ -2,6 +2,8 @@
 
 namespace GitHub;
 
+use \Eventmap;
+
 /**
  * GitHub service for the webhook-api.
  * This hook is returned if specified in the static service function.
@@ -65,6 +67,13 @@ class Hook extends \Hook
     ];
 
     /**
+     * The GitHub Event map
+     *
+     * @var array
+     */
+    private $eventMap;
+
+    /**
      * Checking for X-GitHub-Event header and authorizing.
      *
      * @param string $secret the authorization key
@@ -88,6 +97,7 @@ class Hook extends \Hook
         }
 
         $this->fetchPayload();
+        $this->eventMap = EventMap::GitHub();
     }
 
     /**
@@ -211,114 +221,8 @@ class Hook extends \Hook
      */
     private function registerEvent()
     {
-        switch ($this->event) {
-            case 'push':
-                $this->output = new Event\Push($this->payload);
-            break;
-
-            case 'commit_comment':
-                $this->output = new Event\CommitComment($this->payload);
-            break;
-
-            case 'create':
-                $this->output = new Event\Create($this->payload);
-            break;
-
-            case 'delete':
-                $this->output = new Event\Delete($this->payload);
-            break;
-
-            case 'fork':
-                $this->output = new Event\Fork($this->payload);
-            break;
-
-            case 'gollum':
-                $this->output = new Event\Gollum($this->payload);
-            break;
-
-            case 'issues':
-                $this->output = new Event\Issue\Issues($this->payload);
-            break;
-
-            case 'issue_comment':
-                $this->output = new Event\Issue\Comment($this->payload);
-            break;
-
-            case 'label':
-                $this->output = new Event\Label($this->payload);
-            break;
-
-            case 'member':
-                $this->output = new Event\Member\Member($this->payload);
-            break;
-
-            case 'membership':
-                $this->output = new Event\Member\Membership($this->payload);
-            break;
-
-            case 'milestone':
-                $this->output = new Event\Milestone($this->payload);
-            break;
-
-            case 'organization':
-                $this->output = new Event\Organization\Organization($this->payload);
-            break;
-
-            case 'org_block':
-                $this->output = new Event\Organization\Block($this->payload);
-            break;
-
-            case 'page_build':
-                $this->output = new Event\PageBuild($this->payload);
-            break;
-
-            case 'project_card':
-                $this->output = new Event\Project\Card($this->payload);
-            break;
-
-            case 'project_column':
-                $this->output = new Event\Project\Column($this->payload);
-            break;
-
-            case 'project':
-                $this->output = new Event\Project\Project($this->payload);
-            break;
-
-            case 'public':
-                $this->output = new Event\Repository\PublicRepository($this->payload);
-            break;
-
-            case 'pull_request':
-                $this->output = new Event\PullRequest\PullRequest($this->payload);
-            break;
-
-            case 'pull_request_review':
-                $this->output = new Event\PullRequest\Review\Review($this->payload);
-            break;
-
-            case 'pull_request_review_comment':
-                $this->output = new Event\PullRequest\Review\Comment($this->payload);
-            break;
-
-            case 'release':
-                $this->output = new Event\Release($this->payload);
-            break;
-
-            case 'repository':
-                $this->output = new Event\Repository\Repository($this->payload);
-            break;
-
-            case 'team':
-                $this->output = new Event\Team\Team($this->payload);
-            break;
-
-            case 'team_add':
-                $this->output = new Event\Team\Add($this->payload);
-            break;
-
-            case 'watch':
-                $this->output = new Event\Watch($this->payload);
-            break;
+        if (array_key_exists($this->event, $this->eventMap)) {
+            $this->output = new $this->eventMap[$this->event]($this->payload);
         }
     }
 }
