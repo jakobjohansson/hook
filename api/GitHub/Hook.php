@@ -124,7 +124,12 @@ class Hook extends \Hook
      */
     protected function checkSecret()
     {
-        return hash_equals(hash_hmac($this->algorithm, $this->secretValidator(), $this->secret), $this->signature);
+        return hash_equals(
+            hash_hmac(
+                $this->algorithm,
+                $this->secretValidator(),
+                $this->secret
+            ),  $this->signature);
     }
 
     /**

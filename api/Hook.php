@@ -74,8 +74,8 @@ class Hook
      */
     protected function fetchHeaders()
     {
-        $this->headers = apache_request_headers();
-        $this->contentType = isset($this->headers['Content-Type']) ?: null;
+        $this->headers = Request::headers();
+        $this->contentType = Request::header('CONTENT_TYPE');
     }
 
     /**
