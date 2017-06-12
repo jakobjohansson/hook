@@ -98,19 +98,22 @@ class Hook
     }
 
     /**
-     * Return a hook service.
+     * Return a GitHub Hook service.
      *
-     * @param string $service the specific service to use
-     * @param string $secret  Authorization key
-     *
-     * @return Hook object
+     * @param string $secret Authorization key.
      */
-    public static function service($service, $secret = null)
+    public static function GitHub($secret = null)
     {
-        if ($service === 'GitHub') {
-            return new GitHub\Hook($secret);
-        } elseif ($service === 'GitLab') {
-            return new GitLab\Hook($secret);
-        }
+        return new GitHub\Hook($secret);
+    }
+
+    /**
+     * Return a GitLab Hook service.
+     *
+     * @param string $secret Authorization key.
+     */
+    public static function GitLab($secret = null)
+    {
+        return new GitLab\Hook($secret);
     }
 }
