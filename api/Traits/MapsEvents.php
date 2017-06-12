@@ -4,7 +4,6 @@ namespace Traits;
 
 trait MapsEvents
 {
-
     /**
      * The default available events to listen to.
      *
@@ -13,7 +12,7 @@ trait MapsEvents
     private $defaultListeners;
 
     /**
-     * The GitHub Event map
+     * The GitHub Event map.
      *
      * @var array
      */
