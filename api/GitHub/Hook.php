@@ -129,7 +129,7 @@ class Hook extends \Hook
                 $this->algorithm,
                 $this->secretValidator(),
                 $this->secret
-            ),  $this->signature);
+            ), $this->signature);
     }
 
     /**
