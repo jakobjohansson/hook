@@ -12,7 +12,7 @@ namespace GitLab\Event;
  * @copyright  2017
  * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
  */
-class Event
+abstract class Event
 {
     /**
      * The project object in the event.

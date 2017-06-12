@@ -23,4 +23,26 @@ class Request
     {
         return $_POST[$name];
     }
+
+    /**
+     * Returns an array of the request headers.
+     *
+     * @return array
+     */
+    public static function headers()
+    {
+        return $_SERVER;
+    }
+
+    /**
+     * Returns a specified header.
+     *
+     * @param string $header
+     *
+     * @return string|null
+     */
+    public static function header($header)
+    {
+        return $_SERVER[$header] ?? null;
+    }
 }
