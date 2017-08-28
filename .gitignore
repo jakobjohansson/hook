@@ -1,3 +1,4 @@
 vendor/
 index.php
 get.php
+.DS_Store
