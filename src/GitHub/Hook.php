@@ -29,13 +29,13 @@ class Hook extends BaseHook
         $this->setEventMap(EventMap::GitHub());
         $this->fetchHeaders();
 
-        if (!array_key_exists('X-GitHub-Event', $this->headers)) {
+        if (!array_key_exists('HTTP_X_GITHUB_EVENT', $this->headers)) {
             $this->apiMessages[] = 'GitHub Event header not present';
 
             return;
         }
 
-        $this->event = $this->headers['X-GitHub-Event'];
+        $this->event = $this->headers['HTTP_X_GITHUB_EVENT'];
 
         if (isset($secret)) {
             $this->secret = $secret;
@@ -54,13 +54,13 @@ class Hook extends BaseHook
      */
     private function auth()
     {
-        if (!array_key_exists('X-Hub-Signature', $this->headers)) {
+        if (!array_key_exists('HTTP_X_HUB_SIGNATURE', $this->headers)) {
             $this->apiMessages[] = 'No signature provided';
 
             return false;
         }
 
-        list($this->algorithm, $this->signature) = explode('=', $this->headers['X-Hub-Signature'], 2);
+        list($this->algorithm, $this->signature) = explode('=', $this->headers['HTTP_X_HUB_SIGNATURE'], 2);
 
         if (!$this->checkSecret()) {
             $this->apiMessages[] = 'Signature not authorized';

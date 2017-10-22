@@ -22,13 +22,13 @@ class Hook extends BaseHook
         $this->setEventMap(EventMap::GitLab());
         $this->fetchHeaders();
 
-        if (!array_key_exists('X-Gitlab-Event', $this->headers)) {
+        if (!array_key_exists('HTTP_X_GITLAB_EVENT', $this->headers)) {
             $this->apiMessages[] = 'GitLab Event header not present';
 
             return;
         }
 
-        $this->event = $this->headers['X-Gitlab-Event'];
+        $this->event = $this->headers['HTTP_X_GITLAB_EVENT'];
 
         if (isset($secret)) {
             $this->secret = $secret;
@@ -47,13 +47,13 @@ class Hook extends BaseHook
      */
     private function auth()
     {
-        if (!array_key_exists('X-Gitlab-Token', $this->headers)) {
+        if (!array_key_exists('HTTP_X_GITLAB_TOKEN', $this->headers)) {
             $this->apiMessages[] = 'No signature provided';
 
             return false;
         }
 
-        $this->signature = $this->headers['X-Gitlab-Token'];
+        $this->signature = $this->headers['HTTP_X_GITLAB_TOKEN'];
 
         if (!$this->checkSecret()) {
             $this->apiMessages[] = 'Signature not authorized';
