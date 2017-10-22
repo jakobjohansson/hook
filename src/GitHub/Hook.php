@@ -3,11 +3,12 @@
 namespace Hook\GitHub;
 
 use Hook\EventMap;
+use Hook\Hook as BaseHook;
+use Hook\Traits\MapsEvents;
 use Hook\Traits\Authenticates;
 use Hook\Traits\HandlesEvents;
-use Hook\Traits\MapsEvents;
 
-class Hook extends \Hook
+class Hook extends BaseHook
 {
     use MapsEvents, HandlesEvents, Authenticates;
 
