@@ -58,7 +58,7 @@ trait HandlesEvents
      *
      * @return object | false   false if event is not being watched
      */
-    public function listen(array $listeners)
+    public function listen(array $listeners = [])
     {
         if (empty($listeners)) {
             $listeners = $this->defaultListeners;
