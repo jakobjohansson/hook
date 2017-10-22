@@ -1,17 +1,10 @@
 <?php
 
-namespace GitHub\Event\Project;
+namespace Hook\GitHub\Event\Project;
 
-/**
- * GitHub project column event class.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
-class Column extends \GitHub\Event\Event
+use Hook\GitHub\Event\Event;
+
+class Column extends Event
 {
     /**
      * The action performed on the project column.

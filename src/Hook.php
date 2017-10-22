@@ -1,13 +1,7 @@
 <?php
-/**
- * Main webhook class, which can be used singularly or to return a service hook like GitHub, GitLab etc.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
+
+namespace Hook;
+
 class Hook
 {
     /**

@@ -1,16 +1,7 @@
 <?php
 
-namespace GitHub\Event;
+namespace Hook\GitHub\Event;
 
-/**
- * GitHub page build event class.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
 class PageBuild extends Event
 {
     /**

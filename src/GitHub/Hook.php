@@ -1,23 +1,12 @@
 <?php
 
-namespace GitHub;
+namespace Hook\GitHub;
 
-use EventMap;
-use Traits\Authenticates;
-use Traits\HandlesEvents;
-use Traits\MapsEvents;
+use Hook\EventMap;
+use Hook\Traits\Authenticates;
+use Hook\Traits\HandlesEvents;
+use Hook\Traits\MapsEvents;
 
-/**
- * GitHub service for the webhook-api.
- * This hook is returned if specified in the static service function.
- * Will provide authorization if secret is provided.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
 class Hook extends \Hook
 {
     use MapsEvents, HandlesEvents, Authenticates;

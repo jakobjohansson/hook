@@ -1,6 +1,6 @@
 <?php
 
-namespace Traits;
+namespace Hook\Traits;
 
 trait Authenticates
 {

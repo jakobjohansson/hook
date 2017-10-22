@@ -1,17 +1,7 @@
 <?php
 
-namespace GitHub\Event;
+namespace Hook\GitHub\Event;
 
-/**
- * GitHub event parent.
- * Can be straight up echoed for message.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
 abstract class Event
 {
     /**

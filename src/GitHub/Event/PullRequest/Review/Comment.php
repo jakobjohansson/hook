@@ -1,17 +1,10 @@
 <?php
 
-namespace GitHub\Event\PullRequest\Review;
+namespace Hook\GitHub\Event\PullRequest\Review;
 
-/**
- * GitHub pull request review comment event class.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
-class Comment extends \GitHub\Event\PullRequest\PullRequest
+use Hook\GitHub\Event\PullRequest\PullRequest as Event;
+
+class Comment extends Event
 {
     /**
      * The comment object.

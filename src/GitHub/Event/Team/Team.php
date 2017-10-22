@@ -1,17 +1,10 @@
 <?php
 
-namespace GitHub\Event\Team;
+namespace Hook\GitHub\Event\Team;
 
-/**
- * GitHub team event class.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
-class Team extends \GitHub\Event\Event
+use Hook\GitHub\Event\Event;
+
+class Team extends Event
 {
     /**
      * The action performed on team.

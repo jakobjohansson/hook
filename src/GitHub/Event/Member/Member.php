@@ -1,17 +1,10 @@
 <?php
 
-namespace GitHub\Event\Member;
+namespace Hook\GitHub\Event\Member;
 
-/**
- * GitHub member event class.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
-class Member extends \GitHub\Event\Event
+use Hook\GitHub\Event\Event;
+
+class Member extends Event
 {
     /**
      * The action performed on the member.

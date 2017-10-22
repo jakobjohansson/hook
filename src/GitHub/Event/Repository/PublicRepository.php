@@ -1,17 +1,10 @@
 <?php
 
-namespace GitHub\Event\Repository;
+namespace Hook\GitHub\Event\Repository;
 
-/**
- * GitHub organization event class.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
-class PublicRepository extends \GitHub\Event\Event
+use Hook\GitHub\Event\Event;
+
+class PublicRepository extends Event
 {
     /**
      * The output to be sent to front end.

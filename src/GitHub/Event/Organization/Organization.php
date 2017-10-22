@@ -1,17 +1,10 @@
 <?php
 
-namespace GitHub\Event\Organization;
+namespace Hook\GitHub\Event\Organization;
 
-/**
- * GitHub organization event class.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
-class Organization extends \GitHub\Event\Event
+use Hook\GitHub\Event\Event;
+
+class Organization extends Event
 {
     /**
      * The action performed on the organization.

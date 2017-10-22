@@ -1,5 +1,7 @@
 <?php
 
+namespace Hook;
+
 class EventMap
 {
     /**

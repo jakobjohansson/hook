@@ -1,16 +1,7 @@
 <?php
 
-namespace GitHub\Event\Issue;
+namespace Hook\GitHub\Event\Issue;
 
-/**
- * GitHub issue comment event class.
- *
- * @category   API
- *
- * @author     Jakob Johansson
- * @copyright  2017
- * @license    https://github.com/jakobjohansson/webhook-api/blob/master/LICENSE.txt MIT-License
- */
 class Comment extends Issues
 {
     /**
