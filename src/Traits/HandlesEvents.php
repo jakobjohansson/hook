@@ -42,10 +42,10 @@ trait HandlesEvents
                 $this->apiMessages[] = "Not watching $this->event event";
             }
 
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     /**
