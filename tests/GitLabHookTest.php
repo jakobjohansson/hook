@@ -92,7 +92,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Build Hook']);
 
-        $this->assertSame($this->response(), "User just changed the status of a build in the gitlab-org/gitlab-test repository.");
+        $this->assertSame($this->response(), 'User just changed the status of a build in the gitlab-org/gitlab-test repository.');
     }
 
     public function testCommentNoteHook()
