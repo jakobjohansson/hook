@@ -7,7 +7,7 @@ matrix:
     - php: 7.0
 
 before_script:
-  - composer install --prefer-dist
+  - composer install
 
 script:
   - php -S localhost:8000 -t tests/server.php &
