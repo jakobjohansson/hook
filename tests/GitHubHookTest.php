@@ -67,6 +67,15 @@ class PushTest extends TestCase
         $this->assertSame($this->response(), "baxterthehacker just <a href='https://github.com/baxterthehacker/public-repo/issues/2'>opened an issue</a> in the baxterthehacker/public-repo repository.");
     }
 
+    public function testLabelEvent()
+    {
+        $this->event('label');
+
+        $this->payload($this->gitHub['label']);
+
+        $this->assertSame($this->response(), "baxterthehacker just created a label in the <a href='https://github.com/baxterandthehackers/public-repo'>baxterandthehackers/public-repo</a> repository.");
+    }
+
     public function testPushEvent()
     {
         $this->event('push');
