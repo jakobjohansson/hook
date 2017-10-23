@@ -44,7 +44,7 @@ abstract class TestCase extends BaseTest
     {
         parent::setUp();
 
-        $this->client = new Client(['base_uri' => 'http://hook.dev']);
+        $this->client = new Client(['base_uri' => 'http://localhost:8000']);
         $this->gitHub = PayloadMap::GitHub();
     }
 

@@ -1,0 +1,14 @@
+language: php
+
+sudo: false
+
+matrix:
+  include:
+    - php: 7.0
+
+before_script:
+  - composer install --prefer-dist
+
+script:
+  - php -S localhost:8000 -t tests/server.php &
+  - composer test
