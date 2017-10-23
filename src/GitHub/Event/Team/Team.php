@@ -34,8 +34,6 @@ class Team extends Event
      */
     public function __toString()
     {
-        return $this->sender->login.' just '.$this->action
-        ." a team/team member in the <a href='".$this->organization->html_url
-        ."'>".$this->organization->login.'</a> organization.';
+        return $this->sender->login." just made changes to a team in the ".$this->organization->login.' organization.';
     }
 }

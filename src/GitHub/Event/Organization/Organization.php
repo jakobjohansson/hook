@@ -43,7 +43,7 @@ class Organization extends Event
     {
         switch ($this->action) {
             case 'member_invited':
-                return $this->sender->login." just invited <a href='".$this->invitation->html_url."'>"
+                return $this->sender->login." just invited <a href='https://github.com/".$this->invitation->login."'>"
                 .$this->invitation->login.'</a> to the '
                 .$this->organization->login.' organization.';
             break;
