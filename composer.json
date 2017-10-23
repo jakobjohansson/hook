@@ -1,7 +1,19 @@
 {
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
+    },
     "autoload": {
         "psr-4": {
             "Hook\\": "src/"
         }
+    },
+    "autoload-dev": {
+       "psr-4": {
+           "Hook\\Tests\\": "tests/"
+       }
+   },
+    "require-dev": {
+        "phpunit/phpunit": "^6.4",
+        "guzzlehttp/guzzle": "^6.3"
     }
 }
