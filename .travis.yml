@@ -9,3 +9,6 @@ before_script:
 script:
   - php -S localhost:8000 tests/server.php &
   - composer test
+
+notifications:
+  - email: false
