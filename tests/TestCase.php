@@ -22,6 +22,13 @@ abstract class TestCase extends BaseTest
     public $payload;
 
     /**
+     * The map of pre defined GitHub payloads.
+     *
+     * @var array
+     */
+    public $gitHub;
+
+    /**
      * The headers for the request.
      *
      * @var array
@@ -38,6 +45,7 @@ abstract class TestCase extends BaseTest
         parent::setUp();
 
         $this->client = new Client(['base_uri' => 'http://hook.dev']);
+        $this->gitHub = PayloadMap::GitHub();
     }
 
     /**
