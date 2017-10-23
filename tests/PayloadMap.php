@@ -1185,7 +1185,7 @@ class PayloadMap
             "type": "User",
             "site_admin": false
           }
-      }'
+      }',
         ];
     }
 }

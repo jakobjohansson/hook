@@ -2,7 +2,7 @@
 
 namespace Hook\Tests;
 
-class PushTest extends TestCase
+class GitHubHookTest extends TestCase
 {
     public function testCommitCommentEvent()
     {
