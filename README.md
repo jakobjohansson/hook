@@ -10,7 +10,7 @@ git clone https://github.com/jakobjohansson/hook.git
 ```
 Generate autoloader with composer:
 ```
-composer dump-autoload
+composer dump-autoload --optimize
 ```
 
 ### GitHub integration
@@ -24,7 +24,7 @@ $hook->listen(['push', 'release', 'issues']);
 ```
 Now we have told the hook to listen to the **push**, **release** and **issues** events. If we dont specify an argument, the hook will listen to **all** events.
 
-When an event is successfully provided, we can access the event class through the `$hook->output` property. Every event class can be echoed, looking something like this: 
+When an event is successfully provided, we can access the event class through the `$hook->output` property. Every event class can be echoed, looking something like this:
 
 ```html
 jakobjohansson just pushed 1 commits to <a href='https://github.com/jakobjohansson/hook/compare/39d5ea25f9fb...4891054ffb83'>jakobjohansson/hook</a>.
