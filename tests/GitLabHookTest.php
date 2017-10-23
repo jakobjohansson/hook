@@ -95,5 +95,39 @@ class GitLabHookTest extends TestCase
         $this->assertSame($this->response(), "User just changed the status of a build in the gitlab-org/gitlab-test repository.");
     }
 
-    // TODO: Make tests for comments
+    public function testCommentNoteHook()
+    {
+        $this->event('Note Hook');
+
+        $this->payload($this->gitLab['Commit Note Hook']);
+
+        $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/commit/cfe32cf61b73a0d5e9f13e774abde7ff789b1660#note_1243'>commented on a commit</a> in the <a href='http://example.com/gitlabhq/gitlab-test'>Gitlab Test</a> repository.");
+    }
+
+    public function testMergeRequestNoteHook()
+    {
+        $this->event('Note Hook');
+
+        $this->payload($this->gitLab['Merge Request Note Hook']);
+
+        $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/merge_requests/1#note_1244'>commented on a merge request</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
+    }
+
+    public function testIssueNoteHook()
+    {
+        $this->event('Note Hook');
+
+        $this->payload($this->gitLab['Issue Note Hook']);
+
+        $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/issues/17#note_1241'>commented on an issue </a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
+    }
+
+    public function testSnippetNoteHook()
+    {
+        $this->event('Note Hook');
+
+        $this->payload($this->gitLab['Snippet Note Hook']);
+
+        $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/snippets/53#note_1245'>commented on a snippet</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
+    }
 }
