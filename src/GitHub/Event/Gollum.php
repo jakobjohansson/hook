@@ -22,7 +22,7 @@ class Gollum extends Event
         foreach ($this->pages as $page) {
             $output .= '<br />'.$page->action." <a href='".$page->html_url."'>".$page->page_name.'</a>';
         }
-        $output .= "<br />In <a href='".$this->html_url."'>".$this->repository->full_name.'</a>.';
+        $output .= "<br />In <a href='".$this->repository->html_url."'>".$this->repository->full_name.'</a>.';
 
         return $output;
     }
