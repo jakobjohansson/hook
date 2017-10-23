@@ -34,7 +34,7 @@ abstract class TestCase extends BaseTest
      * @var array
      */
     public $headers = [
-        'Content-Type' => 'application/json'
+        'Content-Type' => 'application/json',
     ];
 
     /**
@@ -51,7 +51,8 @@ abstract class TestCase extends BaseTest
     /**
      * Set the payload to send.
      *
-     * @param  array $payload
+     * @param array $payload
+     *
      * @return $this
      */
     public function payload($payload)
@@ -64,7 +65,8 @@ abstract class TestCase extends BaseTest
     /**
      * Set the event header.
      *
-     * @param  string $event
+     * @param string $event
+     *
      * @return $this
      */
     public function event($event)
@@ -77,7 +79,8 @@ abstract class TestCase extends BaseTest
     /**
      * Set the signature header.
      *
-     * @param  string $signature
+     * @param string $signature
+     *
      * @return $this
      */
     public function signature($signature)
@@ -96,7 +99,7 @@ abstract class TestCase extends BaseTest
     {
         return (string) $this->client->request('POST', '', [
             'headers' => $this->headers,
-            'json' => json_decode($this->payload, true)
+            'json'    => json_decode($this->payload, true),
         ])->getBody();
     }
 }
