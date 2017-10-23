@@ -226,7 +226,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['team']);
 
-        $this->assertSame($this->response(), "baxterthehacker just made changes to a team in the baxterandthehackers organization.");
+        $this->assertSame($this->response(), 'baxterthehacker just made changes to a team in the baxterandthehackers organization.');
     }
 
     public function testTeamAddEvent()

@@ -27,6 +27,6 @@ class Build extends Event
 
     public function __toString()
     {
-        return $this->user->name.' just changed the status of a build in the '.$this->project->name.' repository.';
+        return $this->user->name . ' just changed the status of a build in the ' . $this->project->name . ' repository.';
     }
 }

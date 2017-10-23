@@ -20,8 +20,8 @@ class Add extends Event
      */
     public function __toString()
     {
-        return $this->sender->login." just added a <a href='"
-        .$this->repository->html_url."'>repository</a> to the "
-        .$this->team->name.' team.';
+        return $this->sender->login . " just added a <a href='"
+        . $this->repository->html_url . "'>repository</a> to the "
+        . $this->team->name . ' team.';
     }
 }

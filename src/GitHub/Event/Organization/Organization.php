@@ -43,21 +43,21 @@ class Organization extends Event
     {
         switch ($this->action) {
             case 'member_invited':
-                return $this->sender->login." just invited <a href='https://github.com/".$this->invitation->login."'>"
-                .$this->invitation->login.'</a> to the '
-                .$this->organization->login.' organization.';
+                return $this->sender->login . " just invited <a href='https://github.com/" . $this->invitation->login . "'>"
+                . $this->invitation->login . '</a> to the '
+                . $this->organization->login . ' organization.';
             break;
             case 'member_added':
-                return $this->sender->login.' just added '
-                ." <a href='".$this->membership->user->html_url."'>"
-                .$this->membership->user->login.'</a> to the '
-                .$this->organization->login.' organization.';
+                return $this->sender->login . ' just added '
+                . " <a href='" . $this->membership->user->html_url . "'>"
+                . $this->membership->user->login . '</a> to the '
+                . $this->organization->login . ' organization.';
             break;
             case 'member_removed':
-                return $this->sender->login.' just removed '
-                ." <a href='".$this->membership->user->html_url."'>"
-                .$this->membership->user->login.'</a> from the '
-                .$this->organization->login.' organization.';
+                return $this->sender->login . ' just removed '
+                . " <a href='" . $this->membership->user->html_url . "'>"
+                . $this->membership->user->login . '</a> from the '
+                . $this->organization->login . ' organization.';
             break;
         }
     }

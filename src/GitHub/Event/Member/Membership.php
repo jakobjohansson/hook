@@ -25,9 +25,9 @@ class Membership extends Member
      */
     public function __toString()
     {
-        return $this->sender->login.' just '.$this->action
-        ." <a href='".$this->member->html_url."'>"
-        .$this->member->login.'</a> in the '
-        .$this->team->name.' '.$this->scope.'.';
+        return $this->sender->login . ' just ' . $this->action
+        . " <a href='" . $this->member->html_url . "'>"
+        . $this->member->login . '</a> in the '
+        . $this->team->name . ' ' . $this->scope . '.';
     }
 }

@@ -54,9 +54,9 @@ class Wiki extends Event
 
     public function __toString()
     {
-        return $this->user->name.' just '.$this->state." a <a href='"
-        .$this->object_attributes->url
-        ."'>wiki page</a> in the <a href='".$this->project->web_url
-        ."'>".$this->project->name.'</a> repository.';
+        return $this->user->name . ' just ' . $this->state . " a <a href='"
+        . $this->object_attributes->url
+        . "'>wiki page</a> in the <a href='" . $this->project->web_url
+        . "'>" . $this->project->name . '</a> repository.';
     }
 }

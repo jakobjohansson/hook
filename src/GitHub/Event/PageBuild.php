@@ -18,8 +18,8 @@ class PageBuild extends Event
      */
     public function __toString()
     {
-        return $this->sender->login." just ".$this->build->status
-        ." a page in the <a href='".$this->repository->html_url."'>"
-        .$this->repository->full_name."</a> repository.";
+        return $this->sender->login . ' just ' . $this->build->status
+        . " a page in the <a href='" . $this->repository->html_url . "'>"
+        . $this->repository->full_name . '</a> repository.';
     }
 }

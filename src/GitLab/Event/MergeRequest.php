@@ -27,9 +27,9 @@ class MergeRequest extends Event
 
     public function __toString()
     {
-        return $this->user->name.' just '.$this->object_attributes->state." a new <a href='"
-        .$this->object_attributes->url
-        ."'>merge request</a> in the <a href='".$this->project->web_url
-        ."'>".$this->project->name.'</a> repository.';
+        return $this->user->name . ' just ' . $this->object_attributes->state . " a new <a href='"
+        . $this->object_attributes->url
+        . "'>merge request</a> in the <a href='" . $this->project->web_url
+        . "'>" . $this->project->name . '</a> repository.';
     }
 }

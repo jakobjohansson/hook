@@ -34,8 +34,8 @@ class Block extends Event
      */
     public function __toString()
     {
-        return $this->sender->login." just ".$this->action." <a href='".$this->blocked_user->html_url."'>"
-        .$this->blocked_user->login."</a> from the "
-        .$this->organization->login." organization.";
+        return $this->sender->login . ' just ' . $this->action . " <a href='" . $this->blocked_user->html_url . "'>"
+        . $this->blocked_user->login . '</a> from the '
+        . $this->organization->login . ' organization.';
     }
 }

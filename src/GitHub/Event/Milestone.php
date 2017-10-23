@@ -25,9 +25,9 @@ class Milestone extends Event
      */
     public function __toString()
     {
-        return $this->sender->login.' just '.$this->action
-        ." <a href='".$this->milestone->html_url."'>"
-        .$this->milestone->title.'</a> in the '
-        .$this->repository->full_name.' repository.';
+        return $this->sender->login . ' just ' . $this->action
+        . " <a href='" . $this->milestone->html_url . "'>"
+        . $this->milestone->title . '</a> in the '
+        . $this->repository->full_name . ' repository.';
     }
 }

@@ -18,8 +18,8 @@ class Fork extends Event
      */
     public function __toString()
     {
-        return $this->forkee->owner->login." <a href='"
-        .$this->forkee->html_url."'>just forked</a> a repository from "
-        .$this->repository->owner->login.'.';
+        return $this->forkee->owner->login . " <a href='"
+        . $this->forkee->html_url . "'>just forked</a> a repository from "
+        . $this->repository->owner->login . '.';
     }
 }
