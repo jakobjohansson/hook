@@ -27,8 +27,8 @@ class Card extends Event
      */
     public function __toString()
     {
-        return $this->sender->login.' just '.$this->action
-        ." a project card in the <a href='".$this->repository->html_url
-        ."'>".$this->repository->full_name.'</a> repository.';
+        return $this->sender->login . ' just ' . $this->action
+        . " a project card in the <a href='" . $this->repository->html_url
+        . "'>" . $this->repository->full_name . '</a> repository.';
     }
 }

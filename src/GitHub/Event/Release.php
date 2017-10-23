@@ -25,8 +25,8 @@ class Release extends Event
      */
     public function __toString()
     {
-        return $this->release->author->login.' just '.$this->action
-        ." a new release in the <a href='".$this->release->html_url
-        ."'>".$this->repository->full_name.'</a> repository.';
+        return $this->release->author->login . ' just ' . $this->action
+        . " a new release in the <a href='" . $this->release->html_url
+        . "'>" . $this->repository->full_name . '</a> repository.';
     }
 }

@@ -34,9 +34,9 @@ class Tag extends Event
 
     public function __toString()
     {
-        return $this->user_name.' just pushed the tag '
-        .explode('/', $this->ref)[2]
-        ." to the <a href='".$this->project->web_url
-        ."'>".$this->project->name.'</a> repository.';
+        return $this->user_name . ' just pushed the tag '
+        . explode('/', $this->ref)[2]
+        . " to the <a href='" . $this->project->web_url
+        . "'>" . $this->project->name . '</a> repository.';
     }
 }

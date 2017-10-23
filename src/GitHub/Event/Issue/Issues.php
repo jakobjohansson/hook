@@ -27,8 +27,8 @@ class Issues extends Event
      */
     public function __toString()
     {
-        return $this->issue->user->login." just <a href='"
-        .$this->issue->html_url."'>".$this->action
-        .' an issue</a> in the '.$this->repository->full_name.' repository.';
+        return $this->issue->user->login . " just <a href='"
+        . $this->issue->html_url . "'>" . $this->action
+        . ' an issue</a> in the ' . $this->repository->full_name . ' repository.';
     }
 }

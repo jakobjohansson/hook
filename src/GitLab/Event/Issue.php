@@ -27,9 +27,9 @@ class Issue extends Event
 
     public function __toString()
     {
-        return $this->user->name." just opened a new <a href='"
-        .$this->object_attributes->url
-        ."'>issue</a> in the <a href='".$this->project->web_url
-        ."'>".$this->project->name.'</a> repository.';
+        return $this->user->name . " just opened a new <a href='"
+        . $this->object_attributes->url
+        . "'>issue</a> in the <a href='" . $this->project->web_url
+        . "'>" . $this->project->name . '</a> repository.';
     }
 }

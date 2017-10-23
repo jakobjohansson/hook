@@ -27,9 +27,9 @@ class Member extends Event
      */
     public function __toString()
     {
-        return $this->sender->login.' just '.$this->action
-        ." <a href='".$this->member->html_url."'>"
-        .$this->member->login.'</a> in the '
-        .$this->repository->full_name.' repository.';
+        return $this->sender->login . ' just ' . $this->action
+        . " <a href='" . $this->member->html_url . "'>"
+        . $this->member->login . '</a> in the '
+        . $this->repository->full_name . ' repository.';
     }
 }
