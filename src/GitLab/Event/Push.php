@@ -42,7 +42,7 @@ class Push extends Event
     public function __toString()
     {
         return $this->user_name . ' just pushed ' . $this->total_commits_count
-        . " commits to the <a href='" . $this->project->web_url
+        . " commit(s) to the <a href='" . $this->project->web_url
         . "'>" . $this->project->name . '</a> repository.';
     }
 }

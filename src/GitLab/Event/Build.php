@@ -12,6 +12,13 @@ class Build extends Event
     public $user;
 
     /**
+     * The name of the repository.
+     *
+     * @var string
+     */
+    public $project_name;
+
+    /**
      * Gets the payload and selects the necessary properties.
      *
      * @param object $payload JSON
@@ -27,6 +34,6 @@ class Build extends Event
 
     public function __toString()
     {
-        return $this->user->name . ' just changed the status of a build in the ' . $this->project->name . ' repository.';
+        return $this->user->name . ' just changed the status of a build in the ' . $this->project_name . ' repository.';
     }
 }

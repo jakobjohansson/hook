@@ -2,8 +2,14 @@
 
 require './vendor/autoload.php';
 
-$hook = Hook\Hook::GitHub();
+$github = Hook\Hook::GitHub();
 
-$hook->listen();
+$github->listen();
 
-echo $hook->output;
+echo $github->output;
+
+$gitlab = Hook\Hook::GitLab();
+
+$gitlab->listen();
+
+echo $gitlab->output;

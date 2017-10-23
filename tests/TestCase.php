@@ -29,6 +29,13 @@ abstract class TestCase extends BaseTest
     public $gitHub;
 
     /**
+     * The map of pre defined GitLab payloads.
+     *
+     * @var array
+     */
+    public $gitlab;
+
+    /**
      * The headers for the request.
      *
      * @var array
@@ -46,6 +53,7 @@ abstract class TestCase extends BaseTest
 
         $this->client = new Client(['base_uri' => 'http://localhost:8000']);
         $this->gitHub = PayloadMap::GitHub();
+        $this->gitLab = PayloadMap::GitLab();
     }
 
     /**

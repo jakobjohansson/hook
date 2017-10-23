@@ -27,9 +27,7 @@ class Pipeline extends Event
 
     public function __toString()
     {
-        return $this->user->name . " just <a href='"
-        . $this->object_attributes->url
-        . "'>changed the status</a> of a pipeline in the <a href='" . $this->project->web_url
+        return $this->user->name . " just changed the status of a pipeline in the <a href='" . $this->project->web_url
         . "'>" . $this->project->name . '</a> repository.';
     }
 }
