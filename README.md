@@ -45,8 +45,8 @@ The **release** and **issues** events can be handled with `$hook->output` as nor
 Right now these events can be listened to:
 - create, delete, fork, gollum, issue_comment, issues, push, commit_comment, label, member, membership, milestone, organization, org_block, page_build, project, project_card, project_column, public, pull_request, pull_request_review, pull_request_review_comment, release, repository, team, team_add, watch.
 
-### GitLab service
-The GitLab service works in the same fashion as the GitHub service, only there are fewer events to choose from and they have a different name pattern. Start by declaring the hook and an optional secret:
+### GitLab integration
+Setting the hook up with GitLab is the same as GitHub; only there are fewer events to choose from and they have a different name pattern. Start by declaring the hook and an optional secret:
 ```php
 $hook = Hook\Hook::GitLab($secret);
 ```
