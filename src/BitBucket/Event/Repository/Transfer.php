@@ -34,6 +34,6 @@ class Transfer extends Event
      */
     public function __toString()
     {
-        return $this->previous_owner->username . " just transferred the <a href='" . $this->repository->project->links->html->href . "'>" . $this->repository->name . "</a> repository to " . $this->actor->username . ".";
+        return $this->previous_owner->username . " just transferred the <a href='" . $this->repository->project->links->html->href . "'>" . $this->repository->name . '</a> repository to ' . $this->actor->username . '.';
     }
 }
