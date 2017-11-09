@@ -84,7 +84,7 @@ class Hook extends BaseHook
         return hash_equals(
             hash_hmac(
                 $this->algorithm,
-                $this->secretValidator(),
+                $this->getTemporaryPayload(),
                 $this->secret
             ),
             $this->signature);

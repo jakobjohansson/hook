@@ -27,7 +27,7 @@ trait Authenticates
      *
      * @return array
      */
-    protected function secretValidator()
+    protected function getTemporaryPayload()
     {
         switch ($this->contentType) {
             case 'application/json':

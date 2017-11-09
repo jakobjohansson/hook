@@ -68,6 +68,26 @@ class EventMap
      */
     public static function BitBucket()
     {
-        return [];
+        return [
+            'repo:push',
+            'repo:fork',
+            'repo:updated',
+            'repo:transfer',
+            'repo:commit_comment_created',
+            'repo:commit_status_created',
+            'repo:commit_status_updated',
+            'issue:created',
+            'issue:updated',
+            'issue:comment_created',
+            'pullrequest:created',
+            'pullrequest:updated',
+            'pullrequest:approved',
+            'pullrequest:unapproved',
+            'pullrequest:fulfilled',
+            'pullrequest:rejected',
+            'pullrequest:comment_created',
+            'pullrequest:comment_updated',
+            'pullrequest:comment_deleted',
+        ];
     }
 }
