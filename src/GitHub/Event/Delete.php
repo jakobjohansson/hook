@@ -5,7 +5,7 @@ namespace Hook\GitHub\Event;
 class Delete extends Event
 {
     /**
-     * The git ref (name) that was deleted.
+     * The reference that was deleted.
      *
      * @var string
      */
@@ -19,7 +19,7 @@ class Delete extends Event
     public $ref_type = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

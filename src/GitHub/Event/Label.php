@@ -19,7 +19,7 @@ class Label extends Event
     public $label = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

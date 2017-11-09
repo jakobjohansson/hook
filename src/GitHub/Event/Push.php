@@ -5,28 +5,28 @@ namespace Hook\GitHub\Event;
 class Push extends Event
 {
     /**
-     * URL to the event.
+     * The URL to the event.
      *
      * @var string
      */
     public $compare = '';
 
     /**
-     * Array with commits in the push.
+     * The commits in the push.
      *
      * @var array
      */
     public $commits = '';
 
     /**
-     * Object with name and email properties of the pusher.
+     * The pusher details object.
      *
      * @var object
      */
     public $pusher = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

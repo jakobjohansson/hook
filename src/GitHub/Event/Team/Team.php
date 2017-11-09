@@ -28,7 +28,7 @@ class Team extends Event
     public $organization = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

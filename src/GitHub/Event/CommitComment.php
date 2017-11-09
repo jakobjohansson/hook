@@ -5,14 +5,14 @@ namespace Hook\GitHub\Event;
 class CommitComment extends Event
 {
     /**
-     * Comment object from payload.
+     * The comment object from the payload.
      *
      * @var object
      */
     public $comment = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

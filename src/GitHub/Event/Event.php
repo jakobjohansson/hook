@@ -28,7 +28,7 @@ abstract class Event
     /**
      * Gets the payload and selects the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {

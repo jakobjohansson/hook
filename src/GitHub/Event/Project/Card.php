@@ -21,7 +21,7 @@ class Card extends Event
     public $project_card = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

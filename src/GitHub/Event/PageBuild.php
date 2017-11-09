@@ -12,7 +12,7 @@ class PageBuild extends Event
     public $build;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

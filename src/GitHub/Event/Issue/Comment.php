@@ -5,14 +5,14 @@ namespace Hook\GitHub\Event\Issue;
 class Comment extends Issues
 {
     /**
-     * The comment object itself.
+     * The comment object.
      *
      * @var object
      */
     public $comment = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

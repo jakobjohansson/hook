@@ -12,7 +12,7 @@ class Fork extends Event
     public $forkee = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

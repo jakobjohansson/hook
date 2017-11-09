@@ -35,7 +35,7 @@ class Organization extends Event
     public $invitation = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

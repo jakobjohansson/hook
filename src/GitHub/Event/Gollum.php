@@ -12,7 +12,7 @@ class Gollum extends Event
     public $pages = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

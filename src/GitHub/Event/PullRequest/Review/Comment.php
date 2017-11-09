@@ -14,7 +14,7 @@ class Comment extends Event
     public $comment = '';
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */
