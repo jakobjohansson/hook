@@ -18,9 +18,6 @@ class BitBucketHookTest extends TestCase
         return $this;
     }
 
-    /**
-     * @group failing
-     */
     public function testRepoPushEvent()
     {
         $this->event('repo:push');
@@ -28,5 +25,14 @@ class BitBucketHookTest extends TestCase
         $this->payload($this->bitBucket['repo:push']);
 
         $this->assertSame($this->response(), "emmap1 just pushed 1 commit(s) to <a href='https://bitbucket.org/user_name/repo_name/branches/compare/c4b2b7914156a878aa7c9da452a09fb50c2091f2..b99ea6dad8f416e57c5ca78c1ccef590600d841b'>team_name/repo_name</a>.");
+    }
+
+    public function testRepoForkEvent()
+    {
+        $this->event('repo:fork');
+
+        $this->payload($this->bitBucket['repo:fork']);
+
+        $this->assertSame($this->response(), "emmap1 <a href='https://bitbucket.org/account/user/teamawesome/projects/proj'>just forked</a> a repository from emmap1.");
     }
 }

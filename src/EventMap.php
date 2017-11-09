@@ -70,7 +70,7 @@ class EventMap
     {
         return [
             'repo:push' => 'Hook\BitBucket\Event\Repository\Push',
-            // 'repo:fork',
+            'repo:fork' => 'Hook\BitBucket\Event\Repository\Fork',
             // 'repo:updated',
             // 'repo:transfer',
             // 'repo:commit_comment_created',
