@@ -69,9 +69,9 @@ class EventMap
     public static function BitBucket()
     {
         return [
-            'repo:push' => 'Hook\BitBucket\Event\Repository\Push',
-            'repo:fork' => 'Hook\BitBucket\Event\Repository\Fork',
-            'repo:updated' => 'Hook\BitBucket\Event\Repository\Updated',
+            'repo:push'     => 'Hook\BitBucket\Event\Repository\Push',
+            'repo:fork'     => 'Hook\BitBucket\Event\Repository\Fork',
+            'repo:updated'  => 'Hook\BitBucket\Event\Repository\Updated',
             'repo:transfer' => 'Hook\BitBucket\Event\Repository\Transfer',
             // 'repo:commit_comment_created' => 'Hook\BitBucket\Repository\CommitCommentCreated',
             // 'repo:commit_status_created' => 'Hook\BitBucket\Repository\CommitStatusCreated',

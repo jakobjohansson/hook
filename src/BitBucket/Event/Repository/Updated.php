@@ -34,6 +34,6 @@ class Updated extends Event
      */
     public function __toString()
     {
-        return $this->actor->username . " just updated some details in the <a href='" . $this->repository->project->links->html->href . "'>" . $this->repository->full_name . "</a> repository.";
+        return $this->actor->username . " just updated some details in the <a href='" . $this->repository->project->links->html->href . "'>" . $this->repository->full_name . '</a> repository.';
     }
 }
