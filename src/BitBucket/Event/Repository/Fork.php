@@ -34,6 +34,6 @@ class Fork extends Event
      */
     public function __toString()
     {
-        return $this->actor->username . " <a href='" . $this->fork->project->links->html->href . "'>just forked</a> a repository from " . $this->repository->owner->username . ".";
+        return $this->actor->username . " <a href='" . $this->fork->project->links->html->href . "'>just forked</a> a repository from " . $this->repository->owner->username . '.';
     }
 }
