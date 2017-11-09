@@ -56,7 +56,7 @@ class Hook extends BaseHook
 
         $this->signature = $this->headers['HTTP_X_GITLAB_TOKEN'];
 
-        if (!$this->checkSecret()) {
+        if (!$this->validate()) {
             $this->apiMessages[] = 'Signature not authorized';
 
             return false;
@@ -72,7 +72,7 @@ class Hook extends BaseHook
      *
      * @return bool
      */
-    private function checkSecret()
+    private function validate()
     {
         return $this->signature === $this->secret;
     }

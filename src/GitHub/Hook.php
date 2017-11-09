@@ -63,7 +63,7 @@ class Hook extends BaseHook
 
         list($this->algorithm, $this->signature) = explode('=', $this->headers['HTTP_X_HUB_SIGNATURE'], 2);
 
-        if (!$this->checkSecret()) {
+        if (!$this->validate()) {
             $this->apiMessages[] = 'Signature not authorized';
 
             return false;
@@ -79,7 +79,7 @@ class Hook extends BaseHook
      *
      * @return bool
      */
-    private function checkSecret()
+    private function validate()
     {
         return hash_equals(
             hash_hmac(

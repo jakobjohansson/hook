@@ -20,7 +20,7 @@ trait Authenticates
 
     abstract protected function auth();
 
-    abstract protected function checkSecret();
+    abstract protected function validate();
 
     /**
      * Return the payload temporarily for authorization.
