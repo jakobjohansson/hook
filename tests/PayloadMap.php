@@ -5233,11 +5233,40 @@ class PayloadMap
     }
   },
   "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
-  "project": Project,
+  "project":{
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
   "full_name": "team_name/repo_name",
   "name": "repo_name",
   "website": "https://mywebsite.com/",
-  "owner": Owner,
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
   "scm": "git",
   "is_private": true
 },
@@ -5250,7 +5279,23 @@ class PayloadMap
           "target": {
             "type": "commit",
             "hash": "709d658dc5b6d6afcd46049c2f332ee3f515a67d",
-            "author": User,
+            "author": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
             "message": "new commit message\n",
             "date": "2015-06-09T03:34:49+00:00",
             "parents": [
@@ -5294,7 +5339,23 @@ class PayloadMap
           "target": {
             "type": "commit",
             "hash": "1e65c05c1d5171631d92438a13901ca7dae9618c",
-            "author": User,
+            "author": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
             "message": "old commit message\n",
             "date": "2015-06-08T21:34:56+00:00",
             "parents": [
@@ -5351,7 +5412,23 @@ class PayloadMap
             "hash": "03f4a7270240708834de475bcf21532d6134777e",
             "type": "commit",
             "message": "commit message\n",
-            "author": User,
+            "author": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
             "links": {
               "self": {
                 "href": "https://api.bitbucket.org/2.0/repositories/user/repo/commit/03f4a7270240708834de475bcf21532d6134777e"

@@ -34,7 +34,7 @@ class Push extends Event
      */
     public function __toString()
     {
-        return $this->actor->name . 'just pushed ' . count($this->push->commits)
-        . " commits to <a href='" . $this->push->new->links->html . "'>" . $this->repository->full_name . "</a>'";
+        return $this->actor->username . ' just pushed ' . count($this->push->changes[0]->commits)
+        . " commit(s) to <a href='" . $this->push->changes[0]->links->html->href . "'>" . $this->repository->full_name . "</a>.";
     }
 }
