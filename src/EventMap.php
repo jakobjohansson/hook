@@ -5,7 +5,7 @@ namespace Hook;
 class EventMap
 {
     /**
-     * Returns the GitHub Event map.
+     * Return the GitHub Event map.
      *
      * @return array
      */
@@ -43,7 +43,7 @@ class EventMap
     }
 
     /**
-     * Returns the GitLab Event map.
+     * Return the GitLab Event map.
      *
      * @return array
      */
@@ -59,5 +59,15 @@ class EventMap
             'Pipeline Hook'      => 'Hook\GitLab\Event\Pipeline',
             'Build Hook'         => 'Hook\GitLab\Event\Build',
         ];
+    }
+
+    /**
+     * Return the BitBucket Event map.
+     *
+     * @return array
+     */
+    public static function BitBucket()
+    {
+        return [];
     }
 }

@@ -5,15 +5,14 @@ namespace Hook;
 class Hook
 {
     /**
-     * Webhook headers.
+     * The webhook headers.
      *
      * @var array
      */
     public $headers;
 
     /**
-     * Content-Type header
-     * (application/json, application/x-www-form-urlencoded etc).
+     * The content type header.
      *
      * @var string
      */
@@ -27,7 +26,7 @@ class Hook
     public $payload = null;
 
     /**
-     * Final output string, ready to be used.
+     * The final formatted output string,
      *
      * @var string
      */
@@ -41,7 +40,7 @@ class Hook
     protected $apiMessages = [];
 
     /**
-     * Fetch headers and payload.
+     * Create a new Hook instance.
      *
      * @return void
      */
@@ -52,9 +51,9 @@ class Hook
     }
 
     /**
-     * Returns the $apiMessages.
+     * Return the API messages.
      *
-     * @return array APIMessages
+     * @return array
      */
     public function getApiMessages()
     {
@@ -62,7 +61,7 @@ class Hook
     }
 
     /**
-     * Fetches all the webhook headers and sets them as object properties.
+     * Fetch all the webhook headers and set them as object properties.
      *
      * @return void
      */
@@ -73,7 +72,7 @@ class Hook
     }
 
     /**
-     * Fetches the payload from the webhook.
+     * Fetch the payload from the webhook.
      *
      * @return void
      */
@@ -94,7 +93,9 @@ class Hook
     /**
      * Return a GitHub Hook service.
      *
-     * @param string $secret Authorization key.
+     * @param string $secret
+     *
+     * @return \Hook\GitHub\Hook
      */
     public static function GitHub($secret = null)
     {
@@ -104,10 +105,22 @@ class Hook
     /**
      * Return a GitLab Hook service.
      *
-     * @param string $secret Authorization key.
+     * @param string $secret
+     *
+     * @return \Hook\GitLab\Hook
      */
     public static function GitLab($secret = null)
     {
         return new GitLab\Hook($secret);
+    }
+
+    /**
+     * Return a Bitbucket Hook service.
+     *
+     * @return \Hook\BitBucket\Hook
+     */
+    public static function BitBucket()
+    {
+        return new BitBucket\Hook();
     }
 }

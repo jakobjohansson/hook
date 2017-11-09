@@ -5,9 +5,9 @@ namespace Hook\Traits;
 trait Authenticates
 {
     /**
-     * Authorization key to be provided from the user.
+     * The optional authorization key.
      *
-     * @var string null
+     * @var string
      */
     private $secret = null;
 
@@ -23,9 +23,9 @@ trait Authenticates
     abstract protected function checkSecret();
 
     /**
-     * Returns the payload temporarily for authorization needed in checkSecret().
+     * Return the payload temporarily for authorization.
      *
-     * @return array payload
+     * @return array
      */
     protected function secretValidator()
     {
