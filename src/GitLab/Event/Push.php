@@ -12,7 +12,7 @@ class Push extends Event
     public $user_name = '';
 
     /**
-     * Array of commit objects.
+     * The commit objects.
      *
      * @var array
      */
@@ -26,9 +26,9 @@ class Push extends Event
     public $total_commits_count = '';
 
     /**
-     * Gets the payload and selects the necessary properties.
+     * Get the payload and select the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {
@@ -39,6 +39,11 @@ class Push extends Event
         }
     }
 
+    /**
+     * Proxy the object properties into a string.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return $this->user_name . ' just pushed ' . $this->total_commits_count

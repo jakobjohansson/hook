@@ -12,9 +12,9 @@ class MergeRequest extends Event
     public $user = '';
 
     /**
-     * Gets the payload and selects the necessary properties.
+     * Get the payload and select the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {
@@ -25,6 +25,11 @@ class MergeRequest extends Event
         }
     }
 
+    /**
+     * Proxy the object properties into a string.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return $this->user->name . ' just ' . $this->object_attributes->state . " a new <a href='"

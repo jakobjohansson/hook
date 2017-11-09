@@ -21,7 +21,7 @@ class Wiki extends Event
     /**
      * Gets the payload and selects the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {
@@ -34,6 +34,11 @@ class Wiki extends Event
         $this->setState();
     }
 
+    /**
+     * Set the state.
+     *
+     * @return void
+     */
     public function setState()
     {
         switch ($this->object_attributes->action) {
@@ -52,6 +57,11 @@ class Wiki extends Event
         }
     }
 
+    /**
+     * Proxy the object properties into a string.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return $this->user->name . ' just ' . $this->state . " a <a href='"

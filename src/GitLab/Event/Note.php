@@ -12,9 +12,9 @@ class Note extends Event
     public $user = '';
 
     /**
-     * Gets the payload and selects the necessary properties.
+     * Get the payload and select the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {
@@ -24,7 +24,12 @@ class Note extends Event
             }
         }
     }
-
+    
+    /**
+     * Proxy the object properties into a string.
+     *
+     * @return string
+     */
     public function __toString()
     {
         switch ($this->object_attributes->noteable_type) {

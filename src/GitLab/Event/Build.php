@@ -19,9 +19,9 @@ class Build extends Event
     public $project_name;
 
     /**
-     * Gets the payload and selects the necessary properties.
+     * Get the payload and select the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {
@@ -32,6 +32,11 @@ class Build extends Event
         }
     }
 
+    /**
+     * Proxy the object properties into a string.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return $this->user->name . ' just changed the status of a build in the ' . $this->project_name . ' repository.';
