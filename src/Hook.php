@@ -26,7 +26,7 @@ class Hook
     public $payload = null;
 
     /**
-     * The final formatted output string,
+     * The final formatted output string,.
      *
      * @var string
      */

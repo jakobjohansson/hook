@@ -24,7 +24,7 @@ class Note extends Event
             }
         }
     }
-    
+
     /**
      * Proxy the object properties into a string.
      *
