@@ -2,7 +2,7 @@
 
 namespace Hook\Tests;
 
-class BitBucketHookTest extends TestCase
+class BitBucketTest extends TestCase
 {
     /**
      * Set the event header.
