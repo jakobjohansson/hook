@@ -41,6 +41,6 @@ class CommitCommentCreated extends Event
      */
     public function __toString()
     {
-        return $this->actor->username . " just commented on a <a href='" . $this->comment->links->html->href . "'>commit</a> in the " . $this->repository->full_name . " repository.";
+        return $this->actor->username . " just commented on a <a href='" . $this->comment->links->html->href . "'>commit</a> in the " . $this->repository->full_name . ' repository.';
     }
 }

@@ -34,6 +34,6 @@ class CommitStatus extends Event
      */
     public function __toString()
     {
-        return $this->commit_status->key . ": <a href='" . $this->commit_status->url . "'>" . $this->commit_status->description . "</a>.";
+        return $this->commit_status->key . ": <a href='" . $this->commit_status->url . "'>" . $this->commit_status->description . '</a>.';
     }
 }

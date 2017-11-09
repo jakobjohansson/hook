@@ -34,6 +34,6 @@ class Created extends Event
      */
     public function __toString()
     {
-        return $this->actor->username . " just <a href='" . $this->issue->links->html->href . "'>opened an issue</a> in the " . $this->repository->full_name . " repository.";
+        return $this->actor->username . " just <a href='" . $this->issue->links->html->href . "'>opened an issue</a> in the " . $this->repository->full_name . ' repository.';
     }
 }
