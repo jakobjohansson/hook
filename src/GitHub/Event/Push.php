@@ -9,21 +9,21 @@ class Push extends Event
      *
      * @var string
      */
-    public $compare = '';
+    public $compare;
 
     /**
      * The commits in the push.
      *
      * @var array
      */
-    public $commits = '';
+    public $commits;
 
     /**
      * The pusher details object.
      *
      * @var object
      */
-    public $pusher = '';
+    public $pusher;
 
     /**
      * Proxy the object properties into a string.

@@ -9,7 +9,7 @@ class Gollum extends Event
      *
      * @var array
      */
-    public $pages = '';
+    public $pages;
 
     /**
      * Proxy the object properties into a string.

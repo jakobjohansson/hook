@@ -9,14 +9,14 @@ class Delete extends Event
      *
      * @var string
      */
-    public $ref = '';
+    public $ref;
 
     /**
      * The type of object that was deleted.
      *
      * @var string
      */
-    public $ref_type = '';
+    public $ref_type;
 
     /**
      * Proxy the object properties into a string.

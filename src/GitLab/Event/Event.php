@@ -9,14 +9,14 @@ abstract class Event
      *
      * @var object
      */
-    public $project = '';
+    public $project;
 
     /**
      * The attribute object.
      *
      * @var object
      */
-    public $object_attributes = '';
+    public $object_attributes;
 
     /**
      * Get the payload and select the necessary properties.

@@ -9,7 +9,7 @@ class Issue extends Event
      *
      * @var object
      */
-    public $user = '';
+    public $user;
 
     /**
      * Get the payload and select the necessary properties.

@@ -9,21 +9,21 @@ class Push extends Event
      *
      * @var string
      */
-    public $user_name = '';
+    public $user_name;
 
     /**
      * The commit objects.
      *
      * @var array
      */
-    public $commits = '';
+    public $commits;
 
     /**
      * The number of commits pushed.
      *
      * @var int
      */
-    public $total_commits_count = '';
+    public $total_commits_count;
 
     /**
      * Get the payload and select the necessary properties.

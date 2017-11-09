@@ -9,7 +9,7 @@ class Fork extends Event
      *
      * @var object
      */
-    public $forkee = '';
+    public $forkee;
 
     /**
      * Proxy the object properties into a string.

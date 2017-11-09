@@ -11,14 +11,14 @@ class PullRequest extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The pull request object.
      *
      * @var object
      */
-    public $pull_request = '';
+    public $pull_request;
 
     /**
      * Proxy the object properties into a string.

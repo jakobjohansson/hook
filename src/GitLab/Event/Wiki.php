@@ -9,14 +9,14 @@ class Wiki extends Event
      *
      * @var object
      */
-    public $user = '';
+    public $user;
 
     /**
      * The state of the page, rendered in setState().
      *
      * @var string
      */
-    public $state = '';
+    public $state;
 
     /**
      * Gets the payload and selects the necessary properties.

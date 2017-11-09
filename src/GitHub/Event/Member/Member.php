@@ -11,14 +11,14 @@ class Member extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The member object.
      *
      * @var object
      */
-    public $member = '';
+    public $member;
 
     /**
      * Proxy the object properties into a string.

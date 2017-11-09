@@ -11,7 +11,7 @@ class Repository extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * Proxy the object properties into a string.

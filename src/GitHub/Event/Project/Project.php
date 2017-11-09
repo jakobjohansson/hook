@@ -11,14 +11,14 @@ class Project extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The project object.
      *
      * @var object
      */
-    public $project = '';
+    public $project;
 
     /**
      * Proxy the object properties into a string.

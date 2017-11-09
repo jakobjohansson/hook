@@ -9,14 +9,14 @@ class Tag extends Event
      *
      * @var string
      */
-    public $user_name = '';
+    public $user_name;
 
     /**
      * The tag reference.
      *
      * @var string
      */
-    public $ref = '';
+    public $ref;
 
     /**
      * Get the payload and select the necessary properties.

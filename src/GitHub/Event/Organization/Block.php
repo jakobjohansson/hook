@@ -11,21 +11,21 @@ class Block extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The blocked user object.
      *
      * @var object
      */
-    public $blocked_user = '';
+    public $blocked_user;
 
     /**
      * The organization object.
      *
      * @var object
      */
-    public $organization = '';
+    public $organization;
 
     /**
      * Proxy the object properties into a string.

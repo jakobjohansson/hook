@@ -9,14 +9,14 @@ class Label extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The label object.
      *
      * @var object
      */
-    public $label = '';
+    public $label;
 
     /**
      * Proxy the object properties into a string.

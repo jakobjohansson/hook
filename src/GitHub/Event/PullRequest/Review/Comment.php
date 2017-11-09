@@ -11,7 +11,7 @@ class Comment extends Event
      *
      * @var object
      */
-    public $comment = '';
+    public $comment;
 
     /**
      * Proxy the object properties into a string.

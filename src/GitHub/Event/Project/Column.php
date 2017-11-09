@@ -11,14 +11,14 @@ class Column extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The project column object.
      *
      * @var object
      */
-    public $project_column = '';
+    public $project_column;
 
     /**
      * Proxy the object properties into a string.

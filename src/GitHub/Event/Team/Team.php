@@ -11,21 +11,21 @@ class Team extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The team object.
      *
      * @var object
      */
-    public $team = '';
+    public $team;
 
     /**
      * The organization object.
      *
      * @var object
      */
-    public $organization = '';
+    public $organization;
 
     /**
      * Proxy the object properties into a string.

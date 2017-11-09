@@ -9,7 +9,7 @@ class Release extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The release object.

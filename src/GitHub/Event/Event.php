@@ -9,21 +9,21 @@ abstract class Event
      *
      * @var object
      */
-    public $repository = '';
+    public $repository;
 
     /**
      * The pusher object.
      *
      * @var object
      */
-    public $sender = '';
+    public $sender;
 
     /**
      * The URL of the repository.
      *
      * @var string
      */
-    public $html_url = '';
+    public $html_url;
 
     /**
      * Gets the payload and selects the necessary properties.

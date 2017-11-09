@@ -11,7 +11,7 @@ class Add extends Event
      *
      * @var object
      */
-    public $team = '';
+    public $team;
 
     /**
      * Proxy the object properties into a string.
