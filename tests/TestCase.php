@@ -100,7 +100,7 @@ abstract class TestCase extends BaseTest
      */
     public function signature($signature)
     {
-        $this->headers['X-GitHub-Signature'] = $signature;
+        $this->headers['X-Hub-Signature'] = $signature;
 
         $this->auth = true;
 

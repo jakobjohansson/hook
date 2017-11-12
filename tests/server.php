@@ -3,7 +3,7 @@
 require './vendor/autoload.php';
 
 if (isset($_GET['auth'])) {
-    $github = Hook\Hook::GitHub();
+    $github = Hook\Hook::GitHub('correct-signature');
 
     $github->listen();
 
