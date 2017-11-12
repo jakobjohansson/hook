@@ -25,11 +25,7 @@ class Wiki extends Event
      */
     public function __construct($payload)
     {
-        foreach ($payload as $key => $value) {
-            if (property_exists($this, $key)) {
-                $this->$key = $value;
-            }
-        }
+        parent::__construct($payload);
 
         $this->setState();
     }
