@@ -57,7 +57,7 @@ trait HandlesEvents
      */
     public function listen(array $listeners = [])
     {
-        if ($this->secret && !$this->authenticated) {
+        if (property_exists($this, 'secret') && isset($this->secret) && !$this->authenticated) {
             return false;
         }
 
