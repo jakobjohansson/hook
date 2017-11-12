@@ -27,7 +27,9 @@ class GitLabHookTest extends TestCase
      */
     public function signature($signature)
     {
-        $this->headers['X-GitHub-Token'] = $signature;
+        $this->headers['X-Gitlab-Token'] = $signature;
+
+        $this->auth = true;
 
         return $this;
     }
@@ -129,5 +131,23 @@ class GitLabHookTest extends TestCase
         $this->payload($this->gitLab['Snippet Note Hook']);
 
         $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/snippets/53#note_1245'>commented on a snippet</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
+    }
+
+    public function testHookShouldNotPrintAnythingWhenNotAuthorized()
+    {
+        $this->event('Push Hook')->signature('incorrectlyformattedsignature');
+
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), '');
+    }
+
+    public function testHookShouldWorkAsNormalWhenAuthorized()
+    {
+        $this->event('Push Hook')->signature('correct-signature');
+
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), "John Smith just pushed 4 commit(s) to the <a href='http://example.com/mike/diaspora'>Diaspora</a> repository.");
     }
 }

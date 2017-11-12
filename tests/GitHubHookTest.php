@@ -246,4 +246,22 @@ class GitHubHookTest extends TestCase
 
         $this->assertSame($this->response(), "<a href='https://github.com/baxterthehacker'>baxterthehacker</a> just watched the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
+
+    public function testHookShouldNotPrintAnythingWhenNotAuthorized()
+    {
+        $this->event('push')->signature('incorrectlyformattedsignature');
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), '');
+    }
+
+    public function testHookShouldWorkAsNormalWhenAuthorized()
+    {
+        $this->event('push')->signature('sha1=c5888174a18a46cb60f94f7ec589282673fe2c09');
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
+    }
 }

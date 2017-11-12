@@ -63,6 +63,7 @@ class Hook extends BaseHook
         }
 
         $this->fetchPayload();
+        $this->authenticated = true;
 
         return true;
     }

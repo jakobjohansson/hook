@@ -43,6 +43,13 @@ abstract class TestCase extends BaseTest
     public $bitBucket;
 
     /**
+     * Whether the request includes authorization.
+     *
+     * @var string
+     */
+    public $auth;
+
+    /**
      * The headers for the request.
      *
      * @var array
@@ -101,7 +108,9 @@ abstract class TestCase extends BaseTest
      */
     public function signature($signature)
     {
-        $this->headers['X-GitHub-Signature'] = $signature;
+        $this->headers['X-Hub-Signature'] = $signature;
+
+        $this->auth = true;
 
         return $this;
     }
@@ -114,6 +123,7 @@ abstract class TestCase extends BaseTest
     public function response()
     {
         return (string) $this->client->request('POST', '', [
+            'query'   => $this->auth ? ['auth' => 'true'] : null,
             'headers' => $this->headers,
             'json'    => json_decode($this->payload, true),
         ])->getBody();

@@ -61,6 +61,10 @@ class Hook extends BaseHook
             return false;
         }
 
+        if (strpos($this->headers['HTTP_X_HUB_SIGNATURE'], 'sha1=') !== 0) {
+            return false;
+        }
+
         list($this->algorithm, $this->signature) = explode('=', $this->headers['HTTP_X_HUB_SIGNATURE'], 2);
 
         if (!$this->validate()) {
@@ -70,6 +74,7 @@ class Hook extends BaseHook
         }
 
         $this->fetchPayload();
+        $this->authenticated = true;
 
         return true;
     }
