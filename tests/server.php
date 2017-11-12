@@ -2,14 +2,28 @@
 
 require './vendor/autoload.php';
 
-$github = Hook\Hook::GitHub();
+if (isset($_GET['auth'])) {
+    $github = Hook\Hook::GitHub();
 
-$github->listen();
+    $github->listen();
 
-echo $github->output;
+    echo $github->output;
 
-$gitlab = Hook\Hook::GitLab();
+    $gitlab = Hook\Hook::GitLab('correct-signature');
 
-$gitlab->listen();
+    $gitlab->listen();
 
-echo $gitlab->output;
+    echo $gitlab->output;
+} else {
+    $github = Hook\Hook::GitHub();
+
+    $github->listen();
+
+    echo $github->output;
+
+    $gitlab = Hook\Hook::GitLab();
+
+    $gitlab->listen();
+
+    echo $gitlab->output;
+}
