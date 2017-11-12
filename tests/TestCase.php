@@ -123,7 +123,7 @@ abstract class TestCase extends BaseTest
     public function response()
     {
         return (string) $this->client->request('POST', '', [
-            'query' => $this->auth ? ['auth' => 'true'] : null,
+            'query'   => $this->auth ? ['auth' => 'true'] : null,
             'headers' => $this->headers,
             'json'    => json_decode($this->payload, true),
         ])->getBody();
