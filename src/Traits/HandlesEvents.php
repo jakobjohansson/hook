@@ -60,6 +60,10 @@ trait HandlesEvents
      */
     public function listen(array $listeners = [])
     {
+        if ($this->secret && !$this->authenticated) {
+            return false;
+        }
+
         if (empty($listeners)) {
             $listeners = $this->defaultListeners;
         }
