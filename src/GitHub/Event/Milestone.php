@@ -9,17 +9,17 @@ class Milestone extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The milstone object.
      *
      * @var object
      */
-    public $milestone = '';
+    public $milestone;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

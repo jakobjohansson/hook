@@ -5197,4 +5197,3706 @@ class PayloadMap
 }'
         ];
     }
+
+    public static function BitBucket()
+    {
+        return [
+            'repo:push' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project":{
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+  "push": {
+    "changes": [
+      {
+        "new": {
+          "type": "branch",
+          "name": "name-of-branch",
+          "target": {
+            "type": "commit",
+            "hash": "709d658dc5b6d6afcd46049c2f332ee3f515a67d",
+            "author": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+            "message": "new commit message\n",
+            "date": "2015-06-09T03:34:49+00:00",
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "1e65c05c1d5171631d92438a13901ca7dae9618c",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/commit/8cbbd65829c7ad834a97841e0defc965718036a0"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/user_name/repo_name/commits/8cbbd65829c7ad834a97841e0defc965718036a0"
+                  }
+                }
+              }
+            ],
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/commit/c4b2b7914156a878aa7c9da452a09fb50c2091f2"
+              },
+              "html": {
+                "href": "https://bitbucket.org/user_name/repo_name/commits/c4b2b7914156a878aa7c9da452a09fb50c2091f2"
+              }
+            }
+          },
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/refs/branches/master"
+            },
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/commits/master"
+            },
+            "html": {
+              "href": "https://bitbucket.org/user_name/repo_name/branch/master"
+            }
+          }
+        },
+        "old": {
+          "type": "branch",
+          "name": "name-of-branch",
+          "target": {
+            "type": "commit",
+            "hash": "1e65c05c1d5171631d92438a13901ca7dae9618c",
+            "author": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+            "message": "old commit message\n",
+            "date": "2015-06-08T21:34:56+00:00",
+            "parents": [
+              {
+                "type": "commit",
+                "hash": "e0d0c2041e09746be5ce4b55067d5a8e3098c843",
+                "links": {
+                  "self": {
+                    "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/commit/9c4a3452da3bc4f37af5a6bb9c784246f44406f7"
+                  },
+                  "html": {
+                    "href": "https://bitbucket.org/user_name/repo_name/commits/9c4a3452da3bc4f37af5a6bb9c784246f44406f7"
+                  }
+                }
+              }
+            ],
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/commit/b99ea6dad8f416e57c5ca78c1ccef590600d841b"
+              },
+              "html": {
+                "href": "https://bitbucket.org/user_name/repo_name/commits/b99ea6dad8f416e57c5ca78c1ccef590600d841b"
+              }
+            }
+          },
+          "links": {
+            "self": {
+              "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/refs/branches/master"
+            },
+            "commits": {
+              "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/commits/master"
+            },
+            "html": {
+              "href": "https://bitbucket.org/user_name/repo_name/branch/master"
+            }
+          }
+        },
+        "links": {
+          "html": {
+            "href": "https://bitbucket.org/user_name/repo_name/branches/compare/c4b2b7914156a878aa7c9da452a09fb50c2091f2..b99ea6dad8f416e57c5ca78c1ccef590600d841b"
+          },
+          "diff": {
+            "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/diff/c4b2b7914156a878aa7c9da452a09fb50c2091f2..b99ea6dad8f416e57c5ca78c1ccef590600d841b"
+          },
+          "commits": {
+            "href": "https://api.bitbucket.org/2.0/repositories/user_name/repo_name/commits?include=c4b2b7914156a878aa7c9da452a09fb50c2091f2&exclude=b99ea6dad8f416e57c5ca78c1ccef590600d841b"
+          }
+        },
+        "created": false,
+        "forced": false,
+        "closed": false,
+        "commits": [
+          {
+            "hash": "03f4a7270240708834de475bcf21532d6134777e",
+            "type": "commit",
+            "message": "commit message\n",
+            "author": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+            "links": {
+              "self": {
+                "href": "https://api.bitbucket.org/2.0/repositories/user/repo/commit/03f4a7270240708834de475bcf21532d6134777e"
+              },
+              "html": {
+                "href": "https://bitbucket.org/user/repo/commits/03f4a7270240708834de475bcf21532d6134777e"
+              }
+            }
+          }
+        ],
+        "truncated": false
+      }
+    ]
+  }
+}',
+            'repo:fork' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+  "fork": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+}',
+            'repo:updated' => '{
+              "actor": {
+              "type": "user",
+              "username": "emmap1",
+              "display_name": "Emma",
+              "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+              "links": {
+                "self": {
+                  "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+                },
+                "html": {
+                  "href": "https://api.bitbucket.org/emmap1"
+                },
+                "avatar": {
+                  "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+                }
+              }
+            },
+              "repository": {
+              "type": "repository",
+              "links": {
+                "self": {
+                  "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+                },
+                "html": {
+                  "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+                },
+                "avatar": {
+                  "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+                }
+              },
+              "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+              "project": {
+              "type": "project",
+              "project": "Untitled project",
+              "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+              "links": {
+                "html": {
+                  "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+                },
+                "avatar": {
+                  "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+                }
+              },
+              "key": "proj"
+            },
+              "full_name": "team_name/repo_name",
+              "name": "repo_name",
+              "website": "https://mywebsite.com/",
+              "owner": {
+              "type": "user",
+              "username": "emmap1",
+              "display_name": "Emma",
+              "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+              "links": {
+                "self": {
+                  "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+                },
+                "html": {
+                  "href": "https://api.bitbucket.org/emmap1"
+                },
+                "avatar": {
+                  "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+                }
+              }
+            },
+              "scm": "git",
+              "is_private": true
+            },
+              "changes": {
+                "name": {
+                  "new": "repository",
+                  "old": "repository_name"
+                },
+                "website": {
+                  "new": "http://www.example.com/",
+                  "old": ""
+                },
+                "language": {
+                  "new": "java",
+                  "old": ""
+                },
+                "links": {
+                  "new": {
+                    "avatar": {
+                      "href": "https://bitbucket.org/teamawesome/repository/avatar/32/"
+                    },
+                    "self": {
+                      "href": "https://api.bitbucket.org/2.0/repositories/teamawesome/repository"
+                    },
+                    "html": {
+                      "href": "https://bitbucket.org/teamawesome/repository"
+                    }
+                  },
+                  "old": {
+                    "avatar": {
+                      "href": "https://bitbucket.org/teamawesome/repository_name/avatar/32/"
+                    },
+                    "self": {
+                      "href": "https://api.bitbucket.org/2.0/repositories/teamawesome/repository_name"
+                    },
+                    "html": {
+                      "href": "https://bitbucket.org/teamawesome/repository_name"
+                    }
+                  }
+                },
+                "description": {
+                  "new": "This is a better description.",
+                  "old": "This is a description."
+                },
+                "full_name": {
+                  "new": "teamawesome/repository",
+                  "old": "teamawesome/repository_name"
+                }
+              }
+          }',
+                'repo:transfer' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+  "previous_owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}
+}',
+            'repo:commit_comment_created' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "comment": {
+   "id" : 17,
+   "parent" : { "id":  16 },
+   "content": {
+     "raw": "Comment text",
+     "html": "<p>Comment text</p>",
+     "markup": "markdown"
+   },
+   "inline" : {
+     "path" :  "path/to/file" ,
+     "from" :  null ,
+     "to" :  10
+   },
+   "created_on" :  "2015-04-06T16:52:29.982346+00:00" ,
+   "updated_on" :  "2015-04-06T16:52:29.983730+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/comments/comment_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/comment_id"
+    }
+  }
+}
+,
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+  "commit": {
+    "hash": "d3022fc0ca3d65c7f6654eea129d6bf0cf0ee08e"
+  }
+}',
+            'repo:commit_status_created' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+  "commit_status": {
+    "name": "Unit Tests (Python)",
+    "description": "Build started",
+    "state": "INPROGRESS",
+    "key": "mybuildtool",
+    "url": "https://my-build-tool.com/builds/MY-PROJECT/BUILD-777",
+    "type": "build",
+    "created_on": "2015-11-19T20:37:35.547563+00:00",
+    "updated_on": "2015-11-19T20:37:35.547563+00:00",
+    "links": {
+      "commit": {
+        "href": "http://api.bitbucket.org/2.0/repositories/tk/test/commit/9fec847784abb10b2fa567ee63b85bd238955d0e"
+      },
+      "self": {
+        "href": "http://api.bitbucket.org/2.0/repositories/tk/test/commit/9fec847784abb10b2fa567ee63b85bd238955d0e/statuses/build/mybuildtool"
+      }
+    }
+  }
+}',
+            'repo:commit_status_updated' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+  "commit_status": {
+    "name": "Unit Tests (Python)",
+    "description": "All tests passed",
+    "state": "SUCCESSFUL",
+    "key": "mybuildtool",
+    "url": "https://my-build-tool.com/builds/MY-PROJECT/BUILD-777",
+    "type": "build",
+    "created_on": "2015-11-19T20:37:35.547563+00:00",
+    "updated_on": "2015-11-19T20:37:35.547563+00:00",
+    "links": {
+      "commit": {
+        "href": "http://api.bitbucket.org/2.0/repositories/tk/test/commit/9fec847784abb10b2fa567ee63b85bd238955d0e"
+      },
+      "self": {
+        "href": "http://api.bitbucket.org/2.0/repositories/tk/test/commit/9fec847784abb10b2fa567ee63b85bd238955d0e/statuses/build/mybuildtool"
+      }
+    }
+  }
+}',
+            'issue:created' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+ "issue": {
+   "id" :  1 ,
+   "component" :  "component" ,
+   "title" :  "Issue title" ,
+   "content" : {
+     "raw" :  "Issue description" ,
+     "html" :  "<p>Issue description</p>" ,
+     "markup" :  "markdown"
+   },
+   "priority" :  "trivial|minor|major|critical|blocker" ,
+   "state" :  "new|open|on hold|resolved|duplicate|invalid|wontfix|closed" ,
+   "type" :  "bug|enhancement|proposal|task" ,
+   "milestone" : {  "name" :  "milestone 1"  },
+   "version" : {  "name" :  "version 1"  },
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/issues/issue_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/issue_id"
+    }
+  }
+}
+}',
+            'issue:updated' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+ "issue": {
+   "id" :  1 ,
+   "component" :  "component" ,
+   "title" :  "Issue title" ,
+   "content" : {
+     "raw" :  "Issue description" ,
+     "html" :  "<p>Issue description</p>" ,
+     "markup" :  "markdown"
+   },
+   "priority" :  "trivial|minor|major|critical|blocker" ,
+   "state" :  "new|open|on hold|resolved|duplicate|invalid|wontfix|closed" ,
+   "type" :  "bug|enhancement|proposal|task" ,
+   "milestone" : {  "name" :  "milestone 1"  },
+   "version" : {  "name" :  "version 1"  },
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/issues/issue_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/issue_id"
+    }
+  }
+}, "changes": {
+    "status": {
+      "old": "open",
+      "new": "on hold"
+    },
+    "comment": {
+   "id" :  17 ,
+   "parent" : {  "id" :  16  },
+   "content" : {
+     "raw" :  "Comment text" ,
+     "html" :  "<p>Comment text</p>" ,
+     "markup" :  "markdown"
+   },
+   "inline" : {
+     "path" :  "path/to/file" ,
+     "from" :  null ,
+     "to" :  10
+   },
+   "created_on" :  "2015-04-06T16:52:29.982346+00:00" ,
+   "updated_on" :  "2015-04-06T16:52:29.983730+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/comments/comment_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/comment_id"
+    }
+  }
+}
+}
+}',
+            'issue:comment_created' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+ "issue": {
+   "id" :  1 ,
+   "component" :  "component" ,
+   "title" :  "Issue title" ,
+   "content" : {
+     "raw" :  "Issue description" ,
+     "html" :  "<p>Issue description</p>" ,
+     "markup" :  "markdown"
+   },
+   "priority" :  "trivial|minor|major|critical|blocker" ,
+   "state" :  "new|open|on hold|resolved|duplicate|invalid|wontfix|closed" ,
+   "type" :  "bug|enhancement|proposal|task" ,
+   "milestone" : {  "name" :  "milestone 1"  },
+   "version" : {  "name" :  "version 1"  },
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/issues/issue_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/issue_id"
+    }
+  }
+},
+    "comment": {
+   "id" :  17 ,
+   "parent" : {  "id" :  16  },
+   "content" : {
+     "raw" :  "Comment text" ,
+     "html" :  "<p>Comment text</p>" ,
+     "markup" :  "markdown"
+   },
+   "inline" : {
+     "path" :  "path/to/file" ,
+     "from" :  null ,
+     "to" :  10
+   },
+   "created_on" :  "2015-04-06T16:52:29.982346+00:00" ,
+   "updated_on" :  "2015-04-06T16:52:29.983730+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/comments/comment_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/comment_id"
+    }
+  }
+}
+}',
+            'pullrequest:created' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+}',
+            'pullrequest:updated' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+}',
+            'pullrequest:approved' => '
+            {
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+"approval": {
+    "date": "2015-04-06T16:34:59.195330+00:00",
+    "user": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}
+  }
+}',
+            'pullrequest:unapproved' => '
+            {
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+"approval": {
+    "date": "2015-04-06T16:34:59.195330+00:00",
+    "user": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}
+  }
+}',
+            'pullrequest:fulfilled' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+}',
+            'pullrequest:rejected' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+}',
+            'pullrequest:comment_created' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+"comment": {
+   "id" :  17 ,
+   "parent" : {  "id" :  16  },
+   "content" : {
+     "raw" :  "Comment text" ,
+     "html" :  "<p>Comment text</p>" ,
+     "markup" :  "markdown"
+   },
+   "inline" : {
+     "path" :  "path/to/file" ,
+     "from" :  null ,
+     "to" :  10
+   },
+   "created_on" :  "2015-04-06T16:52:29.982346+00:00" ,
+   "updated_on" :  "2015-04-06T16:52:29.983730+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/comments/comment_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/comment_id"
+    }
+  }
+}
+}',
+            'pullrequest:comment_updated' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+"comment": {
+   "id" :  17 ,
+   "parent" : {  "id" :  16  },
+   "content" : {
+     "raw" :  "Comment text" ,
+     "html" :  "<p>Comment text</p>" ,
+     "markup" :  "markdown"
+   },
+   "inline" : {
+     "path" :  "path/to/file" ,
+     "from" :  null ,
+     "to" :  10
+   },
+   "created_on" :  "2015-04-06T16:52:29.982346+00:00" ,
+   "updated_on" :  "2015-04-06T16:52:29.983730+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/comments/comment_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/comment_id"
+    }
+  }
+}
+}',
+            'pullrequest:comment_deleted' => '{
+  "actor": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "pullrequest": {
+   "id" :  1 ,
+   "title" :  "Title of pull request" ,
+   "description" :  "Description of pull request" ,
+   "state" :  "OPEN|MERGED|DECLINED" ,
+   "author" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "source" : {
+     "branch" : {  "name" :  "branch2"  },
+     "commit" : {  "hash" :  "d3022fc0ca3d"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "destination" : {
+     "branch" : {  "name" :  "master"  },
+     "commit" : {  "hash" :  "ce5965ddd289"  },
+     "repository" : {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+}
+   },
+   "merge_commit" : {  "hash" :  "764413d85e29"  },
+   "participants" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "reviewers" : [{
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+}],
+   "close_source_branch" :  true ,
+   "closed_by" : {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+   "reason" :  "reason for declining the PR (if applicable)" ,
+   "created_on" :  "2015-04-06T15:23:38.179678+00:00" ,
+   "updated_on" :  "2015-04-06T15:23:38.205705+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/pullrequests/pullrequest_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/pullrequest_id"
+    }
+  }
+},
+  "repository": {
+  "type": "repository",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/repositories/bitbucket/bitbucket"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/bitbucket/bitbucket"
+    },
+    "avatar": {
+      "href": "https://api-staging-assetroot.s3.amazonaws.com/c/photos/2014/Aug/01/bitbucket-logo-2629490769-3_avatar.png"
+    }
+  },
+  "uuid": "{673a6070-3421-46c9-9d48-90745f7bfe8e}",
+  "project": {
+  "type": "project",
+  "project": "Untitled project",
+  "uuid": "{3b7898dc-6891-4225-ae60-24613bb83080}",
+  "links": {
+    "html": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj"
+    },
+    "avatar": {
+      "href": "https://bitbucket.org/account/user/teamawesome/projects/proj/avatar/32"
+    }
+  },
+  "key": "proj"
+},
+  "full_name": "team_name/repo_name",
+  "name": "repo_name",
+  "website": "https://mywebsite.com/",
+  "owner": {
+  "type": "user",
+  "username": "emmap1",
+  "display_name": "Emma",
+  "uuid": "{a54f16da-24e9-4d7f-a3a7-b1ba2cd98aa3}",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/users/emmap1"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/emmap1"
+    },
+    "avatar": {
+      "href": "https://bitbucket-api-assetroot.s3.amazonaws.com/c/photos/2015/Feb/26/3613917261-0-emmap1-avatar_avatar.png"
+    }
+  }
+},
+  "scm": "git",
+  "is_private": true
+},
+"comment": {
+   "id" :  17 ,
+   "parent" : {  "id" :  16  },
+   "content" : {
+     "raw" :  "Comment text" ,
+     "html" :  "<p>Comment text</p>" ,
+     "markup" :  "markdown"
+   },
+   "inline" : {
+     "path" :  "path/to/file" ,
+     "from" :  null ,
+     "to" :  10
+   },
+   "created_on" :  "2015-04-06T16:52:29.982346+00:00" ,
+   "updated_on" :  "2015-04-06T16:52:29.983730+00:00",
+  "links": {
+    "self": {
+      "href": "https://api.bitbucket.org/api/2.0/comments/comment_id"
+    },
+    "html": {
+      "href": "https://api.bitbucket.org/comment_id"
+    }
+  }
+}
+}'
+        ];
+    }
 }

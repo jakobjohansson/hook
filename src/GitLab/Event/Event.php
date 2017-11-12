@@ -9,19 +9,19 @@ abstract class Event
      *
      * @var object
      */
-    public $project = '';
+    public $project;
 
     /**
-     * Object with attributes.
+     * The attribute object.
      *
      * @var object
      */
-    public $object_attributes = '';
+    public $object_attributes;
 
     /**
-     * Gets the payload and selects the necessary properties.
+     * Get the payload and select the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {

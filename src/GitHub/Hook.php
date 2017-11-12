@@ -20,9 +20,11 @@ class Hook extends BaseHook
     private $algorithm;
 
     /**
-     * Checking for X-GitHub-Event header and authorizing.
+     * Create a new Hook instance.
      *
-     * @param string $secret the authorization key
+     * @param string $secret
+     *
+     * @return mixed
      */
     public function __construct($secret = null)
     {
@@ -47,10 +49,9 @@ class Hook extends BaseHook
     }
 
     /**
-     * Authorizing method with the helper functions secretValidator() and checkSecret()
-     * Sends message to apiMessages if a problem occurs.
+     * Authorize the request provided a signature.
      *
-     * @return bool true | false
+     * @return bool
      */
     private function auth()
     {
@@ -66,7 +67,7 @@ class Hook extends BaseHook
 
         list($this->algorithm, $this->signature) = explode('=', $this->headers['HTTP_X_HUB_SIGNATURE'], 2);
 
-        if (!$this->checkSecret()) {
+        if (!$this->validate()) {
             $this->apiMessages[] = 'Signature not authorized';
 
             return false;
@@ -79,18 +80,35 @@ class Hook extends BaseHook
     }
 
     /**
-     * Compares the hashes provided by the webhook and the user.
+     * Compare the hashes provided by the request and the server.
      *
-     * @return bool hash
+     * @return bool
      */
-    private function checkSecret()
+    private function validate()
     {
         return hash_equals(
             hash_hmac(
                 $this->algorithm,
-                $this->secretValidator(),
+                $this->getTemporaryPayload(),
                 $this->secret
             ),
             $this->signature);
+    }
+
+    /**
+     * Return the payload temporarily for authorization.
+     *
+     * @return array
+     */
+    protected function getTemporaryPayload()
+    {
+        switch ($this->contentType) {
+            case 'application/json':
+                return file_get_contents('php://input');
+            break;
+            case 'application/x-www-form-urlencoded':
+                return \Request::input('payload');
+            break;
+        }
     }
 }

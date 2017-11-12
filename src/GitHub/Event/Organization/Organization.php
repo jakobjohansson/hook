@@ -11,31 +11,31 @@ class Organization extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The membership object.
      *
      * @var object
      */
-    public $membership = '';
+    public $membership;
 
     /**
      * The organization object.
      *
      * @var object
      */
-    public $organization = '';
+    public $organization;
 
     /**
      * The invitation object.
      *
      * @var object
      */
-    public $invitation = '';
+    public $invitation;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

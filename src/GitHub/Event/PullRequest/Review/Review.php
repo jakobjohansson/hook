@@ -11,10 +11,10 @@ class Review extends Event
      *
      * @var object
      */
-    public $review = '';
+    public $review;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

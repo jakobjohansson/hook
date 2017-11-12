@@ -5,25 +5,27 @@ namespace Hook\Traits;
 trait MapsEvents
 {
     /**
-     * The default available events to listen to.
+     * The default available events.
      *
      * @var array
      */
     private $defaultListeners;
 
     /**
-     * The GitHub Event map.
+     * The event map.
      *
      * @var array
      */
     private $eventMap;
 
     /**
-     * Set the Event Map and the default listeners.
+     * Set the event map and the default listeners.
      *
      * @param array $map
+     *
+     * @return void
      */
-    private function setEventMap($map)
+    private function setEventMap(array $map)
     {
         $this->eventMap = $map;
         $this->defaultListeners = array_keys($map);

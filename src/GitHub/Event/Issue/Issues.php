@@ -11,17 +11,17 @@ class Issues extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The issue object.
      *
      * @var object
      */
-    public $issue = '';
+    public $issue;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

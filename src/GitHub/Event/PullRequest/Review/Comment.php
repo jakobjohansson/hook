@@ -11,10 +11,10 @@ class Comment extends Event
      *
      * @var object
      */
-    public $comment = '';
+    public $comment;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

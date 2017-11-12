@@ -5,21 +5,21 @@ namespace Hook\Traits;
 trait HandlesEvents
 {
     /**
-     * The X-GitHub-Event header, i.e push, issue, etc.
+     * The event header.
      *
      * @var string
      */
     private $event;
 
     /**
-     * The events the API will listen to.
+     * The registered event listeners.
      *
      * @var array
      */
     public $listeners = [];
 
     /**
-     * Register the event and send the payload to its configured class.
+     * Register the event and delegate to the appropriate handler.
      *
      * @return void
      */
@@ -49,14 +49,11 @@ trait HandlesEvents
     }
 
     /**
-     * Sets the events to listen to
-     * Needs to be declared to create any output
-     * Empty array watches all events
-     * Can be complemented with callback functions.
+     * Set the event listeners.
      *
-     * @param array $listeners Array of events
+     * @param array $listeners
      *
-     * @return object | false   false if event is not being watched
+     * @return mixed
      */
     public function listen(array $listeners = [])
     {

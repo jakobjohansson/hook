@@ -33,7 +33,14 @@ abstract class TestCase extends BaseTest
      *
      * @var array
      */
-    public $gitlab;
+    public $gitLab;
+
+    /**
+     * The map of pre defined BitBucket payloads.
+     *
+     * @var array
+     */
+    public $bitBucket;
 
     /**
      * Whether the request includes authorization.
@@ -61,6 +68,7 @@ abstract class TestCase extends BaseTest
         $this->client = new Client(['base_uri' => 'http://localhost:8000']);
         $this->gitHub = PayloadMap::GitHub();
         $this->gitLab = PayloadMap::GitLab();
+        $this->bitBucket = PayloadMap::BitBucket();
     }
 
     /**

@@ -14,7 +14,8 @@
         }
     ],
     "scripts": {
-        "test": "./vendor/bin/phpunit"
+        "boot": "@php -S localhost:8000 tests/server.php &",
+        "test": "phpunit"
     },
     "autoload": {
         "psr-4": {
@@ -25,5 +26,12 @@
        "psr-4": {
            "Hook\\Tests\\": "tests/"
        }
-   }
+   },
+   "extra": {
+       "scripts-description": {
+           "boot": "Boot up a temporary test server.",
+           "test": "Run all tests."
+       }
+    }
+
 }
