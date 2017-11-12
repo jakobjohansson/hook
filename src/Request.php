@@ -7,7 +7,7 @@ class Request
     /**
      * Fetch the request method.
      *
-     * @return string Request method
+     * @return string
      */
     public static function method()
     {
@@ -17,7 +17,7 @@ class Request
     /**
      * Fetch a POST input.
      *
-     * @param string $name name of the input
+     * @param string $name
      *
      * @return mixed
      */
@@ -27,7 +27,7 @@ class Request
     }
 
     /**
-     * Returns an array of the request headers.
+     * Fetch all request headers.
      *
      * @return array
      */
@@ -37,7 +37,7 @@ class Request
     }
 
     /**
-     * Returns a specified header.
+     * Fetch a specified header.
      *
      * @param string $header
      *

@@ -14,7 +14,7 @@ composer dump-autoload --optimize
 ```
 
 ### GitHub integration
-To set up the API for GitHub, first we need to enable the webhook in our repository. This can be done in the repository settings, where we will have to provide the URL for the webhook, then we will configure what events will be fired. We also have an option to set a secret token, to protect our API from invaders. If we don't set a secret, we will skip the second parameter down below. After we have done that, we will tell the API to listen to GitHub events:
+To set up the API for GitHub, first we need to enable the webhook in our repository. This can be done in the repository settings, where we will have to provide the URL for the webhook, then we will configure what events will be fired. We also have an option to set a secret token, to protect our API from invaders. If we don't set a secret, we will skip the parameter down below. After we have done that, we will tell the API to listen to GitHub events:
 ```php
 $hook = Hook\Hook::GitHub($secret);
 ```
@@ -39,11 +39,13 @@ function dumpPushOnly($content) {
 
 $hook->listen(['release', 'issues', 'push' => 'dumpPushOnly']);
 ```
-The **release** and **issues** events can be handled with `$hook->output` as normal. The **push** however, will be sent automatically to our assigned function.
+Now, the **release** and **issues** events can be handled with `$hook->output` as normal. The **push** however, will be sent automatically to our assigned function.
 
 #### Currently supported listeners
 Right now these events can be listened to:
 - create, delete, fork, gollum, issue_comment, issues, push, commit_comment, label, member, membership, milestone, organization, org_block, page_build, project, project_card, project_column, public, pull_request, pull_request_review, pull_request_review_comment, release, repository, team, team_add, watch.
+
+Head to the [GitHub Event documentation](https://developer.github.com/v3/activity/events/types/) for more information.
 
 ### GitLab integration
 Setting the hook up with GitLab is the same as GitHub; only there are fewer events to choose from and they have a different name pattern. Start by declaring the hook and an optional secret:
@@ -59,6 +61,24 @@ You can now provide callback functions as usual.
 #### Currently supported listeners
 All current GitLab hooks are supported, including:
 - Push Hook, Tag Push Hook, Issue Hook , Note Hook, Merge Request Hook, Wiki Page Hook, Pipeline Hook, Build Hook.
+
+Head to the [GitLab Event documentation](https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#events) for more information.
+
+### BitBucket integration
+Unfortunately, BitBucket doesn't provide a way to authorize requests. Everything is still the same though:
+```php
+$hook = Hook\Hook::BitBucket();
+```
+And then provide listeners as usual:
+```php
+$hook->listen(['pullrequest:created', 'repo:push']);
+```
+
+#### Currently supported listeners
+All BitBucket hooks are supported:
+- repo:push, repo:fork, repo:updated, repo:transfer, repo:commit_comment_created, repo:commit_status_created, repo:commit_status_updated, issue:created, issue:updated, issue:comment_created, pullrequest:created, pullrequest:updated, pullrequest:approved, pullrequest:unapproved, pullrequest:fulfilled, pullrequest:rejected, pullrequest:comment_created, pullrequest:comment_updated, pullrequest:comment_deleted
+
+Head to the [BitBucket Event documentation](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html) for more information.
 
 ### Troubleshooting
 The hook method `getApiMessages()` will return an array with errors from the current request.

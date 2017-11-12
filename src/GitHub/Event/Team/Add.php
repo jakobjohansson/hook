@@ -11,10 +11,10 @@ class Add extends Event
      *
      * @var object
      */
-    public $team = '';
+    public $team;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

@@ -9,19 +9,19 @@ class Tag extends Event
      *
      * @var string
      */
-    public $user_name = '';
+    public $user_name;
 
     /**
-     * The ref pushed.
+     * The tag reference.
      *
      * @var string
      */
-    public $ref = '';
+    public $ref;
 
     /**
-     * Gets the payload and selects the necessary properties.
+     * Get the payload and select the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {
@@ -32,6 +32,11 @@ class Tag extends Event
         }
     }
 
+    /**
+     * Proxy the object properties into a string.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return $this->user_name . ' just pushed the tag '

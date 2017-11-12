@@ -5,7 +5,7 @@ namespace Hook;
 class EventMap
 {
     /**
-     * Returns the GitHub Event map.
+     * Return the GitHub Event map.
      *
      * @return array
      */
@@ -43,7 +43,7 @@ class EventMap
     }
 
     /**
-     * Returns the GitLab Event map.
+     * Return the GitLab Event map.
      *
      * @return array
      */
@@ -58,6 +58,36 @@ class EventMap
             'Wiki Page Hook'     => 'Hook\GitLab\Event\Wiki',
             'Pipeline Hook'      => 'Hook\GitLab\Event\Pipeline',
             'Build Hook'         => 'Hook\GitLab\Event\Build',
+        ];
+    }
+
+    /**
+     * Return the BitBucket Event map.
+     *
+     * @return array
+     */
+    public static function BitBucket()
+    {
+        return [
+            'repo:push'                   => 'Hook\BitBucket\Event\Repository\Push',
+            'repo:fork'                   => 'Hook\BitBucket\Event\Repository\Fork',
+            'repo:updated'                => 'Hook\BitBucket\Event\Repository\Updated',
+            'repo:transfer'               => 'Hook\BitBucket\Event\Repository\Transfer',
+            'repo:commit_comment_created' => 'Hook\BitBucket\Event\Repository\CommitCommentCreated',
+            'repo:commit_status_created'  => 'Hook\BitBucket\Event\Repository\CommitStatus',
+            'repo:commit_status_updated'  => 'Hook\BitBucket\Event\Repository\CommitStatus',
+            'issue:created'               => 'Hook\BitBucket\Event\Issue\Created',
+            'issue:updated'               => 'Hook\BitBucket\Event\Issue\Updated',
+            'issue:comment_created'       => 'Hook\BitBucket\Event\Issue\CommentCreated',
+            'pullrequest:created'         => 'Hook\BitBucket\Event\PullRequest\Created',
+            'pullrequest:updated'         => 'Hook\BitBucket\Event\PullRequest\Updated',
+            'pullrequest:approved'        => 'Hook\BitBucket\Event\PullRequest\Approved',
+            'pullrequest:unapproved'      => 'Hook\BitBucket\Event\PullRequest\Unapproved',
+            'pullrequest:fulfilled'       => 'Hook\BitBucket\Event\PullRequest\Fulfilled',
+            'pullrequest:rejected'        => 'Hook\BitBucket\Event\PullRequest\Rejected',
+            'pullrequest:comment_created' => 'Hook\BitBucket\Event\PullRequest\Comment\Created',
+            'pullrequest:comment_updated' => 'Hook\BitBucket\Event\PullRequest\Comment\Updated',
+            'pullrequest:comment_deleted' => 'Hook\BitBucket\Event\PullRequest\Comment\Deleted',
         ];
     }
 }

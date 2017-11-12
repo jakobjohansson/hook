@@ -7,7 +7,7 @@ use Hook\GitHub\Event\Event;
 class PublicRepository extends Event
 {
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

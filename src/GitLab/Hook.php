@@ -13,9 +13,11 @@ class Hook extends BaseHook
     use MapsEvents, HandlesEvents, Authenticates;
 
     /**
-     * Checking for X-Gitlab-Event header and authorizing.
+     * Create a new Hook instance.
      *
-     * @param string $secret the authorization key
+     * @param string $secret
+     *
+     * @return mixed
      */
     public function __construct($secret = null)
     {
@@ -40,10 +42,9 @@ class Hook extends BaseHook
     }
 
     /**
-     * Authorizing method with the helper functions secretValidator() and checkSecret()
-     * Sends message to apiMessages if a problem occurs.
+     * Authorize the request provided a signature.
      *
-     * @return bool true | false
+     * @return bool
      */
     private function auth()
     {
@@ -55,7 +56,7 @@ class Hook extends BaseHook
 
         $this->signature = $this->headers['HTTP_X_GITLAB_TOKEN'];
 
-        if (!$this->checkSecret()) {
+        if (!$this->validate()) {
             $this->apiMessages[] = 'Signature not authorized';
 
             return false;
@@ -67,11 +68,11 @@ class Hook extends BaseHook
     }
 
     /**
-     * Compares the hashes provided by the webhook and the user.
+     * Compare the hashes provided by the request and the server.
      *
-     * @return bool hash
+     * @return bool
      */
-    private function checkSecret()
+    private function validate()
     {
         return $this->signature === $this->secret;
     }

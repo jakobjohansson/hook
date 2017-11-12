@@ -9,12 +9,12 @@ class Issue extends Event
      *
      * @var object
      */
-    public $user = '';
+    public $user;
 
     /**
-     * Gets the payload and selects the necessary properties.
+     * Get the payload and select the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {
@@ -25,6 +25,11 @@ class Issue extends Event
         }
     }
 
+    /**
+     * Proxy the object properties into a string.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return $this->user->name . " just opened a new <a href='"

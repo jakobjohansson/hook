@@ -12,9 +12,9 @@ class Pipeline extends Event
     public $user;
 
     /**
-     * Gets the payload and selects the necessary properties.
+     * Get the payload and select the necessary properties.
      *
-     * @param object $payload JSON
+     * @param mixed $payload
      */
     public function __construct($payload)
     {
@@ -25,6 +25,11 @@ class Pipeline extends Event
         }
     }
 
+    /**
+     * Proxy the object properties into a string.
+     *
+     * @return string
+     */
     public function __toString()
     {
         return $this->user->name . " just changed the status of a pipeline in the <a href='" . $this->project->web_url

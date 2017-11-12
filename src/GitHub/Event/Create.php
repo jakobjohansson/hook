@@ -9,24 +9,24 @@ class Create extends Event
      *
      * @var string
      */
-    public $ref = '';
+    public $ref;
 
     /**
      * The type of object that was created.
      *
      * @var string
      */
-    public $ref_type = '';
+    public $ref_type;
 
     /**
      * The description of the current repository.
      *
      * @var string
      */
-    public $description = '';
+    public $description;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

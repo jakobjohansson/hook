@@ -9,17 +9,17 @@ class Membership extends Member
      *
      * @var string
      */
-    public $scope = '';
+    public $scope;
 
     /**
      * The team of the membership.
      *
      * @var object
      */
-    public $team = '';
+    public $team;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */

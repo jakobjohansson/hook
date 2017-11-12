@@ -11,17 +11,17 @@ class Card extends Event
      *
      * @var string
      */
-    public $action = '';
+    public $action;
 
     /**
      * The project card object.
      *
      * @var object
      */
-    public $project_card = '';
+    public $project_card;
 
     /**
-     * The output to be sent to front end.
+     * Proxy the object properties into a string.
      *
      * @return string
      */
