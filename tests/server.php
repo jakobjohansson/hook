@@ -26,7 +26,7 @@ if (isset($_GET['auth'])) {
     $gitlab->listen();
 
     echo $gitlab->output;
-  
+
     $bitbucket = Hook\Hook::BitBucket();
 
     $bitbucket->listen();
