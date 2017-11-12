@@ -5,35 +5,35 @@ namespace Hook;
 class Hook
 {
     /**
-     * The webhook headers.
+     * The request headers.
      *
      * @var array
      */
     public $headers;
 
     /**
-     * The content type header.
+     * The content-type header.
      *
      * @var string
      */
     protected $contentType;
 
     /**
-     * The transmission payload encoded in JSON.
+     * The request payload.
      *
      * @var object
      */
     public $payload = null;
 
     /**
-     * The final formatted output string,.
+     * The final formatted output string.
      *
      * @var string
      */
     public $output = null;
 
     /**
-     * Messages from the API used for trouble shooting or status texts.
+     * Messages from the API used for troubleshooting or status texts.
      *
      * @var array
      */
