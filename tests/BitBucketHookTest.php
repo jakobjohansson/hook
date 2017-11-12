@@ -107,4 +107,85 @@ class BitBucketHookTest extends TestCase
 
         $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/issue_id'>commented on an issue</a> in the team_name/repo_name repository.");
     }
+
+    public function testPullRequestCreatedEvent()
+    {
+        $this->event('pullrequest:created');
+
+        $this->payload($this->bitBucket['pullrequest:created']);
+
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>opened a pull request</a> in the team_name/repo_name repository.");
+    }
+
+    public function testPullRequestUpdatedEvent()
+    {
+        $this->event('pullrequest:updated');
+
+        $this->payload($this->bitBucket['pullrequest:updated']);
+
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>updated a pull request</a> in the team_name/repo_name repository.");
+    }
+
+    public function testPullRequestApprovedEvent()
+    {
+        $this->event('pullrequest:approved');
+
+        $this->payload($this->bitBucket['pullrequest:approved']);
+
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>approved a pull request</a> in the team_name/repo_name repository.");
+    }
+
+    public function testPullRequestUnapprovedEvent()
+    {
+        $this->event('pullrequest:unapproved');
+
+        $this->payload($this->bitBucket['pullrequest:unapproved']);
+
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>removed their approval from a pull request</a> in the team_name/repo_name repository.");
+    }
+
+    public function testPullRequestFulfilledEvent()
+    {
+        $this->event('pullrequest:fulfilled');
+
+        $this->payload($this->bitBucket['pullrequest:fulfilled']);
+
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>merged a pull request</a> in the team_name/repo_name repository.");
+    }
+
+    public function testPullRequestRejectedEvent()
+    {
+        $this->event('pullrequest:rejected');
+
+        $this->payload($this->bitBucket['pullrequest:rejected']);
+
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>rejected a pull request</a> in the team_name/repo_name repository.");
+    }
+
+    public function testPullRequestCommentCreatedEvent()
+    {
+        $this->event('pullrequest:comment_created');
+
+        $this->payload($this->bitBucket['pullrequest:comment_created']);
+
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/comment_id'>commented</a> on a pull request in the team_name/repo_name repository.");
+    }
+
+    public function testPullRequestCommentUpdatedEvent()
+    {
+        $this->event('pullrequest:comment_updated');
+
+        $this->payload($this->bitBucket['pullrequest:comment_updated']);
+
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/comment_id'>updated their comment</a> on a pull request in the team_name/repo_name repository.");
+    }
+
+    public function testPullRequestCommentDeletedEvent()
+    {
+        $this->event('pullrequest:comment_deleted');
+
+        $this->payload($this->bitBucket['pullrequest:comment_deleted']);
+
+        $this->assertSame($this->response(), "emmap1 just deleted their comment on a <a href='https://api.bitbucket.org/pullrequest_id'>pull request</a> in the team_name/repo_name repository.");
+    }
 }
