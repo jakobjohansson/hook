@@ -152,4 +152,13 @@ class GitLabHookTest extends TestCase
 
         $this->assertSame($this->response(), "John Smith just pushed 4 commit(s) to the <a href='http://example.com/mike/diaspora'>Diaspora</a> repository.");
     }
+
+    public function testUsingCallbackWithPushEvent()
+    {
+        $this->event('Push Hook')->useCallback();
+
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), 'Diaspora');
+    }
 }

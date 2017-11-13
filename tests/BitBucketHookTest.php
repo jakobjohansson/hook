@@ -190,4 +190,13 @@ class BitBucketHookTest extends TestCase
 
         $this->assertSame($this->response(), "emmap1 just deleted their comment on a <a href='https://api.bitbucket.org/pullrequest_id'>pull request</a> in the team_name/repo_name repository.");
     }
+
+    public function testUsingCallbackWithPushEvent()
+    {
+        $this->event('repo:push')->useCallback();
+
+        $this->payload($this->bitBucket['repo:push']);
+
+        $this->assertSame($this->response(), 'team_name/repo_name');
+    }
 }

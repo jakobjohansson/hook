@@ -25,20 +25,38 @@ if ($_GET['type'] === 'GitLab') {
         $gitlab = Hook\Hook::GitLab('correct-signature');
     }
 
-    $gitlab->listen();
+    if (isset($_GET['callback'])) {
+        $gitlab->listen(['Push Hook' => 'gitlabCallback']);
+    } else {
+        $gitlab->listen();
 
-    echo $gitlab->output;
+        echo $gitlab->output;
+    }
 }
 
 if ($_GET['type'] === 'BitBucket') {
     $bitbucket = Hook\Hook::BitBucket();
 
-    $bitbucket->listen();
+    if (isset($_GET['callback'])) {
+        $bitbucket->listen(['repo:push' => 'bitbucketCallback']);
+    } else {
+        $bitbucket->listen();
 
-    echo $bitbucket->output;
+        echo $bitbucket->output;
+    }
 }
 
 function githubCallback($event)
 {
-    echo $event->repository->name;
+    echo $event->repository->full_name;
+}
+
+function gitlabCallback($event)
+{
+    echo $event->project->name;
+}
+
+function bitbucketCallback($event)
+{
+    echo $event->repository->full_name;
 }
