@@ -18,7 +18,7 @@ $hook->listen(['push', 'issue']);
 ```
 If you wish to listen to all events, simply don't provide an argument at all.
 
-#### Which events are available?
+#### What events are available?
 The [GitHub documentation](https://developer.github.com/v3/activity/events/types/) provides a full list of events available.
 
 ### Get some output
@@ -47,3 +47,11 @@ function issueCallback($event) {
 
 ### Error messages
 `$hook->errors` provides an array for troubleshooting or logging when something went wrong, for example when an invalid event was entered, an authentication token didn't match or a callback was missing.
+
+## Receive webhooks from GitLab and BitBucket
+The process is pretty much the same, only with different event labels, which can be found [here](https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#events) for GitLab and [here](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html) for BitBucket.
+
+Of course, also switch the hook method to `Hook\Hook::GitLab()` or `Hook\Hook::BitBucket()`.
+
+### Observe when using BitBucket
+BitBucket does currently not support authentication tokens in their webhooks.
