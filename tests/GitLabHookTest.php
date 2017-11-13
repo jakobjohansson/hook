@@ -15,6 +15,8 @@ class GitLabHookTest extends TestCase
     {
         $this->headers['X-Gitlab-Event'] = $event;
 
+        $this->query['type'] = 'GitLab';
+
         return $this;
     }
 
@@ -29,7 +31,7 @@ class GitLabHookTest extends TestCase
     {
         $this->headers['X-Gitlab-Token'] = $signature;
 
-        $this->auth = true;
+        $this->query['auth'] = 'true';
 
         return $this;
     }
@@ -133,13 +135,24 @@ class GitLabHookTest extends TestCase
         $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/snippets/53#note_1245'>commented on a snippet</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
     }
 
-    public function testHookShouldNotPrintAnythingWhenNotAuthorized()
+    public function testHookShouldGetErrorMessageWhenNotAuthorized()
     {
         $this->event('Push Hook')->signature('incorrectlyformattedsignature');
 
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSame($this->response(), '');
+        $this->assertSame($this->response(), 'Signature not authorized');
+    }
+
+    public function testHookShouldGetErrorMessageWhenNoAuthenticationSecret()
+    {
+        $this->event('Push Hook');
+
+        $this->query['auth'] = 'true';
+
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), 'No signature provided');
     }
 
     public function testHookShouldWorkAsNormalWhenAuthorized()
@@ -149,5 +162,33 @@ class GitLabHookTest extends TestCase
         $this->payload($this->gitLab['Push Hook']);
 
         $this->assertSame($this->response(), "John Smith just pushed 4 commit(s) to the <a href='http://example.com/mike/diaspora'>Diaspora</a> repository.");
+    }
+
+    public function testUsingCallbackWithPushEvent()
+    {
+        $this->event('Push Hook')->useCallback();
+
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), 'Diaspora');
+    }
+
+    public function testHookShouldGiveErrorWhenNoEventHeaderIsPresent()
+    {
+        $this->query = ['type' => 'GitLab'];
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), 'GitLab Event header not present');
+    }
+
+    public function testHookShouldGiveErrorWhenInvalidEventIsWatched()
+    {
+        $this->event('Push Hook');
+
+        $this->query['invalid-event'] = 'true';
+
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), "Can't watch an invalid event");
     }
 }

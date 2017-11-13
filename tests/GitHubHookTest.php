@@ -4,6 +4,38 @@ namespace Hook\Tests;
 
 class GitHubHookTest extends TestCase
 {
+    /**
+     * Set the event header.
+     *
+     * @param string $event
+     *
+     * @return $this
+     */
+    public function event($event)
+    {
+        $this->headers['X-GitHub-Event'] = $event;
+
+        $this->query['type'] = 'GitHub';
+
+        return $this;
+    }
+
+    /**
+     * Set the signature header.
+     *
+     * @param string $signature
+     *
+     * @return $this
+     */
+    public function signature($signature)
+    {
+        $this->headers['X-Hub-Signature'] = $signature;
+
+        $this->query['auth'] = 'true';
+
+        return $this;
+    }
+
     public function testCommitCommentEvent()
     {
         $this->event('commit_comment');
@@ -247,13 +279,24 @@ class GitHubHookTest extends TestCase
         $this->assertSame($this->response(), "<a href='https://github.com/baxterthehacker'>baxterthehacker</a> just watched the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
-    public function testHookShouldNotPrintAnythingWhenNotAuthorized()
+    public function testHookShouldGetErrorMessageWhenNotAuthorized()
     {
         $this->event('push')->signature('incorrectlyformattedsignature');
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSame($this->response(), '');
+        $this->assertSame($this->response(), 'Signature not authorized');
+    }
+
+    public function testHookShouldGetErrorMessageWhenNoAuthenticationSecret()
+    {
+        $this->event('push');
+
+        $this->query['auth'] = 'true';
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), 'No signature provided');
     }
 
     public function testHookShouldWorkAsNormalWhenAuthorized()
@@ -263,5 +306,34 @@ class GitHubHookTest extends TestCase
         $this->payload($this->gitHub['push']);
 
         $this->assertSame($this->response(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
+    }
+
+    public function testUsingCallbackWithPushEvent()
+    {
+        $this->event('push')->useCallback();
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), 'baxterthehacker/public-repo');
+    }
+
+    public function testHookShouldGiveErrorWhenNoEventHeaderIsPresent()
+    {
+        $this->query = ['type' => 'GitHub'];
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), 'GitHub Event header not present');
+    }
+
+    public function testHookShouldGiveErrorWhenInvalidEventIsWatched()
+    {
+        $this->event('push');
+
+        $this->query['invalid-event'] = 'true';
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), "Can't watch an invalid event");
     }
 }

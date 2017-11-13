@@ -2,34 +2,91 @@
 
 require './vendor/autoload.php';
 
-if (isset($_GET['auth'])) {
-    $github = Hook\Hook::GitHub('correct-signature');
-
-    $github->listen();
-
-    echo $github->output;
-
-    $gitlab = Hook\Hook::GitLab('correct-signature');
-
-    $gitlab->listen();
-
-    echo $gitlab->output;
-} else {
+if ($_GET['type'] === 'GitHub') {
     $github = Hook\Hook::GitHub();
 
-    $github->listen();
+    if (isset($_GET['auth'])) {
+        $github = Hook\Hook::GitHub('correct-signature');
+    }
 
-    echo $github->output;
+    if (isset($_GET['callback'])) {
+        $github->listen(['push' => 'githubCallback']);
+    } else {
+        if (isset($_GET['invalid-event'])) {
+            $github->listen(['jaksd', 'push']);
+        } else {
+            $github->listen();
+        }
 
+        echo $github->output;
+
+        if (count($github->errors)) {
+            foreach ($github->errors as $error) {
+                echo $error;
+            }
+        }
+    }
+}
+
+if ($_GET['type'] === 'GitLab') {
     $gitlab = Hook\Hook::GitLab();
 
-    $gitlab->listen();
+    if (isset($_GET['auth'])) {
+        $gitlab = Hook\Hook::GitLab('correct-signature');
+    }
 
-    echo $gitlab->output;
+    if (isset($_GET['callback'])) {
+        $gitlab->listen(['Push Hook' => 'gitlabCallback']);
+    } else {
+        if (isset($_GET['invalid-event'])) {
+            $gitlab->listen(['jaksd', 'Push Hook']);
+        } else {
+            $gitlab->listen();
+        }
 
+        echo $gitlab->output;
+
+        if (count($gitlab->errors)) {
+            foreach ($gitlab->errors as $error) {
+                echo $error;
+            }
+        }
+    }
+}
+
+if ($_GET['type'] === 'BitBucket') {
     $bitbucket = Hook\Hook::BitBucket();
 
-    $bitbucket->listen();
+    if (isset($_GET['callback'])) {
+        $bitbucket->listen(['repo:push' => 'bitbucketCallback']);
+    } else {
+        if (isset($_GET['invalid-event'])) {
+            $bitbucket->listen(['jaksd', 'repo:push']);
+        } else {
+            $bitbucket->listen();
+        }
 
-    echo $bitbucket->output;
+        echo $bitbucket->output;
+
+        if (count($bitbucket->errors)) {
+            foreach ($bitbucket->errors as $error) {
+                echo $error;
+            }
+        }
+    }
+}
+
+function githubCallback($event)
+{
+    echo $event->repository->full_name;
+}
+
+function gitlabCallback($event)
+{
+    echo $event->project->name;
+}
+
+function bitbucketCallback($event)
+{
+    echo $event->repository->full_name;
 }

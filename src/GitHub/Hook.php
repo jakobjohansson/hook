@@ -4,7 +4,7 @@ namespace Hook\GitHub;
 
 use Hook\Request;
 use Hook\Hook as BaseHook;
-use Hook\Traits\Authenticates;
+use Hook\Concerns\Authenticates;
 
 class Hook extends BaseHook
 {
@@ -58,6 +58,8 @@ class Hook extends BaseHook
         }
 
         if (strpos(Request::header('HTTP_X_HUB_SIGNATURE'), 'sha1=') !== 0) {
+            $this->errors[] = 'Signature not authorized';
+
             return false;
         }
 

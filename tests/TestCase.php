@@ -43,11 +43,11 @@ abstract class TestCase extends BaseTest
     public $bitBucket;
 
     /**
-     * Whether the request includes authorization.
+     * Queries sent to the server to differentiate between testing modes.
      *
-     * @var string
+     * @var array
      */
-    public $auth;
+    public $query;
 
     /**
      * The headers for the request.
@@ -72,6 +72,18 @@ abstract class TestCase extends BaseTest
     }
 
     /**
+     * Modify the request to use a callback.
+     *
+     * @return $this
+     */
+    public function useCallback()
+    {
+        $this->query['callback'] = 'true';
+
+        return $this;
+    }
+
+    /**
      * Set the payload to send.
      *
      * @param array $payload
@@ -86,36 +98,6 @@ abstract class TestCase extends BaseTest
     }
 
     /**
-     * Set the event header.
-     *
-     * @param string $event
-     *
-     * @return $this
-     */
-    public function event($event)
-    {
-        $this->headers['X-GitHub-Event'] = $event;
-
-        return $this;
-    }
-
-    /**
-     * Set the signature header.
-     *
-     * @param string $signature
-     *
-     * @return $this
-     */
-    public function signature($signature)
-    {
-        $this->headers['X-Hub-Signature'] = $signature;
-
-        $this->auth = true;
-
-        return $this;
-    }
-
-    /**
      * Perform a request.
      *
      * @return string
@@ -123,7 +105,7 @@ abstract class TestCase extends BaseTest
     public function response()
     {
         return (string) $this->client->request('POST', '', [
-            'query'   => $this->auth ? ['auth' => 'true'] : null,
+            'query'   => $this->query,
             'headers' => $this->headers,
             'json'    => json_decode($this->payload, true),
         ])->getBody();

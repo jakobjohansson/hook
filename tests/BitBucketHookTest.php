@@ -15,6 +15,8 @@ class BitBucketHookTest extends TestCase
     {
         $this->headers['X-Event-Key'] = $event;
 
+        $this->query['type'] = 'BitBucket';
+
         return $this;
     }
 
@@ -187,5 +189,33 @@ class BitBucketHookTest extends TestCase
         $this->payload($this->bitBucket['pullrequest:comment_deleted']);
 
         $this->assertSame($this->response(), "emmap1 just deleted their comment on a <a href='https://api.bitbucket.org/pullrequest_id'>pull request</a> in the team_name/repo_name repository.");
+    }
+
+    public function testUsingCallbackWithPushEvent()
+    {
+        $this->event('repo:push')->useCallback();
+
+        $this->payload($this->bitBucket['repo:push']);
+
+        $this->assertSame($this->response(), 'team_name/repo_name');
+    }
+
+    public function testHookShouldGiveErrorWhenNoEventHeaderIsPresent()
+    {
+        $this->query = ['type' => 'BitBucket'];
+        $this->payload($this->bitBucket['repo:push']);
+
+        $this->assertSame($this->response(), 'BitBucket Event header not present');
+    }
+
+    public function testHookShouldGiveErrorWhenInvalidEventIsWatched()
+    {
+        $this->event('repo:push');
+
+        $this->query['invalid-event'] = 'true';
+
+        $this->payload($this->bitBucket['repo:push']);
+
+        $this->assertSame($this->response(), "Can't watch an invalid event");
     }
 }
