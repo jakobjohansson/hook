@@ -59,7 +59,7 @@ class Hook extends BaseHook
 
         if (strpos(Request::header('HTTP_X_HUB_SIGNATURE'), 'sha1=') !== 0) {
             $this->errors[] = 'Signature not authorized';
-            
+
             return false;
         }
 
