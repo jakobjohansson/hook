@@ -23,7 +23,7 @@ class Hook extends BaseHook
         $this->setEventMap(EventMap::GitLab());
 
         if (!Request::header('HTTP_X_GITLAB_EVENT')) {
-            $this->apiMessages[] = 'GitLab Event header not present';
+            $this->errors[] = 'GitLab Event header not present';
 
             return;
         }
@@ -45,7 +45,7 @@ class Hook extends BaseHook
     private function auth()
     {
         if (!Request::header('HTTP_X_GITLAB_TOKEN')) {
-            $this->apiMessages[] = 'No signature provided';
+            $this->errors[] = 'No signature provided';
 
             return false;
         }
@@ -53,7 +53,7 @@ class Hook extends BaseHook
         $this->signature = Request::header('HTTP_X_GITLAB_TOKEN');
 
         if (!$this->validate()) {
-            $this->apiMessages[] = 'Signature not authorized';
+            $this->errors[] = 'Signature not authorized';
 
             return false;
         }

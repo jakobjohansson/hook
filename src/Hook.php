@@ -17,21 +17,11 @@ abstract class Hook
     public $output = null;
 
     /**
-     * Messages from the API used for troubleshooting or status texts.
+     * Errors thrown by the hook.
      *
      * @var array
      */
-    protected $apiMessages = [];
-
-    /**
-     * Return the API messages.
-     *
-     * @return array
-     */
-    public function getApiMessages()
-    {
-        return $this->apiMessages;
-    }
+    public $errors = [];
 
     /**
      * Return a GitHub Hook service.

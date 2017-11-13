@@ -18,7 +18,7 @@ class Hook extends BaseHook
         $this->setEventMap(EventMap::BitBucket());
 
         if (!Request::header('HTTP_X_EVENT_KEY')) {
-            $this->apiMessages[] = 'BitBucket Event header not present';
+            $this->errors[] = 'BitBucket Event header not present';
 
             return;
         }

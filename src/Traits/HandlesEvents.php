@@ -41,7 +41,7 @@ trait HandlesEvents
     {
         if (!array_key_exists($this->event, $this->listeners) && !in_array($this->event, $this->listeners)) {
             if (!empty($this->event)) {
-                $this->apiMessages[] = "Not watching $this->event event";
+                $this->errors[] = "Not watching $this->event event";
             }
 
             return true;
@@ -69,7 +69,7 @@ trait HandlesEvents
 
         foreach ($listeners as $listener => $callback) {
             if (!in_array($listener, $this->defaultListeners) && !in_array($callback, $this->defaultListeners)) {
-                $this->apiMessages[] = "Can't watch an invalid event";
+                $this->errors[] = "Can't watch an invalid event";
 
                 return false;
             }
