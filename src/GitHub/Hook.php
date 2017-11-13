@@ -21,11 +21,11 @@ class Hook extends BaseHook
      * Create a new Hook instance.
      *
      * @param string $secret
-     * @param array $map
+     * @param array  $map
      *
      * @return mixed
      */
-    public function __construct($secret = null, array $map)
+    public function __construct($secret, array $map)
     {
         $this->map($map);
 
