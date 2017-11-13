@@ -14,7 +14,7 @@ abstract class Hook
      *
      * @var string
      */
-    public $output = null;
+    public $output;
 
     /**
      * The errors thrown by the hook.
