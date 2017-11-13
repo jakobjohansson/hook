@@ -13,7 +13,7 @@ $ composer dump-autoload --optimize
 ```
 
 ## Documentation
-Please refer to the [https://jakobjohansson.github.io/hook/](official documentation).
+Please refer to the [official documentation](https://jakobjohansson.github.io/hook/).
 
 ## License
 Hook is using the [MIT license](https://github.com/jakobjohansson/hook/blob/master/LICENSE.txt).
