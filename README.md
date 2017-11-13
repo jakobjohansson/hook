@@ -16,4 +16,4 @@ $ composer dump-autoload --optimize
 Please refer to the [https://jakobjohansson.github.io/hook/](official documentation).
 
 ## License
-Hook is using the [MIT license](https://github.com/jakobjohansson/hook/blob/master/LICENSE.txt)
+Hook is using the [MIT license](https://github.com/jakobjohansson/hook/blob/master/LICENSE.txt).
