@@ -9,7 +9,6 @@ if ($_GET['type'] === 'GitHub') {
         $github = Hook\Hook::GitHub('correct-signature');
     }
 
-
     $github->listen();
 
     echo $github->output;
