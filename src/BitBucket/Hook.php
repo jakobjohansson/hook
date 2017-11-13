@@ -5,13 +5,9 @@ namespace Hook\BitBucket;
 use Hook\Request;
 use Hook\EventMap;
 use Hook\Hook as BaseHook;
-use Hook\Traits\MapsEvents;
-use Hook\Traits\HandlesEvents;
 
 class Hook extends BaseHook
 {
-    use MapsEvents, HandlesEvents;
-
     /**
      * Create a new Hook instance.
      *

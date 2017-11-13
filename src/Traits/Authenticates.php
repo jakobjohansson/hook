@@ -9,7 +9,7 @@ trait Authenticates
      *
      * @var string
      */
-    private $secret = null;
+    protected $secret = null;
 
     /**
      * The secret provided in the token header.
@@ -23,7 +23,7 @@ trait Authenticates
      *
      * @var bool
      */
-    private $authenticated = false;
+    protected $authenticated = false;
 
     abstract protected function auth();
 

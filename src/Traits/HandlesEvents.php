@@ -9,14 +9,14 @@ trait HandlesEvents
      *
      * @var string
      */
-    private $event;
+    protected $event;
 
     /**
      * The registered event listeners.
      *
      * @var array
      */
-    public $listeners = [];
+    protected $listeners = [];
 
     /**
      * Register the event and delegate to the appropriate handler.

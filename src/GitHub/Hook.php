@@ -5,13 +5,11 @@ namespace Hook\GitHub;
 use Hook\Request;
 use Hook\EventMap;
 use Hook\Hook as BaseHook;
-use Hook\Traits\MapsEvents;
 use Hook\Traits\Authenticates;
-use Hook\Traits\HandlesEvents;
 
 class Hook extends BaseHook
 {
-    use MapsEvents, HandlesEvents, Authenticates;
+    use Authenticates;
 
     /**
      * The hash algorithm used in the X-GitHub-Signature header.

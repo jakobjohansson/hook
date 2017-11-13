@@ -2,8 +2,13 @@
 
 namespace Hook;
 
+use Hook\Traits\MapsEvents;
+use Hook\Traits\HandlesEvents;
+
 abstract class Hook
 {
+    use MapsEvents, HandlesEvents;
+    
     /**
      * The request headers.
      *
