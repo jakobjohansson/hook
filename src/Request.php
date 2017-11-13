@@ -60,7 +60,7 @@ class Request
                 return json_decode(file_get_contents('php://input'));
             break;
             case 'application/x-www-form-urlencoded':
-                return static::input('payload');
+                return json_decode(json_encode(static::input('payload')));
             break;
             default:
                 return false;
