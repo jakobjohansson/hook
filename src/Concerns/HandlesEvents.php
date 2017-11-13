@@ -41,7 +41,7 @@ trait HandlesEvents
     {
         if (!array_key_exists($this->event, $this->listeners) && !in_array($this->event, $this->listeners)) {
             if (!empty($this->event)) {
-                $this->errors[] = "Not watching $this->event event";
+                $this->errors[] = "Not watching {$this->event} event";
             }
 
             return true;
