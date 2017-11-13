@@ -23,7 +23,6 @@ class Hook extends BaseHook
     public function __construct($secret = null)
     {
         $this->setEventMap(EventMap::GitLab());
-        $this->fetchHeaders();
 
         if (!Request::header('HTTP_X_GITLAB_EVENT')) {
             $this->apiMessages[] = 'GitLab Event header not present';
