@@ -19,7 +19,7 @@ abstract class Event
     public $object_attributes;
 
     /**
-     * Get the payload and select the necessary properties.
+     * Iterate the payload and set properties.
      *
      * @param mixed $payload
      */
