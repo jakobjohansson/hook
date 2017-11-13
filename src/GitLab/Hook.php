@@ -38,7 +38,7 @@ class Hook extends BaseHook
     }
 
     /**
-     * Authorize the request provided a signature.
+     * Authenticate the request provided a signature.
      *
      * @return bool
      */
