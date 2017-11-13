@@ -24,7 +24,7 @@ class Hook extends BaseHook
      *
      * @return mixed
      */
-    public function __construct($secret = null, array $map)
+    public function __construct($secret, array $map)
     {
         $this->map($map);
 
