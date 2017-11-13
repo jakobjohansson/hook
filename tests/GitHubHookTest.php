@@ -305,7 +305,12 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
+        $this->assertSame($this->response(), $this->formResponse(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
+
+        // We need to change the signature since the payload differs when using different requests.
+        $this->signature('sha1=704b8e4f4e8ea2e03121bfaf1bc9f5c0c5744113');
+
+        $this->assertSame($this->formResponse(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
     }
 
     public function testUsingCallbackWithPushEvent()
