@@ -68,7 +68,7 @@ trait HandlesEvents
         }
 
         foreach ($listeners as $listener => $callback) {
-            if (!in_array($listener, $this->defaultListeners) && !in_array($callback, $this->defaultListeners)) {
+            if (!in_array($listener, $this->defaultListeners, true) && !in_array($callback, $this->defaultListeners, true)) {
                 $this->errors[] = "Can't watch an invalid event";
 
                 return false;
