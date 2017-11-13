@@ -69,9 +69,7 @@ class Hook extends BaseHook
             return false;
         }
 
-        $this->authenticated = true;
-
-        return true;
+        return $this->authenticated = true;
     }
 
     /**
@@ -87,6 +85,7 @@ class Hook extends BaseHook
                 json_encode(Request::payload()),
                 $this->secret
             ),
-            $this->signature);
+            $this->signature
+        );
     }
 }
