@@ -37,7 +37,7 @@ class Request
     }
 
     /**
-     * Fetch a specified header.
+     * Fetch a specific header.
      *
      * @param string $header
      *
@@ -46,5 +46,24 @@ class Request
     public static function header($header)
     {
         return $_SERVER[$header] ?? null;
+    }
+
+    /**
+     * Get the payload.
+     *
+     * @return mixed
+     */
+    public static function payload()
+    {
+        switch (static::header('CONTENT-TYPE')) {
+            case 'application/json':
+                return json_decode(file_get_contents('php://input'));
+            break;
+            case 'application/x-www-form-urlencoded':
+                return static::input('payload');
+            break;
+            default:
+                return false;
+        }
     }
 }
