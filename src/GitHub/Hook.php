@@ -4,7 +4,7 @@ namespace Hook\GitHub;
 
 use Hook\Request;
 use Hook\Hook as BaseHook;
-use Hook\Traits\Authenticates;
+use Hook\Concerns\Authenticates;
 
 class Hook extends BaseHook
 {

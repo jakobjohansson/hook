@@ -2,8 +2,8 @@
 
 namespace Hook;
 
-use Hook\Traits\MapsEvents;
-use Hook\Traits\HandlesEvents;
+use Hook\Concerns\MapsEvents;
+use Hook\Concerns\HandlesEvents;
 
 abstract class Hook
 {
