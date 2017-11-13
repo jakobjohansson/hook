@@ -8,27 +8,13 @@ use Hook\Traits\HandlesEvents;
 abstract class Hook
 {
     use MapsEvents, HandlesEvents;
-    
-    /**
-     * The request headers.
-     *
-     * @var array
-     */
-    public $headers;
-
-    /**
-     * The content-type header.
-     *
-     * @var string
-     */
-    protected $contentType;
 
     /**
      * The request payload.
      *
      * @var object
      */
-    public $payload = null;
+    public $payload;
 
     /**
      * The final formatted output string.
@@ -52,27 +38,6 @@ abstract class Hook
     public function getApiMessages()
     {
         return $this->apiMessages;
-    }
-
-    /**
-     * Fetch all the webhook headers and set them as object properties.
-     *
-     * @return void
-     */
-    protected function fetchHeaders()
-    {
-        $this->headers = Request::headers();
-        $this->contentType = Request::header('CONTENT_TYPE');
-    }
-
-    /**
-     * Fetch the payload from the webhook.
-     *
-     * @return void
-     */
-    protected function fetchPayload()
-    {
-        $this->payload = Request::payload();
     }
 
     /**
