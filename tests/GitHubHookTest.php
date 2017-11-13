@@ -296,4 +296,13 @@ class GitHubHookTest extends TestCase
 
         $this->assertSame($this->response(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
     }
+
+    public function testUsingCallbackWithRepoEvent()
+    {
+        $this->event('push')->useCallback();
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), 'baxterthehacker');
+    }
 }

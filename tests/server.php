@@ -9,10 +9,13 @@ if ($_GET['type'] === 'GitHub') {
         $github = Hook\Hook::GitHub('correct-signature');
     }
 
+    if (isset($_GET['callback'])) {
+        $github->listen(['push' => 'githubCallback']);
+    } else {
+        $github->listen();
 
-    $github->listen();
-
-    echo $github->output;
+        echo $github->output;
+    }
 }
 
 if ($_GET['type'] === 'GitLab') {
@@ -33,4 +36,9 @@ if ($_GET['type'] === 'BitBucket') {
     $bitbucket->listen();
 
     echo $bitbucket->output;
+}
+
+function githubCallback($event)
+{
+    echo $event->repository->name;
 }

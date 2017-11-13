@@ -72,6 +72,18 @@ abstract class TestCase extends BaseTest
     }
 
     /**
+     * Modify the request to use a callback.
+     *
+     * @return $this
+     */
+    public function useCallback()
+    {
+        $this->query['callback'] = 'true';
+
+        return $this;
+    }
+
+    /**
      * Set the payload to send.
      *
      * @param array $payload
