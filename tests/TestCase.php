@@ -122,4 +122,18 @@ abstract class TestCase extends BaseTest
             'form_params'    => ['payload' => json_decode($this->payload, true)],
         ])->getBody();
     }
+
+    /**
+     * Helper assertion method for asserting both requests in one moethod.
+     *
+     * @param  string $one
+     * @param  string $two
+     * @param  string $three
+     * @return void
+     */
+    public function assertSameThree($one, $two, $three)
+    {
+        $this->assertSame($one, $three);
+        $this->assertSame($two, $three);
+    }
 }
