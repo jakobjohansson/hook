@@ -15,7 +15,7 @@ class GitHubHookTest extends TestCase
     {
         $this->headers['X-GitHub-Event'] = $event;
 
-        $this->query['another'] = 'GitHub';
+        $this->query['type'] = 'GitHub';
 
         return $this;
     }

@@ -15,7 +15,7 @@ if ($_GET['type'] === 'GitHub') {
     echo $github->output;
 }
 
-if ($_GET['type'] === 'GitLab') {}
+if ($_GET['type'] === 'GitLab') {
     $gitlab = Hook\Hook::GitLab();
 
     if (isset($_GET['auth'])) {
