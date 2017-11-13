@@ -2,74 +2,67 @@
 
 namespace Hook\GitLab;
 
-use Hook\EventMap;
+use Hook\Request;
 use Hook\Hook as BaseHook;
-use Hook\Traits\MapsEvents;
 use Hook\Traits\Authenticates;
-use Hook\Traits\HandlesEvents;
 
 class Hook extends BaseHook
 {
-    use MapsEvents, HandlesEvents, Authenticates;
+    use Authenticates;
 
     /**
      * Create a new Hook instance.
      *
      * @param string $secret
+     * @param array  $map
      *
      * @return mixed
      */
-    public function __construct($secret = null)
+    public function __construct($secret, array $map)
     {
-        $this->setEventMap(EventMap::GitLab());
-        $this->fetchHeaders();
+        $this->map($map);
 
-        if (!array_key_exists('HTTP_X_GITLAB_EVENT', $this->headers)) {
-            $this->apiMessages[] = 'GitLab Event header not present';
+        if (!Request::header('HTTP_X_GITLAB_EVENT')) {
+            $this->errors[] = 'GitLab Event header not present';
 
             return;
         }
 
-        $this->event = $this->headers['HTTP_X_GITLAB_EVENT'];
+        $this->event = Request::header('HTTP_X_GITLAB_EVENT');
 
         if (isset($secret)) {
             $this->secret = $secret;
 
             return $this->auth();
         }
-
-        $this->fetchPayload();
     }
 
     /**
-     * Authorize the request provided a signature.
+     * Authenticate the request provided a signature.
      *
      * @return bool
      */
     private function auth()
     {
-        if (!array_key_exists('HTTP_X_GITLAB_TOKEN', $this->headers)) {
-            $this->apiMessages[] = 'No signature provided';
+        if (!Request::header('HTTP_X_GITLAB_TOKEN')) {
+            $this->errors[] = 'No signature provided';
 
             return false;
         }
 
-        $this->signature = $this->headers['HTTP_X_GITLAB_TOKEN'];
+        $this->signature = Request::header('HTTP_X_GITLAB_TOKEN');
 
         if (!$this->validate()) {
-            $this->apiMessages[] = 'Signature not authorized';
+            $this->errors[] = 'Signature not authorized';
 
             return false;
         }
 
-        $this->fetchPayload();
-        $this->authenticated = true;
-
-        return true;
+        return $this->authenticated = true;
     }
 
     /**
-     * Compare the hashes provided by the request and the server.
+     * Compare the signature and the secret.
      *
      * @return bool
      */

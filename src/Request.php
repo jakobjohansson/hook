@@ -5,7 +5,7 @@ namespace Hook;
 class Request
 {
     /**
-     * Fetch the request method.
+     * Get the request method.
      *
      * @return string
      */
@@ -15,7 +15,7 @@ class Request
     }
 
     /**
-     * Fetch a POST input.
+     * Get a POST input.
      *
      * @param string $name
      *
@@ -27,7 +27,7 @@ class Request
     }
 
     /**
-     * Fetch all request headers.
+     * Get all request headers.
      *
      * @return array
      */
@@ -37,7 +37,7 @@ class Request
     }
 
     /**
-     * Fetch a specified header.
+     * Get a specific header.
      *
      * @param string $header
      *
@@ -46,5 +46,24 @@ class Request
     public static function header($header)
     {
         return $_SERVER[$header] ?? null;
+    }
+
+    /**
+     * Get the payload.
+     *
+     * @return mixed
+     */
+    public static function payload()
+    {
+        switch (static::header('CONTENT_TYPE')) {
+            case 'application/json':
+                return json_decode(file_get_contents('php://input'));
+            break;
+            case 'application/x-www-form-urlencoded':
+                return static::input('payload');
+            break;
+            default:
+                return false;
+        }
     }
 }

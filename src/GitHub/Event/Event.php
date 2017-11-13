@@ -26,7 +26,7 @@ abstract class Event
     public $html_url;
 
     /**
-     * Get the payload and selects the necessary properties.
+     * Iterate the payload and set properties.
      *
      * @param mixed $payload
      */

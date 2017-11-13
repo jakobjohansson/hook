@@ -2,96 +2,29 @@
 
 namespace Hook;
 
-class Hook
+use Hook\Traits\MapsEvents;
+use Hook\Traits\HandlesEvents;
+
+abstract class Hook
 {
-    /**
-     * The request headers.
-     *
-     * @var array
-     */
-    public $headers;
+    use MapsEvents, HandlesEvents;
 
     /**
-     * The content-type header.
+     * The formatted output string.
      *
      * @var string
      */
-    protected $contentType;
+    public $output;
 
     /**
-     * The request payload.
-     *
-     * @var object
-     */
-    public $payload = null;
-
-    /**
-     * The final formatted output string.
-     *
-     * @var string
-     */
-    public $output = null;
-
-    /**
-     * Messages from the API used for troubleshooting or status texts.
+     * The errors thrown by the hook.
      *
      * @var array
      */
-    protected $apiMessages = [];
+    public $errors = [];
 
     /**
-     * Create a new Hook instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->fetchHeaders();
-        $this->fetchPayload();
-    }
-
-    /**
-     * Return the API messages.
-     *
-     * @return array
-     */
-    public function getApiMessages()
-    {
-        return $this->apiMessages;
-    }
-
-    /**
-     * Fetch all the webhook headers and set them as object properties.
-     *
-     * @return void
-     */
-    protected function fetchHeaders()
-    {
-        $this->headers = Request::headers();
-        $this->contentType = Request::header('CONTENT_TYPE');
-    }
-
-    /**
-     * Fetch the payload from the webhook.
-     *
-     * @return void
-     */
-    protected function fetchPayload()
-    {
-        switch ($this->contentType) {
-            case 'application/json':
-                $this->payload = json_decode(file_get_contents('php://input'));
-            break;
-            case 'application/x-www-form-urlencoded':
-                $this->payload = Request::input('payload');
-            break;
-            default:
-                $this->apiMessages[] = 'Invalid Content Type';
-        }
-    }
-
-    /**
-     * Return a GitHub Hook service.
+     * Return a GitHub hook.
      *
      * @param string $secret
      *
@@ -99,11 +32,11 @@ class Hook
      */
     public static function GitHub($secret = null)
     {
-        return new GitHub\Hook($secret);
+        return new GitHub\Hook($secret, EventMap::GitHub());
     }
 
     /**
-     * Return a GitLab Hook service.
+     * Return a GitLab hook.
      *
      * @param string $secret
      *
@@ -111,16 +44,16 @@ class Hook
      */
     public static function GitLab($secret = null)
     {
-        return new GitLab\Hook($secret);
+        return new GitLab\Hook($secret, EventMap::GitLab());
     }
 
     /**
-     * Return a Bitbucket Hook service.
+     * Return a Bitbucket hook.
      *
      * @return \Hook\BitBucket\Hook
      */
     public static function BitBucket()
     {
-        return new BitBucket\Hook();
+        return new BitBucket\Hook(EventMap::BitBucket());
     }
 }

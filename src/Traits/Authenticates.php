@@ -5,14 +5,14 @@ namespace Hook\Traits;
 trait Authenticates
 {
     /**
-     * The optional authorization key.
+     * The authentication key.
      *
      * @var string
      */
-    private $secret = null;
+    protected $secret;
 
     /**
-     * The secret provided in the token header.
+     * The request signature.
      *
      * @var string
      */
@@ -23,7 +23,7 @@ trait Authenticates
      *
      * @var bool
      */
-    private $authenticated = false;
+    protected $authenticated = false;
 
     abstract protected function auth();
 

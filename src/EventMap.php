@@ -5,7 +5,7 @@ namespace Hook;
 class EventMap
 {
     /**
-     * Return the GitHub Event map.
+     * Return the GitHub event map.
      *
      * @return array
      */
@@ -43,7 +43,7 @@ class EventMap
     }
 
     /**
-     * Return the GitLab Event map.
+     * Return the GitLab event map.
      *
      * @return array
      */
@@ -62,7 +62,7 @@ class EventMap
     }
 
     /**
-     * Return the BitBucket Event map.
+     * Return the BitBucket event map.
      *
      * @return array
      */
