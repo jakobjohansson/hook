@@ -55,3 +55,6 @@ Of course, also switch the hook method to `Hook\Hook::GitLab()` or `Hook\Hook::B
 
 ### Observe when using BitBucket
 BitBucket does currently not support authentication tokens in their webhooks.
+
+# License
+Hook is licensed under the [MIT License](https://github.com/jakobjohansson/hook/blob/master/LICENSE.txt).
