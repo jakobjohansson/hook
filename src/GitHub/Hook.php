@@ -42,8 +42,6 @@ class Hook extends BaseHook
 
             return $this->auth();
         }
-
-        $this->payload = Request::payload();
     }
 
     /**
@@ -71,7 +69,6 @@ class Hook extends BaseHook
             return false;
         }
 
-        $this->payload = Request::payload();
         $this->authenticated = true;
 
         return true;

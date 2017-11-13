@@ -10,13 +10,6 @@ abstract class Hook
     use MapsEvents, HandlesEvents;
 
     /**
-     * The request payload.
-     *
-     * @var object
-     */
-    public $payload;
-
-    /**
      * The final formatted output string.
      *
      * @var string

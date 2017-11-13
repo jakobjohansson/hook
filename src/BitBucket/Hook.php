@@ -24,7 +24,5 @@ class Hook extends BaseHook
         }
 
         $this->event = Request::header('HTTP_X_EVENT_KEY');
-
-        $this->payload = Request::payload();
     }
 }

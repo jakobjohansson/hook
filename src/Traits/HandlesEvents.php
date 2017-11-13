@@ -2,6 +2,8 @@
 
 namespace Hook\Traits;
 
+use Hook\Request;
+
 trait HandlesEvents
 {
     /**
@@ -26,7 +28,7 @@ trait HandlesEvents
     private function registerEvent()
     {
         if (array_key_exists($this->event, $this->eventMap)) {
-            $this->output = new $this->eventMap[$this->event]($this->payload);
+            $this->output = new $this->eventMap[$this->event](Request::payload());
         }
     }
 
