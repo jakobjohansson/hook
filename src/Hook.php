@@ -21,7 +21,7 @@ abstract class Hook
      *
      * @var array
      */
-    public $errors = [];
+    public $errors;
 
     /**
      * Return a GitHub hook.
