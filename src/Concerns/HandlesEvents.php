@@ -21,14 +21,17 @@ trait HandlesEvents
     protected $listeners;
 
     /**
-     * Register the event and delegate to the responsible handler.
+     * Check if the assigned events actually exist.
      *
-     * @return void
+     * @param  array  $listeners
+     * @return bool
      */
-    private function registerEvent()
+    private function eventsAreNotValid(array $listeners)
     {
-        if (array_key_exists($this->event, $this->map)) {
-            $this->output = new $this->map[$this->event](Request::payload());
+        foreach ($listeners as $key => $value) {
+            if (!in_array($key, $this->defaultListeners, true) && !in_array($value, $this->defaultListeners, true)) {
+                return true;
+            }
         }
     }
 
@@ -51,6 +54,33 @@ trait HandlesEvents
     }
 
     /**
+     * Register the event and delegate to the responsible handler.
+     *
+     * @return void
+     */
+    private function registerEvent()
+    {
+        if (array_key_exists($this->event, $this->map)) {
+            $this->output = new $this->map[$this->event](Request::payload());
+        }
+
+        if (isset($this->listeners[$this->event])) {
+            $this->runCallback($this->listeners[$this->event]);
+        }
+    }
+
+    /**
+     * Run the event callback.
+     *
+     * @param  callable $callback
+     * @return void
+     */
+    private function runCallback(callable $callback)
+    {
+        $callback($this->output);
+    }
+
+    /**
      * Set the event listeners.
      *
      * @param array $listeners
@@ -67,12 +97,10 @@ trait HandlesEvents
             $listeners = $this->defaultListeners;
         }
 
-        foreach ($listeners as $listener => $callback) {
-            if (!in_array($listener, $this->defaultListeners, true) && !in_array($callback, $this->defaultListeners, true)) {
-                $this->errors[] = "Can't watch an invalid event";
+        if ($this->eventsAreNotValid($listeners)) {
+            $this->errors[] = "Can't watch an invalid event";
 
-                return false;
-            }
+            return false;
         }
 
         $this->listeners = $listeners;
@@ -82,9 +110,5 @@ trait HandlesEvents
         }
 
         $this->registerEvent();
-
-        if (isset($this->listeners[$this->event])) {
-            call_user_func($this->listeners[$this->event], $this->output);
-        }
     }
 }
