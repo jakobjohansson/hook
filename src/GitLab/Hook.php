@@ -3,7 +3,6 @@
 namespace Hook\GitLab;
 
 use Hook\Request;
-use Hook\EventMap;
 use Hook\Hook as BaseHook;
 use Hook\Traits\Authenticates;
 
@@ -18,9 +17,9 @@ class Hook extends BaseHook
      *
      * @return mixed
      */
-    public function __construct($secret = null)
+    public function __construct($secret = null, array $map)
     {
-        $this->setEventMap(EventMap::GitLab());
+        $this->map($map);
 
         if (!Request::header('HTTP_X_GITLAB_EVENT')) {
             $this->errors[] = 'GitLab Event header not present';

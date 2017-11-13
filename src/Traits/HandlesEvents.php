@@ -27,8 +27,8 @@ trait HandlesEvents
      */
     private function registerEvent()
     {
-        if (array_key_exists($this->event, $this->eventMap)) {
-            $this->output = new $this->eventMap[$this->event](Request::payload());
+        if (array_key_exists($this->event, $this->map)) {
+            $this->output = new $this->map[$this->event](Request::payload());
         }
     }
 

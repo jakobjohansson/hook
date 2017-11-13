@@ -16,7 +16,7 @@ trait MapsEvents
      *
      * @var array
      */
-    protected $eventMap;
+    protected $map;
 
     /**
      * Set the event map and the default listeners.
@@ -25,9 +25,9 @@ trait MapsEvents
      *
      * @return void
      */
-    protected function setEventMap(array $map)
+    protected function map(array $map)
     {
-        $this->eventMap = $map;
+        $this->map = $map;
         $this->defaultListeners = array_keys($map);
     }
 }

@@ -3,7 +3,6 @@
 namespace Hook\BitBucket;
 
 use Hook\Request;
-use Hook\EventMap;
 use Hook\Hook as BaseHook;
 
 class Hook extends BaseHook
@@ -13,9 +12,9 @@ class Hook extends BaseHook
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(array $map)
     {
-        $this->setEventMap(EventMap::BitBucket());
+        $this->map($map);
 
         if (!Request::header('HTTP_X_EVENT_KEY')) {
             $this->errors[] = 'BitBucket Event header not present';

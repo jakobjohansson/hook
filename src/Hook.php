@@ -10,7 +10,7 @@ abstract class Hook
     use MapsEvents, HandlesEvents;
 
     /**
-     * The final formatted output string.
+     * The formatted output string.
      *
      * @var string
      */
@@ -32,7 +32,7 @@ abstract class Hook
      */
     public static function GitHub($secret = null)
     {
-        return new GitHub\Hook($secret);
+        return new GitHub\Hook($secret, EventMap::GitHub());
     }
 
     /**
@@ -44,7 +44,7 @@ abstract class Hook
      */
     public static function GitLab($secret = null)
     {
-        return new GitLab\Hook($secret);
+        return new GitLab\Hook($secret, EventMap::GitLab());
     }
 
     /**
@@ -54,6 +54,6 @@ abstract class Hook
      */
     public static function BitBucket()
     {
-        return new BitBucket\Hook();
+        return new BitBucket\Hook(EventMap::BitBucket());
     }
 }
