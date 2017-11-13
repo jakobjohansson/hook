@@ -18,7 +18,7 @@ trait HandlesEvents
      *
      * @var array
      */
-    protected $listeners = [];
+    protected $listeners;
 
     /**
      * Register the event and delegate to the responsible handler.
