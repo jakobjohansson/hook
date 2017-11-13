@@ -55,7 +55,7 @@ class Request
      */
     public static function payload()
     {
-        switch (static::header('CONTENT-TYPE')) {
+        switch (static::header('CONTENT_TYPE')) {
             case 'application/json':
                 return json_decode(file_get_contents('php://input'));
             break;

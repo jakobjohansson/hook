@@ -2,7 +2,7 @@
 
 namespace Hook;
 
-class Hook
+abstract class Hook
 {
     /**
      * The request headers.
@@ -40,17 +40,6 @@ class Hook
     protected $apiMessages = [];
 
     /**
-     * Create a new Hook instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->fetchHeaders();
-        $this->fetchPayload();
-    }
-
-    /**
      * Return the API messages.
      *
      * @return array
@@ -78,16 +67,7 @@ class Hook
      */
     protected function fetchPayload()
     {
-        switch ($this->contentType) {
-            case 'application/json':
-                $this->payload = json_decode(file_get_contents('php://input'));
-            break;
-            case 'application/x-www-form-urlencoded':
-                $this->payload = Request::input('payload');
-            break;
-            default:
-                $this->apiMessages[] = 'Invalid Content Type';
-        }
+        $this->payload = Request::payload();
     }
 
     /**
