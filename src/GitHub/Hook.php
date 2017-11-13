@@ -21,6 +21,7 @@ class Hook extends BaseHook
      * Create a new Hook instance.
      *
      * @param string $secret
+     * @param array $map
      *
      * @return mixed
      */

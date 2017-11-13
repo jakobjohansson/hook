@@ -10,6 +10,8 @@ class Hook extends BaseHook
     /**
      * Create a new Hook instance.
      *
+     * @param  array $map
+     *
      * @return void
      */
     public function __construct(array $map)

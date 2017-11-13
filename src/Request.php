@@ -5,7 +5,7 @@ namespace Hook;
 class Request
 {
     /**
-     * Fetch the request method.
+     * Get the request method.
      *
      * @return string
      */
@@ -15,7 +15,7 @@ class Request
     }
 
     /**
-     * Fetch a POST input.
+     * Get a POST input.
      *
      * @param string $name
      *
@@ -27,7 +27,7 @@ class Request
     }
 
     /**
-     * Fetch all request headers.
+     * Get all request headers.
      *
      * @return array
      */
@@ -37,7 +37,7 @@ class Request
     }
 
     /**
-     * Fetch a specific header.
+     * Get a specific header.
      *
      * @param string $header
      *

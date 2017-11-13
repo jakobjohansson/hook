@@ -17,14 +17,14 @@ abstract class Hook
     public $output = null;
 
     /**
-     * Errors thrown by the hook.
+     * The errors thrown by the hook.
      *
      * @var array
      */
     public $errors = [];
 
     /**
-     * Return a GitHub Hook service.
+     * Return a GitHub hook.
      *
      * @param string $secret
      *
@@ -36,7 +36,7 @@ abstract class Hook
     }
 
     /**
-     * Return a GitLab Hook service.
+     * Return a GitLab hook.
      *
      * @param string $secret
      *
@@ -48,7 +48,7 @@ abstract class Hook
     }
 
     /**
-     * Return a Bitbucket Hook service.
+     * Return a Bitbucket hook.
      *
      * @return \Hook\BitBucket\Hook
      */

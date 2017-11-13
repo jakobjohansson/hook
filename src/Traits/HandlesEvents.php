@@ -21,7 +21,7 @@ trait HandlesEvents
     protected $listeners = [];
 
     /**
-     * Register the event and delegate to the appropriate handler.
+     * Register the event and delegate to the responsible handler.
      *
      * @return void
      */
