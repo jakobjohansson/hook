@@ -12,7 +12,12 @@ if ($_GET['type'] === 'GitHub') {
     if (isset($_GET['callback'])) {
         $github->listen(['push' => 'githubCallback']);
     } else {
-        $github->listen();
+
+        if (isset($_GET['invalid-event'])) {
+            $github->listen(['jaksd', 'push']);
+        } else {
+            $github->listen();
+        }
 
         echo $github->output;
 
@@ -34,7 +39,12 @@ if ($_GET['type'] === 'GitLab') {
     if (isset($_GET['callback'])) {
         $gitlab->listen(['Push Hook' => 'gitlabCallback']);
     } else {
-        $gitlab->listen();
+
+        if (isset($_GET['invalid-event'])) {
+            $gitlab->listen(['jaksd', 'Push Hook']);
+        } else {
+            $gitlab->listen();
+        }
 
         echo $gitlab->output;
 
@@ -52,7 +62,12 @@ if ($_GET['type'] === 'BitBucket') {
     if (isset($_GET['callback'])) {
         $bitbucket->listen(['repo:push' => 'bitbucketCallback']);
     } else {
-        $bitbucket->listen();
+
+        if (isset($_GET['invalid-event'])) {
+            $bitbucket->listen(['jaksd', 'repo:push']);
+        } else {
+            $bitbucket->listen();
+        }
 
         echo $bitbucket->output;
 

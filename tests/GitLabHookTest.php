@@ -173,11 +173,22 @@ class GitLabHookTest extends TestCase
         $this->assertSame($this->response(), 'Diaspora');
     }
 
-    public function testHookGiveErrorWhenNoEventHeaderIsPresent()
+    public function testHookShouldGiveErrorWhenNoEventHeaderIsPresent()
     {
         $this->query = ['type' => 'GitLab'];
         $this->payload($this->gitLab['Push Hook']);
 
         $this->assertSame($this->response(), "GitLab Event header not present");
+    }
+
+    public function testHookShouldGiveErrorWhenInvalidEventIsWatched()
+    {
+        $this->event('Push Hook');
+
+        $this->query['invalid-event'] = 'true';
+
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), "Can't watch an invalid event");
     }
 }

@@ -317,11 +317,23 @@ class GitHubHookTest extends TestCase
         $this->assertSame($this->response(), 'baxterthehacker/public-repo');
     }
 
-    public function testHookGiveErrorWhenNoEventHeaderIsPresent()
+    public function testHookShouldGiveErrorWhenNoEventHeaderIsPresent()
     {
         $this->query = ['type' => 'GitHub'];
+
         $this->payload($this->gitHub['push']);
 
         $this->assertSame($this->response(), "GitHub Event header not present");
+    }
+
+    public function testHookShouldGiveErrorWhenInvalidEventIsWatched()
+    {
+        $this->event('push');
+
+        $this->query['invalid-event'] = 'true';
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), "Can't watch an invalid event");
     }
 }
