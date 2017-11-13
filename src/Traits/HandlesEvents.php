@@ -84,7 +84,7 @@ trait HandlesEvents
         $this->registerEvent();
 
         if (isset($this->listeners[$this->event])) {
-            call_user_func($this->listeners[$this->event], $this->output->__toString());
+            call_user_func($this->listeners[$this->event], $this->output);
         }
     }
 }
