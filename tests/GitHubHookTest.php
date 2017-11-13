@@ -322,6 +322,6 @@ class GitHubHookTest extends TestCase
         $this->query = ['type' => 'GitHub'];
         $this->payload($this->gitHub['push']);
 
-        $this->assertSame($this->response(), "GitHub Event header not present");
+        $this->assertSame($this->response(), 'GitHub Event header not present');
     }
 }
