@@ -15,6 +15,12 @@ if ($_GET['type'] === 'GitHub') {
         $github->listen();
 
         echo $github->output;
+
+        if (count($github->errors)) {
+            foreach ($github->errors as $error) {
+                echo $error;
+            }
+        }
     }
 }
 
@@ -31,6 +37,12 @@ if ($_GET['type'] === 'GitLab') {
         $gitlab->listen();
 
         echo $gitlab->output;
+
+        if (count($gitlab->errors)) {
+            foreach ($gitlab->errors as $error) {
+                echo $error;
+            }
+        }
     }
 }
 
@@ -43,6 +55,12 @@ if ($_GET['type'] === 'BitBucket') {
         $bitbucket->listen();
 
         echo $bitbucket->output;
+
+        if (count($bitbucket->errors)) {
+            foreach ($bitbucket->errors as $error) {
+                echo $error;
+            }
+        }
     }
 }
 

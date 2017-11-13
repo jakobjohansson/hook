@@ -279,13 +279,24 @@ class GitHubHookTest extends TestCase
         $this->assertSame($this->response(), "<a href='https://github.com/baxterthehacker'>baxterthehacker</a> just watched the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
-    public function testHookShouldNotPrintAnythingWhenNotAuthorized()
+    public function testHookShouldGetErrorMessageWhenNotAuthorized()
     {
         $this->event('push')->signature('incorrectlyformattedsignature');
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSame($this->response(), '');
+        $this->assertSame($this->response(), 'Signature not authorized');
+    }
+
+    public function testHookShouldGetErrorMessageWhenNoAuthenticationSecret()
+    {
+        $this->event('push');
+
+        $this->query['auth'] = 'true';
+
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), 'No signature provided');
     }
 
     public function testHookShouldWorkAsNormalWhenAuthorized()
@@ -304,5 +315,13 @@ class GitHubHookTest extends TestCase
         $this->payload($this->gitHub['push']);
 
         $this->assertSame($this->response(), 'baxterthehacker/public-repo');
+    }
+
+    public function testHookGiveErrorWhenNoEventHeaderIsPresent()
+    {
+        $this->query = ['type' => 'GitHub'];
+        $this->payload($this->gitHub['push']);
+
+        $this->assertSame($this->response(), "GitHub Event header not present");
     }
 }

@@ -135,13 +135,24 @@ class GitLabHookTest extends TestCase
         $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/snippets/53#note_1245'>commented on a snippet</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
     }
 
-    public function testHookShouldNotPrintAnythingWhenNotAuthorized()
+    public function testHookShouldGetErrorMessageWhenNotAuthorized()
     {
         $this->event('Push Hook')->signature('incorrectlyformattedsignature');
 
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSame($this->response(), '');
+        $this->assertSame($this->response(), 'Signature not authorized');
+    }
+
+    public function testHookShouldGetErrorMessageWhenNoAuthenticationSecret()
+    {
+        $this->event('Push Hook');
+
+        $this->query['auth'] = 'true';
+
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), 'No signature provided');
     }
 
     public function testHookShouldWorkAsNormalWhenAuthorized()
@@ -160,5 +171,13 @@ class GitLabHookTest extends TestCase
         $this->payload($this->gitLab['Push Hook']);
 
         $this->assertSame($this->response(), 'Diaspora');
+    }
+
+    public function testHookGiveErrorWhenNoEventHeaderIsPresent()
+    {
+        $this->query = ['type' => 'GitLab'];
+        $this->payload($this->gitLab['Push Hook']);
+
+        $this->assertSame($this->response(), "GitLab Event header not present");
     }
 }

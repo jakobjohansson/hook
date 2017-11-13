@@ -199,4 +199,12 @@ class BitBucketHookTest extends TestCase
 
         $this->assertSame($this->response(), 'team_name/repo_name');
     }
+
+    public function testHookGiveErrorWhenNoEventHeaderIsPresent()
+    {
+        $this->query = ['type' => 'BitBucket'];
+        $this->payload($this->bitBucket['repo:push']);
+
+        $this->assertSame($this->response(), "BitBucket Event header not present");
+    }
 }
