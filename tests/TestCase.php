@@ -54,9 +54,7 @@ abstract class TestCase extends BaseTest
      *
      * @var array
      */
-    public $headers = [
-        'Content-Type' => 'application/json',
-    ];
+    public $headers;
 
     /**
      * Set up a client when constructing the test.
@@ -98,7 +96,7 @@ abstract class TestCase extends BaseTest
     }
 
     /**
-     * Perform a request.
+     * Perform a JSON request.
      *
      * @return string
      */
@@ -108,6 +106,20 @@ abstract class TestCase extends BaseTest
             'query'   => $this->query,
             'headers' => $this->headers,
             'json'    => json_decode($this->payload, true),
+        ])->getBody();
+    }
+
+    /**
+     * Perform a form request.
+     *
+     * @return string
+     */
+    public function formResponse()
+    {
+        return (string) $this->client->request('POST', '', [
+            'query'   => $this->query,
+            'headers' => $this->headers,
+            'form_params'    => ['payload' => json_decode($this->payload, true)],
         ])->getBody();
     }
 }
