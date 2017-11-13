@@ -4,6 +4,38 @@ namespace Hook\Tests;
 
 class GitHubHookTest extends TestCase
 {
+    /**
+     * Set the event header.
+     *
+     * @param string $event
+     *
+     * @return $this
+     */
+    public function event($event)
+    {
+        $this->headers['X-GitHub-Event'] = $event;
+
+        $this->query['another'] = 'GitHub';
+
+        return $this;
+    }
+
+    /**
+     * Set the signature header.
+     *
+     * @param string $signature
+     *
+     * @return $this
+     */
+    public function signature($signature)
+    {
+        $this->headers['X-Hub-Signature'] = $signature;
+
+        $this->query['auth'] = 'true';
+
+        return $this;
+    }
+
     public function testCommitCommentEvent()
     {
         $this->event('commit_comment');

@@ -15,6 +15,8 @@ class BitBucketHookTest extends TestCase
     {
         $this->headers['X-Event-Key'] = $event;
 
+        $this->query['type'] = 'BitBucket';
+
         return $this;
     }
 

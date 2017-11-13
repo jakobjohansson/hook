@@ -15,6 +15,8 @@ class GitLabHookTest extends TestCase
     {
         $this->headers['X-Gitlab-Event'] = $event;
 
+        $this->query['type'] = 'GitLab';
+
         return $this;
     }
 
@@ -29,7 +31,7 @@ class GitLabHookTest extends TestCase
     {
         $this->headers['X-Gitlab-Token'] = $signature;
 
-        $this->auth = true;
+        $this->query['auth'] = 'true';
 
         return $this;
     }
