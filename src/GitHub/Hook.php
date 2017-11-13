@@ -12,7 +12,7 @@ class Hook extends BaseHook
     use Authenticates;
 
     /**
-     * The hash algorithm used in the X-GitHub-Signature header.
+     * The algorithm used on the hash.
      *
      * @var string
      */
@@ -45,7 +45,7 @@ class Hook extends BaseHook
     }
 
     /**
-     * Authorize the request provided a signature.
+     * Authenticate the request provided a signature.
      *
      * @return bool
      */
@@ -75,7 +75,7 @@ class Hook extends BaseHook
     }
 
     /**
-     * Compare the hashes provided by the request and the server.
+     * Compare the signature and the secret.
      *
      * @return bool
      */

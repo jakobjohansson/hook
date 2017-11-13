@@ -64,7 +64,7 @@ class Hook extends BaseHook
     }
 
     /**
-     * Compare the hashes provided by the request and the server.
+     * Compare the signature and the secret.
      *
      * @return bool
      */
