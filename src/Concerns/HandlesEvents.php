@@ -23,7 +23,8 @@ trait HandlesEvents
     /**
      * Check if the assigned events actually exist.
      *
-     * @param  array  $listeners
+     * @param array $listeners
+     *
      * @return bool
      */
     private function eventsAreNotValid(array $listeners)
@@ -72,7 +73,8 @@ trait HandlesEvents
     /**
      * Run the event callback.
      *
-     * @param  callable $callback
+     * @param callable $callback
+     *
      * @return void
      */
     private function runCallback(callable $callback)
