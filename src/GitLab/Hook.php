@@ -58,9 +58,7 @@ class Hook extends BaseHook
             return false;
         }
 
-        $this->authenticated = true;
-
-        return true;
+        return $this->authenticated = true;
     }
 
     /**
