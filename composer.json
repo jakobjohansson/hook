@@ -2,6 +2,8 @@
     "name": "jakobjohansson/hook",
     "description": "a library for quickly dealing with git webhooks",
     "type": "library",
+    "homepage": "https://jakobjohansson.github.io/hook/",
+    "keywords": ["webhook", "github", "gitlab", "bitbucket"],
     "require-dev": {
         "phpunit/phpunit": "^6.4",
         "guzzlehttp/guzzle": "^6.3"
