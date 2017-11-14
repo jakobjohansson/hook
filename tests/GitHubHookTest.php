@@ -42,7 +42,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['commit_comment']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just <a href='https://github.com/baxterthehacker/public-repo/commit/9049f1265b7d61be4a8904a9a27120d2064dab3b#commitcomment-11056394'>made a comment</a> on a commit in the baxterthehacker/public-repo repository: <br />This is a really good change! :+1:");
+        $this->assertSame($this->response(), "baxterthehacker just <a href='https://github.com/baxterthehacker/public-repo/commit/9049f1265b7d61be4a8904a9a27120d2064dab3b#commitcomment-11056394'>made a comment</a> on a commit in the baxterthehacker/public-repo repository: <br />This is a really good change! :+1:");
     }
 
     public function testCreateEvent()
@@ -51,7 +51,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['create']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just made a new tag in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just made a new tag in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testDeleteEvent()
@@ -60,7 +60,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['delete']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just deleted the tag simple-tag in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just deleted the tag simple-tag in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testForkEvent()
@@ -69,7 +69,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['fork']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterandthehackers <a href='https://github.com/baxterandthehackers/public-repo'>just forked</a> a repository from baxterthehacker.");
+        $this->assertSame($this->response(), "baxterandthehackers <a href='https://github.com/baxterandthehackers/public-repo'>just forked</a> a repository from baxterthehacker.");
     }
 
     public function testGollumEvent()
@@ -78,7 +78,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['gollum']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "jasonrudolph just made these wiki changes: <br /><br />created <a href='https://github.com/baxterthehacker/public-repo/wiki/Home'>Home</a><br />In <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a>.");
+        $this->assertSame($this->response(), "jasonrudolph just made these wiki changes: <br /><br />created <a href='https://github.com/baxterthehacker/public-repo/wiki/Home'>Home</a><br />In <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a>.");
     }
 
     public function testIssueCommentEvent()
@@ -87,7 +87,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['issue_comment']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just <a href='https://github.com/baxterthehacker/public-repo/issues/2#issuecomment-99262140'>created a comment on an issue</a> in the baxterthehacker/public-repo repository.");
+        $this->assertSame($this->response(), "baxterthehacker just <a href='https://github.com/baxterthehacker/public-repo/issues/2#issuecomment-99262140'>created a comment on an issue</a> in the baxterthehacker/public-repo repository.");
     }
 
     public function testIssuesEvent()
@@ -96,7 +96,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['issues']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just <a href='https://github.com/baxterthehacker/public-repo/issues/2'>opened an issue</a> in the baxterthehacker/public-repo repository.");
+        $this->assertSame($this->response(), "baxterthehacker just <a href='https://github.com/baxterthehacker/public-repo/issues/2'>opened an issue</a> in the baxterthehacker/public-repo repository.");
     }
 
     public function testLabelEvent()
@@ -105,7 +105,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['label']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just created a label in the <a href='https://github.com/baxterandthehackers/public-repo'>baxterandthehackers/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just created a label in the <a href='https://github.com/baxterandthehackers/public-repo'>baxterandthehackers/public-repo</a> repository.");
     }
 
     public function testMemberEvent()
@@ -114,7 +114,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['member']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just added <a href='https://github.com/octocat'>octocat</a> in the baxterthehacker/public-repo repository.");
+        $this->assertSame($this->response(), "baxterthehacker just added <a href='https://github.com/octocat'>octocat</a> in the baxterthehacker/public-repo repository.");
     }
 
     public function testMembershipEvent()
@@ -123,7 +123,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['membership']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just added <a href='https://github.com/kdaigle'>kdaigle</a> in the Contractors team.");
+        $this->assertSame($this->response(), "baxterthehacker just added <a href='https://github.com/kdaigle'>kdaigle</a> in the Contractors team.");
     }
 
     public function testMilestoneEvent()
@@ -132,7 +132,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['milestone']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just created <a href='https://github.com/baxterandthehackers/public-repo/milestones/Test%20milestone%20creation%20webhook%20from%20command%20line2'>I am a milestone</a> in the baxterandthehackers/public-repo repository.");
+        $this->assertSame($this->response(), "baxterthehacker just created <a href='https://github.com/baxterandthehackers/public-repo/milestones/Test%20milestone%20creation%20webhook%20from%20command%20line2'>I am a milestone</a> in the baxterandthehackers/public-repo repository.");
     }
 
     public function testOrganizationEvent()
@@ -141,7 +141,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['organization']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just invited <a href='https://github.com/baxterthehacker'>baxterthehacker</a> to the baxterandthehackers organization.");
+        $this->assertSame($this->response(), "baxterthehacker just invited <a href='https://github.com/baxterthehacker'>baxterthehacker</a> to the baxterandthehackers organization.");
     }
 
     public function testOrganizationBlockEvent()
@@ -150,7 +150,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['org_block']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "octodocs just blocked <a href='https://github.com/octocat'>octocat</a> from the github organization.");
+        $this->assertSame($this->response(), "octodocs just blocked <a href='https://github.com/octocat'>octocat</a> from the github organization.");
     }
 
     public function testPageBuildEvent()
@@ -159,7 +159,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['page_build']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just built a page in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just built a page in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testProjectCardEvent()
@@ -168,7 +168,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['project_card']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just created a project card in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just created a project card in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testProjectColumnEvent()
@@ -177,7 +177,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['project_card']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just created a project column in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just created a project column in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testProjectEvent()
@@ -186,7 +186,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['project_card']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just created a project in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just created a project in the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testPublicRepositoryEvent()
@@ -195,7 +195,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['public']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just made the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository public.");
+        $this->assertSame($this->response(), "baxterthehacker just made the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository public.");
     }
 
     public function testPullRequestEvent()
@@ -204,7 +204,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['pull_request']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just opened a pull request in the <a href='https://github.com/baxterthehacker/public-repo/pull/1'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just opened a pull request in the <a href='https://github.com/baxterthehacker/public-repo/pull/1'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testPullRequestReviewEvent()
@@ -213,7 +213,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['pull_request_review']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just submitted a review on a pull request in the <a href='https://github.com/baxterthehacker/public-repo/pull/8#pullrequestreview-2626884'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just submitted a review on a pull request in the <a href='https://github.com/baxterthehacker/public-repo/pull/8#pullrequestreview-2626884'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testPullRequestReviewCommentEvent()
@@ -222,7 +222,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['pull_request_review_comment']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just created a comment on a pull request review in the <a href='https://github.com/baxterthehacker/public-repo/pull/1#discussion_r29724692'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just created a comment on a pull request review in the <a href='https://github.com/baxterthehacker/public-repo/pull/1#discussion_r29724692'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testPushEvent()
@@ -231,7 +231,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
+        $this->assertSame($this->response(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
     }
 
     public function testReleaseEvent()
@@ -240,7 +240,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['release']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just published a new release in the <a href='https://github.com/baxterthehacker/public-repo/releases/tag/0.0.1'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just published a new release in the <a href='https://github.com/baxterthehacker/public-repo/releases/tag/0.0.1'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testRepositoryEvent()
@@ -249,7 +249,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['repository']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterthehacker just created the <a href='https://github.com/baxterandthehackers/new-repository'>baxterandthehackers/new-repository</a> repository.");
+        $this->assertSame($this->response(), "baxterthehacker just created the <a href='https://github.com/baxterandthehackers/new-repository'>baxterandthehackers/new-repository</a> repository.");
     }
 
     public function testTeamEvent()
@@ -258,7 +258,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['team']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'baxterthehacker just made changes to a team in the baxterandthehackers organization.');
+        $this->assertSame($this->response(), 'baxterthehacker just made changes to a team in the baxterandthehackers organization.');
     }
 
     public function testTeamAddEvent()
@@ -267,7 +267,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['team_add']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "baxterandthehackers just added a <a href='https://github.com/baxterandthehackers/public-repo'>repository</a> to the github team.");
+        $this->assertSame($this->response(), "baxterandthehackers just added a <a href='https://github.com/baxterandthehackers/public-repo'>repository</a> to the github team.");
     }
 
     public function testWatchEvent()
@@ -276,7 +276,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['watch']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "<a href='https://github.com/baxterthehacker'>baxterthehacker</a> just watched the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
+        $this->assertSame($this->response(), "<a href='https://github.com/baxterthehacker'>baxterthehacker</a> just watched the <a href='https://github.com/baxterthehacker/public-repo'>baxterthehacker/public-repo</a> repository.");
     }
 
     public function testHookShouldGetErrorMessageWhenNotAuthorized()
@@ -285,7 +285,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'Signature not authorized');
+        $this->assertSame($this->response(), 'Signature not authorized');
     }
 
     public function testHookShouldGetErrorMessageWhenNoAuthenticationSecret()
@@ -296,7 +296,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'No signature provided');
+        $this->assertSame($this->response(), 'No signature provided');
     }
 
     public function testHookShouldWorkAsNormalWhenAuthorized()
@@ -305,12 +305,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSame($this->response(), $this->formResponse(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
-
-        // We need to change the signature since the payload differs when using different requests.
-        $this->signature('sha1=704b8e4f4e8ea2e03121bfaf1bc9f5c0c5744113');
-
-        $this->assertSame($this->formResponse(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
+        $this->assertSame($this->response(), "baxterthehacker just pushed 1 commit(s) to <a href='https://github.com/baxterthehacker/public-repo/compare/9049f1265b7d...0d1a26e67d8f'>baxterthehacker/public-repo</a>.");
     }
 
     public function testUsingCallbackWithPushEvent()
@@ -319,7 +314,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'baxterthehacker/public-repo');
+        $this->assertSame($this->response(), 'baxterthehacker/public-repo');
     }
 
     public function testHookShouldGiveErrorWhenNoEventHeaderIsPresent()
@@ -328,7 +323,7 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'GitHub Event header not present');
+        $this->assertSame($this->response(), 'GitHub Event header not present');
     }
 
     public function testHookShouldGiveErrorWhenInvalidEventIsWatched()
@@ -339,6 +334,6 @@ class GitHubHookTest extends TestCase
 
         $this->payload($this->gitHub['push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Can't watch an invalid event");
+        $this->assertSame($this->response(), "Can't watch an invalid event");
     }
 }

@@ -42,7 +42,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "John Smith just pushed 4 commit(s) to the <a href='http://example.com/mike/diaspora'>Diaspora</a> repository.");
+        $this->assertSame($this->response(), "John Smith just pushed 4 commit(s) to the <a href='http://example.com/mike/diaspora'>Diaspora</a> repository.");
     }
 
     public function testTagEvent()
@@ -51,7 +51,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Tag Push Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "John Smith just pushed the tag v1.0.0 to the <a href='http://example.com/jsmith/example'>Example</a> repository.");
+        $this->assertSame($this->response(), "John Smith just pushed the tag v1.0.0 to the <a href='http://example.com/jsmith/example'>Example</a> repository.");
     }
 
     public function testIssuesEvent()
@@ -60,7 +60,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Issue Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Administrator just opened a new <a href='http://example.com/diaspora/issues/23'>issue</a> in the <a href='http://example.com/gitlabhq/gitlab-test'>Gitlab Test</a> repository.");
+        $this->assertSame($this->response(), "Administrator just opened a new <a href='http://example.com/diaspora/issues/23'>issue</a> in the <a href='http://example.com/gitlabhq/gitlab-test'>Gitlab Test</a> repository.");
     }
 
     public function testMergeRequestEvent()
@@ -69,7 +69,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Merge Request Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Administrator just opened a new <a href='http://example.com/diaspora/merge_requests/1'>merge request</a> in the <a href='http://example.com/gitlabhq/gitlab-test'>Gitlab Test</a> repository.");
+        $this->assertSame($this->response(), "Administrator just opened a new <a href='http://example.com/diaspora/merge_requests/1'>merge request</a> in the <a href='http://example.com/gitlabhq/gitlab-test'>Gitlab Test</a> repository.");
     }
 
     public function testWikiPageEvent()
@@ -78,7 +78,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Wiki Page Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Administrator just created a <a href='http://example.com/root/awesome-project/wikis/awesome'>wiki page</a> in the <a href='http://example.com/root/awesome-project'>awesome-project</a> repository.");
+        $this->assertSame($this->response(), "Administrator just created a <a href='http://example.com/root/awesome-project/wikis/awesome'>wiki page</a> in the <a href='http://example.com/root/awesome-project'>awesome-project</a> repository.");
     }
 
     public function testPipelineEvent()
@@ -87,7 +87,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Pipeline Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Administrator just changed the status of a pipeline in the <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
+        $this->assertSame($this->response(), "Administrator just changed the status of a pipeline in the <a href='http://192.168.64.1:3005/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
     }
 
     public function testBuildEvent()
@@ -96,7 +96,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Build Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'User just changed the status of a build in the gitlab-org/gitlab-test repository.');
+        $this->assertSame($this->response(), 'User just changed the status of a build in the gitlab-org/gitlab-test repository.');
     }
 
     public function testCommentNoteHook()
@@ -105,7 +105,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Commit Note Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/commit/cfe32cf61b73a0d5e9f13e774abde7ff789b1660#note_1243'>commented on a commit</a> in the <a href='http://example.com/gitlabhq/gitlab-test'>Gitlab Test</a> repository.");
+        $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/commit/cfe32cf61b73a0d5e9f13e774abde7ff789b1660#note_1243'>commented on a commit</a> in the <a href='http://example.com/gitlabhq/gitlab-test'>Gitlab Test</a> repository.");
     }
 
     public function testMergeRequestNoteHook()
@@ -114,7 +114,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Merge Request Note Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/merge_requests/1#note_1244'>commented on a merge request</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
+        $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/merge_requests/1#note_1244'>commented on a merge request</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
     }
 
     public function testIssueNoteHook()
@@ -123,7 +123,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Issue Note Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/issues/17#note_1241'>commented on an issue </a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
+        $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/issues/17#note_1241'>commented on an issue </a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
     }
 
     public function testSnippetNoteHook()
@@ -132,7 +132,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Snippet Note Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/snippets/53#note_1245'>commented on a snippet</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
+        $this->assertSame($this->response(), "Administrator just <a href='http://example.com/gitlab-org/gitlab-test/snippets/53#note_1245'>commented on a snippet</a> in the <a href='http://example.com/gitlab-org/gitlab-test'>Gitlab Test</a> repository.");
     }
 
     public function testHookShouldGetErrorMessageWhenNotAuthorized()
@@ -141,7 +141,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'Signature not authorized');
+        $this->assertSame($this->response(), 'Signature not authorized');
     }
 
     public function testHookShouldGetErrorMessageWhenNoAuthenticationSecret()
@@ -152,7 +152,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'No signature provided');
+        $this->assertSame($this->response(), 'No signature provided');
     }
 
     public function testHookShouldWorkAsNormalWhenAuthorized()
@@ -161,7 +161,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "John Smith just pushed 4 commit(s) to the <a href='http://example.com/mike/diaspora'>Diaspora</a> repository.");
+        $this->assertSame($this->response(), "John Smith just pushed 4 commit(s) to the <a href='http://example.com/mike/diaspora'>Diaspora</a> repository.");
     }
 
     public function testUsingCallbackWithPushEvent()
@@ -170,7 +170,7 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'Diaspora');
+        $this->assertSame($this->response(), 'Diaspora');
     }
 
     public function testHookShouldGiveErrorWhenNoEventHeaderIsPresent()
@@ -178,7 +178,7 @@ class GitLabHookTest extends TestCase
         $this->query = ['type' => 'GitLab'];
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'GitLab Event header not present');
+        $this->assertSame($this->response(), 'GitLab Event header not present');
     }
 
     public function testHookShouldGiveErrorWhenInvalidEventIsWatched()
@@ -189,6 +189,6 @@ class GitLabHookTest extends TestCase
 
         $this->payload($this->gitLab['Push Hook']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Can't watch an invalid event");
+        $this->assertSame($this->response(), "Can't watch an invalid event");
     }
 }

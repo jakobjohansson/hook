@@ -85,7 +85,7 @@ class Hook extends BaseHook
         return hash_equals(
             hash_hmac(
                 $this->algorithm,
-                json_encode(Request::payload()),
+                file_get_contents('php://input'),
                 $this->secret
             ),
             $this->signature
