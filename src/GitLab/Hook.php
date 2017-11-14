@@ -21,6 +21,12 @@ class Hook extends BaseHook
     public function __construct($secret, array $map)
     {
         $this->map($map);
+        
+        if (Request::method() !== 'POST') {
+            $this->errors[] = 'Wrong request method';
+
+            return;
+        }
 
         if (!Request::header('HTTP_X_GITLAB_EVENT')) {
             $this->errors[] = 'GitLab Event header not present';

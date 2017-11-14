@@ -91,6 +91,10 @@ trait HandlesEvents
      */
     public function listen(array $listeners = [])
     {
+        if (Request::method() !== 'POST') {
+            return false;
+        }
+
         if (property_exists($this, 'secret') && isset($this->secret) && !$this->authenticated) {
             return false;
         }

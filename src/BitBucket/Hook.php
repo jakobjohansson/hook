@@ -17,6 +17,12 @@ class Hook extends BaseHook
     public function __construct(array $map)
     {
         $this->map($map);
+        
+        if (Request::method() !== 'POST') {
+            $this->errors[] = 'Wrong request method';
+
+            return;
+        }
 
         if (!Request::header('HTTP_X_EVENT_KEY')) {
             $this->errors[] = 'BitBucket Event header not present';
