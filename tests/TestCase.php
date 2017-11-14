@@ -108,4 +108,17 @@ abstract class TestCase extends BaseTest
             'json'    => json_decode($this->payload, true),
         ])->getBody();
     }
+
+    /**
+     * Try to perform a GET request.
+     *
+     * @return string
+     */
+    public function tryGetResponse()
+    {
+        return (string) $this->client->request('GET', '', [
+            'query'   => $this->query,
+            'headers' => $this->headers,
+        ])->getBody();
+    }
 }

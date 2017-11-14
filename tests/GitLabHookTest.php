@@ -191,4 +191,11 @@ class GitLabHookTest extends TestCase
 
         $this->assertSame($this->response(), "Can't watch an invalid event");
     }
+
+    public function testHookShouldGiveErrorWhenUsingGetRequest()
+    {
+        $this->event('Push Hook');
+
+        $this->assertSame($this->tryGetResponse(), 'Wrong request method');
+    }
 }
