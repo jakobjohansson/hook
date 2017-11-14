@@ -28,7 +28,7 @@ class Hook extends BaseHook
     public function __construct($secret, array $map)
     {
         $this->map($map);
-        
+
         if (Request::method() !== 'POST') {
             $this->errors[] = 'Wrong request method';
 
