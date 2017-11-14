@@ -1,1 +1,2 @@
 Not watching ping event
+Signature not authorized
