@@ -82,6 +82,7 @@ class Hook extends BaseHook
     private function validate()
     {
         echo $this->signature;
+
         return hash_equals(
             hash_hmac(
                 $this->algorithm,
