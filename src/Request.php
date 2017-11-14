@@ -15,16 +15,6 @@ class Request
     }
 
     /**
-     * Get all request headers.
-     *
-     * @return array
-     */
-    public static function headers()
-    {
-        return $_SERVER;
-    }
-
-    /**
      * Get a specific header.
      *
      * @param string $header
