@@ -3,13 +3,9 @@
 A library for quickly dealing with GitHub, GitLab and BitBucket webhooks.
 
 ## Installation
-Clone the repository:
+Install through composer:
 ```bash
-$ git clone https://github.com/jakobjohansson/hook.git
-```
-Generate autoloader with composer:
-```bash
-$ composer dump-autoload --optimize
+$ composer require jakobjohansson/hook
 ```
 
 ## Documentation
