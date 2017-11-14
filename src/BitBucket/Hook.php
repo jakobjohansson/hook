@@ -12,7 +12,7 @@ class Hook extends BaseHook
      *
      * @param array $map
      *
-     * @return void
+     * @return mixed
      */
     public function __construct(array $map)
     {
