@@ -15,18 +15,6 @@ class Request
     }
 
     /**
-     * Get a POST input.
-     *
-     * @param string $name
-     *
-     * @return mixed
-     */
-    public static function input($name)
-    {
-        return $_POST[$name];
-    }
-
-    /**
      * Get all request headers.
      *
      * @return array
