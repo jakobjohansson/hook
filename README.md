@@ -14,7 +14,7 @@ $hook = Hook\Hook::GitHub();
 ```
 If you chose to use an authentication token for your webhook, simply provide it as an argument:
 ```php
-$hook = Hook\Hook::GitHub('sha1=98hd17e18273127j81j932');
+$hook = Hook\Hook::GitHub('authentication-token');
 ```
 Tell the hook which events to listen for:
 ```php
