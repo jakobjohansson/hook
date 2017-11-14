@@ -36,6 +36,7 @@ class EventMap
             'pull_request_review_comment' => 'Hook\GitHub\Event\PullRequest\Review\Comment',
             'release'                     => 'Hook\GitHub\Event\Release',
             'repository'                  => 'Hook\GitHub\Event\Repository\Repository',
+            'status'                      => 'Hook\GitHub\Event\Status',
             'team'                        => 'Hook\GitHub\Event\Team\Team',
             'team_add'                    => 'Hook\GitHub\Event\Team\Add',
             'watch'                       => 'Hook\GitHub\Event\Watch',

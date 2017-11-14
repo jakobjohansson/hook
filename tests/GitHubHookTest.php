@@ -252,6 +252,15 @@ class GitHubHookTest extends TestCase
         $this->assertSame($this->response(), "baxterthehacker just created the <a href='https://github.com/baxterandthehackers/new-repository'>baxterandthehackers/new-repository</a> repository.");
     }
 
+    public function testStatusEvent()
+    {
+        $this->event('status');
+
+        $this->payload($this->gitHub['status']);
+
+        $this->assertSame($this->response(), "baxterthehacker/public-repo: <a href='http://travis.url'>The travis CI build passed</a>.");
+    }
+
     public function testTeamEvent()
     {
         $this->event('team');
