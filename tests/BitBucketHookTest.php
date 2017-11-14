@@ -26,7 +26,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just pushed 1 commit(s) to <a href='https://bitbucket.org/user_name/repo_name/branches/compare/c4b2b7914156a878aa7c9da452a09fb50c2091f2..b99ea6dad8f416e57c5ca78c1ccef590600d841b'>team_name/repo_name</a>.");
+        $this->assertSame($this->response(), "emmap1 just pushed 1 commit(s) to <a href='https://bitbucket.org/user_name/repo_name/branches/compare/c4b2b7914156a878aa7c9da452a09fb50c2091f2..b99ea6dad8f416e57c5ca78c1ccef590600d841b'>team_name/repo_name</a>.");
     }
 
     public function testRepoForkEvent()
@@ -35,7 +35,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:fork']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 <a href='https://bitbucket.org/account/user/teamawesome/projects/proj'>just forked</a> a repository from emmap1.");
+        $this->assertSame($this->response(), "emmap1 <a href='https://bitbucket.org/account/user/teamawesome/projects/proj'>just forked</a> a repository from emmap1.");
     }
 
     public function testRepoUpdatedEvent()
@@ -44,7 +44,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:updated']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just updated some details in the <a href='https://bitbucket.org/account/user/teamawesome/projects/proj'>team_name/repo_name</a> repository.");
+        $this->assertSame($this->response(), "emmap1 just updated some details in the <a href='https://bitbucket.org/account/user/teamawesome/projects/proj'>team_name/repo_name</a> repository.");
     }
 
     public function testRepoTransferEvent()
@@ -53,7 +53,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:transfer']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just transferred the <a href='https://bitbucket.org/account/user/teamawesome/projects/proj'>repo_name</a> repository to emmap1.");
+        $this->assertSame($this->response(), "emmap1 just transferred the <a href='https://bitbucket.org/account/user/teamawesome/projects/proj'>repo_name</a> repository to emmap1.");
     }
 
     public function testCommitCommentCreatedEvent()
@@ -62,7 +62,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:commit_comment_created']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just commented on a <a href='https://api.bitbucket.org/comment_id'>commit</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just commented on a <a href='https://api.bitbucket.org/comment_id'>commit</a> in the team_name/repo_name repository.");
     }
 
     public function testCommitStatusCreatedEvent()
@@ -71,7 +71,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:commit_status_created']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "mybuildtool: <a href='https://my-build-tool.com/builds/MY-PROJECT/BUILD-777'>Build started</a>.");
+        $this->assertSame($this->response(), "mybuildtool: <a href='https://my-build-tool.com/builds/MY-PROJECT/BUILD-777'>Build started</a>.");
     }
 
     public function testCommitStatusUpdatedEvent()
@@ -80,7 +80,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:commit_status_updated']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "mybuildtool: <a href='https://my-build-tool.com/builds/MY-PROJECT/BUILD-777'>All tests passed</a>.");
+        $this->assertSame($this->response(), "mybuildtool: <a href='https://my-build-tool.com/builds/MY-PROJECT/BUILD-777'>All tests passed</a>.");
     }
 
     public function testIssueCreatedEvent()
@@ -89,7 +89,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['issue:created']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/issue_id'>opened an issue</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/issue_id'>opened an issue</a> in the team_name/repo_name repository.");
     }
 
     public function testIssueUpdatedEvent()
@@ -98,7 +98,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['issue:updated']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/issue_id'>updated their issue</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/issue_id'>updated their issue</a> in the team_name/repo_name repository.");
     }
 
     public function testIssueCommentCreatedEvent()
@@ -107,7 +107,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['issue:comment_created']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/issue_id'>commented on an issue</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/issue_id'>commented on an issue</a> in the team_name/repo_name repository.");
     }
 
     public function testPullRequestCreatedEvent()
@@ -116,7 +116,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:created']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>opened a pull request</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>opened a pull request</a> in the team_name/repo_name repository.");
     }
 
     public function testPullRequestUpdatedEvent()
@@ -125,7 +125,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:updated']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>updated a pull request</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>updated a pull request</a> in the team_name/repo_name repository.");
     }
 
     public function testPullRequestApprovedEvent()
@@ -134,7 +134,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:approved']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>approved a pull request</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>approved a pull request</a> in the team_name/repo_name repository.");
     }
 
     public function testPullRequestUnapprovedEvent()
@@ -143,7 +143,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:unapproved']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>removed their approval from a pull request</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>removed their approval from a pull request</a> in the team_name/repo_name repository.");
     }
 
     public function testPullRequestFulfilledEvent()
@@ -152,7 +152,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:fulfilled']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>merged a pull request</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>merged a pull request</a> in the team_name/repo_name repository.");
     }
 
     public function testPullRequestRejectedEvent()
@@ -161,7 +161,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:rejected']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>rejected a pull request</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/pullrequest_id'>rejected a pull request</a> in the team_name/repo_name repository.");
     }
 
     public function testPullRequestCommentCreatedEvent()
@@ -170,7 +170,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:comment_created']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/comment_id'>commented</a> on a pull request in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/comment_id'>commented</a> on a pull request in the team_name/repo_name repository.");
     }
 
     public function testPullRequestCommentUpdatedEvent()
@@ -179,7 +179,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:comment_updated']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just <a href='https://api.bitbucket.org/comment_id'>updated their comment</a> on a pull request in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just <a href='https://api.bitbucket.org/comment_id'>updated their comment</a> on a pull request in the team_name/repo_name repository.");
     }
 
     public function testPullRequestCommentDeletedEvent()
@@ -188,7 +188,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['pullrequest:comment_deleted']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "emmap1 just deleted their comment on a <a href='https://api.bitbucket.org/pullrequest_id'>pull request</a> in the team_name/repo_name repository.");
+        $this->assertSame($this->response(), "emmap1 just deleted their comment on a <a href='https://api.bitbucket.org/pullrequest_id'>pull request</a> in the team_name/repo_name repository.");
     }
 
     public function testUsingCallbackWithPushEvent()
@@ -197,7 +197,7 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'team_name/repo_name');
+        $this->assertSame($this->response(), 'team_name/repo_name');
     }
 
     public function testHookShouldGiveErrorWhenNoEventHeaderIsPresent()
@@ -205,7 +205,7 @@ class BitBucketHookTest extends TestCase
         $this->query = ['type' => 'BitBucket'];
         $this->payload($this->bitBucket['repo:push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), 'BitBucket Event header not present');
+        $this->assertSame($this->response(), 'BitBucket Event header not present');
     }
 
     public function testHookShouldGiveErrorWhenInvalidEventIsWatched()
@@ -216,6 +216,6 @@ class BitBucketHookTest extends TestCase
 
         $this->payload($this->bitBucket['repo:push']);
 
-        $this->assertSameThree($this->response(), $this->formResponse(), "Can't watch an invalid event");
+        $this->assertSame($this->response(), "Can't watch an invalid event");
     }
 }
