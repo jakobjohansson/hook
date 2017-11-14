@@ -32,7 +32,6 @@ class Status extends Event
      */
     public function __toString()
     {
-        return $this->repository->full_name . ": <a href='" . $this->target_url . "'>" . $this->description . "</a>.";
+        return $this->repository->full_name . ": <a href='" . $this->target_url . "'>" . $this->description . '</a>.';
     }
-
 }
