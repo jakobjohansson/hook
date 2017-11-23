@@ -32,7 +32,7 @@ abstract class Hook
      */
     public static function GitHub($secret = null)
     {
-        return new GitHub\Hook($secret, EventMap::GitHub());
+        return new GitHub\Hook(EventMap::GitHub(), $secret);
     }
 
     /**
@@ -44,7 +44,7 @@ abstract class Hook
      */
     public static function GitLab($secret = null)
     {
-        return new GitLab\Hook($secret, EventMap::GitLab());
+        return new GitLab\Hook(EventMap::GitLab(), $secret);
     }
 
     /**
