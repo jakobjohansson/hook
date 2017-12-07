@@ -11,5 +11,13 @@ script:
   - php -S localhost:8000 tests/server.php &
   - composer test
 
+after_script:
+  - vendor/bin/test-reporter
+
+cache:
+  directories:
+    - vendor
+    - $HOME/.composer/cache
+
 notifications:
   - email: false
