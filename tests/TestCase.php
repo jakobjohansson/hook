@@ -54,7 +54,7 @@ abstract class TestCase extends BaseTest
      *
      * @var array
      */
-    public $headers;
+    public $headers = [];
 
     /**
      * Set up a client when constructing the test.
